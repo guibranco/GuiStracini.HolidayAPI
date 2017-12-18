@@ -10,6 +10,8 @@ Provides fully functional wrapper for the API with all options!
 [![GuiStracini.HolidayAPI NuGet Downloads](https://img.shields.io/nuget/dt/GuiStracini.HolidayAPI.svg)](https://www.nuget.org/packages/GuiStracini.HolidayAPI/)
 [![Github All Releases](https://img.shields.io/github/downloads/guibranco/GuiStracini.HolidayAPI/total.svg?style=plastic)](https://github.com/guibranco/GuiStracini.HolidayAPI)
 
+<img src="https://raw.githubusercontent.com/guibranco/GuiStracini.HolidayAPI/master/logo.png" alt="GuiStracini.HolidayAPI" width="150" height="150">
+
 
 ----------
 

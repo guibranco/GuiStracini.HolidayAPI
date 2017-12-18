@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
+    <metadata>
+        <id>GuiStracini.HolidayAPI</id>
+        <version>$version$</version>
+        <title>Holiday API</title>
+        <authors>Guilherme Branco Stracini</authors>
+        <owners>Guilherme Branco Stracini</owners>
+        <licenseUrl>https://github.com/guibranco/GuiStracini.HolidayAPI/blob/master/LICENSE</licenseUrl>
+        <projectUrl>https://github.com/guibranco/GuiStracini.HolidayAPI/</projectUrl>
+        <iconUrl>https://raw.githubusercontent.com/guibranco/GuiStracini.HolidayAPI/master/GuiStracini.HolidayAPI.png</iconUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>The Holiday API client wrapper.Provides fully functional wrapper for the API with all options!</description>
+        <copyright>Copyright 2017 Guilherme Branco Stracini. All rights reserved</copyright>
+        <tags>holiday api wrapper holidayapi</tags>
+    </metadata>
+</package>
