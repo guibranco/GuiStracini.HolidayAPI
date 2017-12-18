@@ -8,7 +8,7 @@
         <owners>Guilherme Branco Stracini</owners>
         <licenseUrl>https://github.com/guibranco/GuiStracini.HolidayAPI/blob/master/LICENSE</licenseUrl>
         <projectUrl>https://github.com/guibranco/GuiStracini.HolidayAPI/</projectUrl>
-        <iconUrl>https://raw.githubusercontent.com/guibranco/GuiStracini.HolidayAPI/master/GuiStracini.HolidayAPI.png</iconUrl>
+        <iconUrl>https://raw.githubusercontent.com/guibranco/GuiStracini.HolidayAPI/master/logo.jpg</iconUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>The Holiday API client wrapper.Provides fully functional wrapper for the API with all options!</description>
         <copyright>Copyright 2017 Guilherme Branco Stracini. All rights reserved</copyright>
