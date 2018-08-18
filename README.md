@@ -1,4 +1,4 @@
-# GBStracini.HolidayAPI
+# GuiStracini.HolidayAPI
 
 The [Holiday API](https://holidayapi.com) client wrapper written in C#.
 
