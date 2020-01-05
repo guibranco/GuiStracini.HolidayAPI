@@ -1,10 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+	<ProjectGuid>96A31323-EEDE-48A1-9ECE-4344F1FBE571</ProjectGuid>
     <TargetFramework>netcoreapp2.2</TargetFramework>
-
     <IsPackable>false</IsPackable>
-
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
 

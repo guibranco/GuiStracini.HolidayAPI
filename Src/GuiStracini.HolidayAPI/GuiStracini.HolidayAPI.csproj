@@ -1,8 +1,21 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+	<ProjectGuid>12BF88BB-C4C5-4074-8623-CD166A033E36</ProjectGuid>
     <TargetFramework>netstandard2.0</TargetFramework>
     <LangVersion>latest</LangVersion>
+	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	<Authors>Guilherme Branco Stracini</Authors>
+    <Description>The Holiday API client wrapper.Provides fully functional wrapper for the API with all options!</Description>
+    <Copyright>© 2020 Guilherme Branco Stracini. All rights reserved.</Copyright>
+    <PackageLicense>https://github.com/guibranco/GuiStracini.HolidayAPI/blob/master/LICENSE</PackageLicense>
+    <PackageProjectUrl>https://github.com/guibranco/GuiStracini.HolidayAPI</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/guibranco/GuiStracini.HolidayAPI</RepositoryUrl>
+    <RepositoryType>GIT</RepositoryType>
+    <PackageTags>holiday api wrapper holidayapi</PackageTags>
+    <PackageIconUrl>https://raw.githubusercontent.com/guibranco/GuiStracini.HolidayAPI/master/logo.jpg</PackageIconUrl>
+    <Version>2.0.0</Version>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
