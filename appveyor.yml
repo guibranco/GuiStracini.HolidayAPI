@@ -1,6 +1,4 @@
-version: 1.0.{build}
-pull_requests:
- do_not_increment_build_number: true
+version: 2.0.{build}
 skip_tags: true
 image: Visual Studio 2017
 configuration: Release
@@ -13,11 +11,11 @@ environment:
 dotnet_csproj: 
   patch: true 
   file: '**\*.csproj' 
-  version: '1.0.{build}' 
-  package_version: '1.0.{build}' 
-  assembly_version: '1.0.{build}'
-  file_version: '1.0.{build}'
-  informational_version: '1.0.{build}'
+  version: '{version}' 
+  package_version: '{version}' 
+  assembly_version: '{version}' 
+  file_version: '{version}' 
+  informational_version: '{version}' 
 before_build:
 - cmd: nuget restore
 - cmd: choco install opencover.portable
@@ -37,7 +35,7 @@ build_script:
  /d:sonar.login="$env:SONAR_TOKEN" 
  /v:"$env:APPVEYOR_BUILD_NUMBER" 
  /d:sonar.exclusions="**/bin/**/*,**/obj/**/*" 
- /d:sonar.coverage.exclusions="GuiStracini.HolidayAPI.Tests/**,**/*Tests.cs" 
+ /d:sonar.coverage.exclusions="**/GuiStracini.HolidayAPI.Tests/**,**/*Tests.cs" 
  /d:sonar.cs.opencover.reportsPaths="$env:CD\Tests\GuiStracini.HolidayAPI.Tests\coverage.opencover.xml" }'
  - dotnet build GuiStracini.HolidayAPI.sln
  - ps: dotnet test .\Tests\GuiStracini.HolidayAPI.Tests\GuiStracini.HolidayAPI.Tests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat="opencover"
