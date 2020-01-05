@@ -1,37 +1,30 @@
 ﻿namespace GuiStracini.HolidayAPI.Model
 {
     /// <summary>
-    /// The country interface.
+    /// The subdivision class.
     /// </summary>
-    public interface ICountry
+    public class Subdivision
     {
         /// <summary>
-        /// Gets the code.
+        /// Gets or sets the code.
         /// </summary>
         /// <value>
         /// The code.
         /// </value>
-        string Code { get; }
+        public string Code { get; set; }
         /// <summary>
-        /// Gets the name.
+        /// Gets or sets the name.
         /// </summary>
         /// <value>
         /// The name.
         /// </value>
-        string Name { get; }
+        public string Name { get; set; }
         /// <summary>
-        /// Gets the languages.
+        /// Gets or sets the languages.
         /// </summary>
         /// <value>
         /// The languages.
         /// </value>
-        string[] Languages { get; }
-        /// <summary>
-        /// Gets the codes.
-        /// </summary>
-        /// <value>
-        /// The codes.
-        /// </value>
-        CountryCode Codes { get; }
+        public string[] Languages { get; set; }
     }
 }

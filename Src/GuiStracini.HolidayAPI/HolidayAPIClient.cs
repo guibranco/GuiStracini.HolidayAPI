@@ -43,6 +43,26 @@
 
         #endregion
 
+        #region Private methods
+
+        private async ValueTask<TResponse> Execute<TRequest, TResponse>(TRequest request,
+            CancellationToken cancellationToken) where TRequest : BaseRequest where TResponse : BaseResponse
+        {
+            var response = await _serviceFactory.Post<TRequest, TResponse>(request, cancellationToken).ConfigureAwait(false);
+
+            _metadata = response.Requests ?? new RequestMetadata();
+            _metadata.LastCall = DateTime.Now;
+            if (response.Status == 200)
+            {
+                _metadata.Message = "Success";
+                return response;
+            }
+            _metadata.Message = $"Error code: {response.Status}";
+            return null;
+        }
+
+        #endregion
+
         #region Implementation of IHolidayAPIClient
 
         /// <summary>
@@ -73,19 +93,9 @@
         /// <returns></returns>
         public async Task<IEnumerable<IHoliday>> GetHolidaysAsync(HolidayFilter filter, CancellationToken cancellationToken)
         {
-            var data = new HolidayRequest { Key = _apiKey, Country = filter.Country, Year = filter.Year };
-
-            var result = await _serviceFactory.Post<HolidayRequest, HolidayResponse>(data, cancellationToken).ConfigureAwait(false);
-
-            _metadata = result.Requests ?? new RequestMetadata();
-            _metadata.LastCall = DateTime.Now;
-            if (result.Status == 200)
-            {
-                _metadata.Message = "Success";
-                return result.Holidays;
-            }
-            _metadata.Message = $"Error code: {result.Status}";
-            return null;
+            var request = new HolidayRequest { Key = _apiKey, Country = filter.Country, Year = filter.Year };
+            var response = await Execute<HolidayRequest, HolidayResponse>(request, cancellationToken).ConfigureAwait(false);
+            return response?.Holidays;
         }
 
         /// <summary>
@@ -106,7 +116,11 @@
         /// <returns></returns>
         public async Task<IEnumerable<ICountry>> GetCountriesAsync(string search, CancellationToken cancellationToken)
         {
-            throw new System.NotImplementedException();
+            var request = new CountriesRequest { Key = _apiKey };
+            if (!string.IsNullOrWhiteSpace(search))
+                request.Search = search;
+            var response = await Execute<CountriesRequest, CountriesResponse>(request, cancellationToken).ConfigureAwait(false);
+            return response?.Countries;
         }
 
         /// <summary>
@@ -127,7 +141,11 @@
         /// <returns></returns>
         public async Task<IEnumerable<ILanguage>> GetLanguagesAsync(string search, CancellationToken cancellationToken)
         {
-            throw new System.NotImplementedException();
+            var request = new LanguagesRequest { Key = _apiKey };
+            if (!string.IsNullOrWhiteSpace(search))
+                request.Search = search;
+            var response = await Execute<LanguagesRequest, LanguagesResponse>(request, cancellationToken).ConfigureAwait(false);
+            return response?.Languages;
         }
 
         #endregion

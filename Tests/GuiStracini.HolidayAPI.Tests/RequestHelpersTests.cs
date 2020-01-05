@@ -37,6 +37,10 @@
         }
     }
 
+    /// <summary>
+    /// Dummy request for test purposes.
+    /// </summary>
+    /// <seealso cref="GuiStracini.HolidayAPI.Transport.BaseRequest" />
     [EndpointRoute("something/{Dummy}")]
     public class DummyRequest : BaseRequest
     {
