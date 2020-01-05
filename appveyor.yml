@@ -37,7 +37,7 @@ build_script:
  /d:sonar.login="$env:SONAR_TOKEN" 
  /v:"$env:APPVEYOR_BUILD_NUMBER" 
  /d:sonar.exclusions="**/bin/**/*,**/obj/**/*" 
- /d:sonar.coverage.exclusions="GuiStracini.HolidayAPI.Tests/**,**/*Tests.cs" 
+ /d:sonar.coverage.exclusions="**/GuiStracini.HolidayAPI.Tests/**,**/*Tests.cs" 
  /d:sonar.cs.opencover.reportsPaths="$env:CD\Tests\GuiStracini.HolidayAPI.Tests\coverage.opencover.xml" }'
  - dotnet build GuiStracini.HolidayAPI.sln
  - ps: dotnet test .\Tests\GuiStracini.HolidayAPI.Tests\GuiStracini.HolidayAPI.Tests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat="opencover"
