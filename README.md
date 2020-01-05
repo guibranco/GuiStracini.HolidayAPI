@@ -20,7 +20,7 @@ Provides fully functional wrapper for the API with all options!
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=guibranco_GuiStracini.HolidayAPI&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=guibranco_GuiStracini.HolidayAPI)
 
 
-<img src="https://raw.githubusercontent.com/guibranco/GuiStracini.HolidayAPI/master/logo.jpg" alt="GuiStracini.HolidayAPI" width="150" height="150">
+<img src="https://raw.githubusercontent.com/guibranco/GuiStracini.HolidayAPI/master/logo.jpg" alt="GuiStracini.HolidayAPI">
 
 
 ----------
