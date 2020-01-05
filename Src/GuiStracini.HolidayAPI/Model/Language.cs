@@ -1,23 +1,28 @@
 ﻿namespace GuiStracini.HolidayAPI.Model
 {
     /// <summary>
-    /// The language interface
+    /// The language class.
     /// </summary>
-    public interface ILanguage
+    /// <seealso cref="GuiStracini.HolidayAPI.Model.ILanguage" />
+    public class Language : ILanguage
     {
+        #region Implementation of ILanguage
+
         /// <summary>
         /// Gets the code.
         /// </summary>
         /// <value>
         /// The code.
         /// </value>
-        string Code { get; }
+        public string Code { get; set; }
         /// <summary>
         /// Gets the name.
         /// </summary>
         /// <value>
         /// The name.
         /// </value>
-        string Name { get; }
+        public string Name { get; set; }
+
+        #endregion
     }
 }
