@@ -2,7 +2,7 @@
 {
     using Utils;
 
-    [EndpointRoute("/v1/holidays")]
+    [EndpointRoute("/v1/holidays?key={Key}&country={Country}&year={Year}")]
     internal class HolidayRequest : BaseRequest
     {
         /// <summary>

@@ -73,19 +73,17 @@
         /// <returns></returns>
         public async Task<IEnumerable<IHoliday>> GetHolidaysAsync(HolidayFilter filter, CancellationToken cancellationToken)
         {
-            var data = new HolidayRequest();
+            var data = new HolidayRequest { Key = _apiKey, Country = filter.Country, Year = filter.Year };
 
-            var result = await _serviceFactory.Get<HolidayRequest, HolidayResponse>(data, cancellationToken).ConfigureAwait(false);
+            var result = await _serviceFactory.Post<HolidayRequest, HolidayResponse>(data, cancellationToken).ConfigureAwait(false);
 
-            _metadata = result.Requests;
+            _metadata = result.Requests ?? new RequestMetadata();
             _metadata.LastCall = DateTime.Now;
-
             if (result.Status == 200)
             {
                 _metadata.Message = "Success";
                 return result.Holidays;
             }
-
             _metadata.Message = $"Error code: {result.Status}";
             return null;
         }

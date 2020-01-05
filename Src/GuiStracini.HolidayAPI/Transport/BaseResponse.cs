@@ -19,6 +19,14 @@
         public int Status { get; set; }
 
         /// <summary>
+        /// Gets or sets the warning.
+        /// </summary>
+        /// <value>
+        /// The warning.
+        /// </value>
+        public string Warning { get; set; }
+
+        /// <summary>
         /// Gets or sets the requests.
         /// </summary>
         /// <value>

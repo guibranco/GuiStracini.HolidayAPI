@@ -1,4 +1,4 @@
-﻿namespace GuiStracini.HolidayAPI.Utils
+﻿namespace GuiStracini.HolidayAPI.GoodPractices
 {
     using System;
     using System.Runtime.Serialization;

@@ -1,5 +1,6 @@
 ﻿namespace GuiStracini.HolidayAPI.Transport
 {
+    using Newtonsoft.Json;
     using System;
 
     /// <summary>
@@ -13,6 +14,7 @@
         /// <value>
         /// The key.
         /// </value>
+        [JsonProperty("key")]
         public Guid Key { get; set; }
     }
 }
