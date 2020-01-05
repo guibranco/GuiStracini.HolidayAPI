@@ -1,5 +1,6 @@
 namespace GuiStracini.HolidayAPI.Tests
 {
+    using Microsoft.Extensions.Configuration;
     using System;
     using System.Linq;
     using System.Threading;
@@ -11,7 +12,8 @@ namespace GuiStracini.HolidayAPI.Tests
         [Fact]
         public async Task GetBrazilianHolidaysFromTheLastYear()
         {
-            var client = new HolidayAPIClient("");
+            var configuration = new ConfigurationBuilder().AddEnvironmentVariables().Build();
+            var client = new HolidayAPIClient(configuration["apiKey"]);
             var result = await client.GetHolidaysAsync("BR", DateTime.Now.AddYears(-1).Year, CancellationToken.None);
             var metadata = client.UsageData;
 
