@@ -44,9 +44,9 @@ build_script:
  - ps: 'if (-Not $env:APPVEYOR_PULL_REQUEST_NUMBER) { & dotnet sonarscanner end /d:sonar.login="$env:SONAR_TOKEN" }'
  - codecov -f "Tests\GuiStracini.HolidayAPI.Tests\coverage.opencover.xml"
 after_build:
-- xcopy %CD%\guistracini-holidayapi\bin\Release\netstandard2.0\*.* %CD%\Build\
-- copy %CD%\guistracini-holidayapi\bin\Release\GuiStracini.HolidayAPI.%APPVEYOR_BUILD_VERSION%.nupkg GuiStracini.HolidayAPI.%APPVEYOR_BUILD_VERSION%.nupkg
-- rd /s /q %CD%\guistracini-holidayapi\bin\Release\
+- xcopy %CD%\Src\GuiStracini.HolidayAPI\bin\Release\netstandard2.0\*.* %CD%\Build\
+- copy %CD%\Src\GuiStracini.HolidayAPI\bin\Release\GuiStracini.HolidayAPI.%APPVEYOR_BUILD_VERSION%.nupkg GuiStracini.HolidayAPI.%APPVEYOR_BUILD_VERSION%.nupkg
+- rd /s /q %CD%\Src\GuiStracini.HolidayAPI\bin\Release\
 - cd %CD%
 - 7z a -tzip -mx9 "GuiStracini.HolidayAPI.%APPVEYOR_BUILD_VERSION%.zip" Build
 artifacts:
