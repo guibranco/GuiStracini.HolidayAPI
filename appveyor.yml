@@ -43,7 +43,7 @@ build_script:
  - ps: dotnet test .\Tests\GuiStracini.HolidayAPI.Tests\GuiStracini.HolidayAPI.Tests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat="opencover"
  - ps: 'if (-Not $env:APPVEYOR_PULL_REQUEST_NUMBER) { & dotnet sonarscanner end /d:sonar.login="$env:SONAR_TOKEN" }'
  - codecov -f "Tests\GuiStracini.HolidayAPI.Tests\coverage.opencover.xml"
- after_build:
+after_build:
 - xcopy %CD%\guistracini-holidayapi\bin\Release\netstandard2.0\*.* %CD%\Build\
 - copy %CD%\guistracini-holidayapi\bin\Release\GuiStracini.HolidayAPI.%APPVEYOR_BUILD_VERSION%.nupkg GuiStracini.HolidayAPI.%APPVEYOR_BUILD_VERSION%.nupkg
 - rd /s /q %CD%\guistracini-holidayapi\bin\Release\
