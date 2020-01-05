@@ -13,11 +13,11 @@ environment:
 dotnet_csproj: 
   patch: true 
   file: '**\*.csproj' 
-  version: '2.0.{build}' 
-  package_version: '2.0.{build}' 
-  assembly_version: '2.0.{build}'
-  file_version: '2.0.{build}'
-  informational_version: '2.0.{build}'
+  version: '{version}' 
+  package_version: '{version}' 
+  assembly_version: '{version}' 
+  file_version: '{version}' 
+  informational_version: '{version}' 
 before_build:
 - cmd: nuget restore
 - cmd: choco install opencover.portable
@@ -45,6 +45,7 @@ build_script:
  - codecov -f "Tests\GuiStracini.HolidayAPI.Tests\coverage.opencover.xml"
 after_build:
 - xcopy %CD%\Src\GuiStracini.HolidayAPI\bin\Release\netstandard2.0\*.* %CD%\Build\
+C:\projects\guistracini-holidayapi\Src\GuiStracini.HolidayAPI\bin\Release\GuiStracini.HolidayAPI
 - copy %CD%\Src\GuiStracini.HolidayAPI\bin\Release\GuiStracini.HolidayAPI.%APPVEYOR_BUILD_VERSION%.nupkg GuiStracini.HolidayAPI.%APPVEYOR_BUILD_VERSION%.nupkg
 - rd /s /q %CD%\Src\GuiStracini.HolidayAPI\bin\Release\
 - cd %CD%
