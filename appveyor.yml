@@ -1,4 +1,4 @@
-version: 1.0.{build}
+version: 2.0.{build}
 pull_requests:
  do_not_increment_build_number: true
 skip_tags: true
@@ -6,17 +6,18 @@ image: Visual Studio 2017
 configuration: Release
 skip_commits:
   message: /(Created|Update).*\.(png|jpg|jpeg|bmp|gif|md)/
+skip_branch_with_pr: true
 environment:
   SONAR_TOKEN: 
     secure: RrgnyBWUgGKOwEnWRGPS6usKzoUY0oOhVx0lW2KuhEwVvCd76sP1Kxv+goWO2h1+
 dotnet_csproj: 
   patch: true 
   file: '**\*.csproj' 
-  version: '1.0.{build}' 
-  package_version: '1.0.{build}' 
-  assembly_version: '1.0.{build}'
-  file_version: '1.0.{build}'
-  informational_version: '1.0.{build}'
+  version: '2.0.{build}' 
+  package_version: '2.0.{build}' 
+  assembly_version: '2.0.{build}'
+  file_version: '2.0.{build}'
+  informational_version: '2.0.{build}'
 before_build:
 - cmd: nuget restore
 - cmd: choco install opencover.portable
