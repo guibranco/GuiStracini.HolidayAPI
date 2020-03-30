@@ -19,6 +19,15 @@
             : base($"Unable to complete request to {endpoint}", innerException)
         { }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HolidayAPIException"/> class.
+        /// </summary>
+        /// <param name="statusCode">The status code.</param>
+        /// <param name="errorMessage">The error message.</param>
+        public HolidayAPIException(int statusCode, string errorMessage)
+        : base($"{statusCode} - {errorMessage}")
+        { }
+
         /// <summary>Initializes a new instance of the <see cref="T:System.Exception"></see> class with serialized data.</summary>
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo"></see> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext"></see> that contains contextual information about the source or destination.</param>

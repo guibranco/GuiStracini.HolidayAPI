@@ -3,7 +3,7 @@
     using Utils;
 
     [EndpointRoute("/v1/holidays?key={Key}&country={Country}&year={Year}")]
-    internal class HolidayRequest : SearchableRequest
+    internal class HolidayRequest : HolidaySearchableRequest
     {
         /// <summary>
         /// Gets or sets the country.

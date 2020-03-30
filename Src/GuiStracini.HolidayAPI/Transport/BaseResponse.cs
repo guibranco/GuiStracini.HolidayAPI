@@ -27,6 +27,14 @@
         public string Warning { get; set; }
 
         /// <summary>
+        /// Gets or sets the error.
+        /// </summary>
+        /// <value>
+        /// The error.
+        /// </value>
+        public string Error { get; set; }
+
+        /// <summary>
         /// Gets or sets the requests.
         /// </summary>
         /// <value>

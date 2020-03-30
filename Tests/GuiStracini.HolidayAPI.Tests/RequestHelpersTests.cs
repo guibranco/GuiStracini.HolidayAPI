@@ -1,6 +1,5 @@
 ﻿namespace GuiStracini.HolidayAPI.Tests
 {
-    using Transport;
     using Utils;
     using Xunit;
 
@@ -20,7 +19,9 @@
             {
                 Dummy = "my-string"
             };
+
             var actual = dummy.GetRequestEndpoint();
+
             Assert.Equal(expected, actual);
         }
 
@@ -32,19 +33,44 @@
         {
             const string expected = "something";
             var dummy = new DummyRequest();
+
             var actual = dummy.GetRequestEndpoint();
+
+            Assert.Equal(expected, actual);
+        }
+
+        /// <summary>
+        /// Requests the endpoint with additional values.
+        /// </summary>
+        [Fact]
+        public void RequestEndpointWithAdditionalValues()
+        {
+            const string expected = "something/test/?foo=bar";
+            var dummy = new DummyRequest
+            {
+                Dummy = "test",
+                Foo = "bar"
+            };
+
+            var actual = dummy.GetRequestEndpoint();
+
+            Assert.Equal(expected, actual);
+        }
+
+
+        [Fact]
+        public void RequestEndpointWithAdditionalValuesNullable()
+        {
+            const string expected = "something/test/?fooBar=true";
+            var dummy = new DummyRequest
+            {
+                Dummy = "test",
+                FooBar = true
+            };
+
+            var actual = dummy.GetRequestEndpoint();
+
             Assert.Equal(expected, actual);
         }
     }
-
-    /// <summary>
-    /// Dummy request for test purposes.
-    /// </summary>
-    /// <seealso cref="GuiStracini.HolidayAPI.Transport.BaseRequest" />
-    [EndpointRoute("something/{Dummy}")]
-    public class DummyRequest : BaseRequest
-    {
-        public string Dummy { get; set; }
-    }
-
 }

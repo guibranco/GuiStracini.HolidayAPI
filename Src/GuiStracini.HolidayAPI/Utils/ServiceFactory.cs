@@ -1,42 +1,47 @@
 ﻿namespace GuiStracini.HolidayAPI.Utils
 {
     using GoodPractices;
-    using System;
     using System.Net.Http;
-    using System.Net.Http.Headers;
     using System.Threading;
     using System.Threading.Tasks;
     using Transport;
 
     public class ServiceFactory
     {
-        #region Private fields
+        /// <summary>
+        /// The HTTP client
+        /// </summary>
+        private readonly HttpClient _httpClient;
 
         /// <summary>
-        /// The base endpoint
+        /// Initializes a new instance of the <see cref="ServiceFactory"/> class.
         /// </summary>
-        private const string BaseEndpoint = "https://holidayapi.com/";
+        /// <param name="httpClient">The HTTP client.</param>
+        public ServiceFactory(HttpClient httpClient)
+        {
+            _httpClient = httpClient;
+        }
 
-        #endregion
-
+        /// <summary>
+        /// Posts the specified data.
+        /// </summary>
+        /// <typeparam name="TIn">The type of the in.</typeparam>
+        /// <typeparam name="TOut">The type of the out.</typeparam>
+        /// <param name="data">The data.</param>
+        /// <param name="cancellationToken">The cancellation token.</param>
+        /// <returns></returns>
+        /// <exception cref="HolidayAPIException"></exception>
         public async ValueTask<TOut> Post<TIn, TOut>(TIn data, CancellationToken cancellationToken) where TIn : BaseRequest where TOut : BaseResponse
         {
-            using (var client = new HttpClient())
+            var endpoint = data.GetRequestEndpoint();
+            try
             {
-                client.BaseAddress = new Uri(BaseEndpoint);
-                client.DefaultRequestHeaders.ExpectContinue = false;
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                var endpoint = data.GetRequestEndpoint();
-                try
-                {
-                    var response = await client.GetAsync(endpoint, cancellationToken).ConfigureAwait(false);
-                    return await response.Content.ReadAsAsync<TOut>(cancellationToken).ConfigureAwait(false);
-                }
-                catch (HttpRequestException e)
-                {
-                    throw new HolidayAPIException(endpoint, e);
-                }
+                var response = await _httpClient.GetAsync(endpoint, cancellationToken).ConfigureAwait(false);
+                return await response.Content.ReadAsAsync<TOut>(cancellationToken).ConfigureAwait(false);
+            }
+            catch (HttpRequestException e)
+            {
+                throw new HolidayAPIException(endpoint, e);
             }
         }
 

@@ -1,4 +1,7 @@
-﻿namespace GuiStracini.HolidayAPI
+﻿using GuiStracini.HolidayAPI.GoodPractices;
+using System.Net.Http;
+
+namespace GuiStracini.HolidayAPI
 {
     using Model;
     using System;
@@ -23,7 +26,7 @@
         /// <summary>
         /// The service factory
         /// </summary>
-        private ServiceFactory _serviceFactory;
+        private readonly ServiceFactory _serviceFactory;
 
         #region ~Ctors
 
@@ -31,26 +34,36 @@
         /// Initializes a new instance of the <see cref="HolidayAPIClient"/> class.
         /// </summary>
         /// <param name="apiKey">The API key.</param>
-        public HolidayAPIClient(string apiKey)
+        /// <param name="httpClient">The HTTP client.</param>
+        public HolidayAPIClient(string apiKey, HttpClient httpClient)
         {
             _apiKey = new Guid(apiKey);
             _metadata = new RequestMetadata
             {
                 Message = "Make at least on request before get the metadata"
             };
-            _serviceFactory = new ServiceFactory();
+            _serviceFactory = new ServiceFactory(httpClient);
         }
 
         #endregion
 
         #region Private methods
 
+        /// <summary>
+        /// Executes the specified request.
+        /// </summary>
+        /// <typeparam name="TRequest">The type of the request.</typeparam>
+        /// <typeparam name="TResponse">The type of the response.</typeparam>
+        /// <param name="request">The request.</param>
+        /// <param name="cancellationToken">The cancellation token.</param>
+        /// <returns></returns>
         private async ValueTask<TResponse> Execute<TRequest, TResponse>(TRequest request,
             CancellationToken cancellationToken) where TRequest : BaseRequest where TResponse : BaseResponse
         {
             var response = await _serviceFactory.Post<TRequest, TResponse>(request, cancellationToken).ConfigureAwait(false);
 
             _metadata = response.Requests ?? new RequestMetadata();
+            _metadata.Warning = response.Warning;
             _metadata.LastCall = DateTime.Now;
             if (response.Status == 200)
             {
@@ -58,7 +71,7 @@
                 return response;
             }
             _metadata.Message = $"Error code: {response.Status}";
-            return null;
+            throw new HolidayAPIException(response.Status, response.Error ?? response.Warning);
         }
 
         #endregion
@@ -93,7 +106,20 @@
         /// <returns></returns>
         public async Task<IEnumerable<IHoliday>> GetHolidaysAsync(HolidayFilter filter, CancellationToken cancellationToken)
         {
-            var request = new HolidayRequest { Key = _apiKey, Country = filter.Country, Year = filter.Year };
+            var request = new HolidayRequest
+            {
+                Key = _apiKey,
+                Country = filter.Country,
+                Year = filter.Year,
+                Day = filter.Day,
+                Month = filter.Month,
+                Language = filter.Language,
+                Previous = filter.Previous,
+                Public = filter.Public,
+                Search = filter.Search,
+                Subdivisions = filter.Subdivisions,
+                Upcoming = filter.Upcoming
+            };
             var response = await Execute<HolidayRequest, HolidayResponse>(request, cancellationToken).ConfigureAwait(false);
             return response?.Holidays;
         }
