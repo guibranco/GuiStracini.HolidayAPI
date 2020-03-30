@@ -8,7 +8,7 @@
     /// </summary>
     /// <seealso cref="System.Exception" />
     [Serializable]
-    public class InvalidRequestEndpointException : Exception
+    public sealed class InvalidRequestEndpointException : Exception
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="InvalidRequestEndpointException"/> class.
@@ -24,7 +24,7 @@
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination. </param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is <see langword="null" />. </exception>
         /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is <see langword="null" /> or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
-        public InvalidRequestEndpointException(SerializationInfo info, StreamingContext context) : base(info, context)
+        private InvalidRequestEndpointException(SerializationInfo info, StreamingContext context) : base(info, context)
         { }
     }
 }
