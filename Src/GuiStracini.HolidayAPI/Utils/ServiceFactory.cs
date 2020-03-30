@@ -30,7 +30,7 @@
         /// <param name="data">The data.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns></returns>
-        /// <exception cref="HolidayAPIException"></exception>
+        /// <exception cref="HolidayApiException"></exception>
         public async ValueTask<TOut> Post<TIn, TOut>(TIn data, CancellationToken cancellationToken) where TIn : BaseRequest where TOut : BaseResponse
         {
             var endpoint = data.GetRequestEndpoint();
@@ -41,7 +41,7 @@
             }
             catch (HttpRequestException e)
             {
-                throw new HolidayAPIException(endpoint, e);
+                throw new HolidayApiException(endpoint, e);
             }
         }
 

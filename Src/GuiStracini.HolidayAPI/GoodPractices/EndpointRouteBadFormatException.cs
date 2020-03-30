@@ -7,16 +7,14 @@
     /// Throws when a request endpoint is in a bad format
     /// </summary>
     /// <seealso cref="System.Exception" />
-
-    //TODO Rename
     [Serializable]
-    public class RequestEndpointBadFormatException : Exception
+    public sealed class EndpointRouteBadFormatException : Exception
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="RequestEndpointBadFormatException"/> class.
+        /// Initializes a new instance of the <see cref="EndpointRouteBadFormatException"/> class.
         /// </summary>
         /// <param name="endpointFormat">The endpoint format.</param>
-        public RequestEndpointBadFormatException(string endpointFormat)
+        public EndpointRouteBadFormatException(string endpointFormat)
             : base($"Unable to resolve the endpoint format {endpointFormat}")
         { }
 
@@ -25,7 +23,7 @@
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination. </param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is <see langword="null" />. </exception>
         /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is <see langword="null" /> or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
-        protected RequestEndpointBadFormatException(SerializationInfo info, StreamingContext context) : base(info, context)
+        private EndpointRouteBadFormatException(SerializationInfo info, StreamingContext context) : base(info, context)
         { }
     }
 }

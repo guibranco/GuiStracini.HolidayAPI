@@ -11,7 +11,7 @@ namespace GuiStracini.HolidayAPI
     using Transport;
     using Utils;
 
-    public class HolidayAPIClient : IHolidayAPIClient
+    public class HolidayApiClient : IHolidayApiClient
     {
         /// <summary>
         /// The API key
@@ -31,11 +31,11 @@ namespace GuiStracini.HolidayAPI
         #region ~Ctors
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="HolidayAPIClient"/> class.
+        /// Initializes a new instance of the <see cref="HolidayApiClient"/> class.
         /// </summary>
         /// <param name="apiKey">The API key.</param>
         /// <param name="httpClient">The HTTP client.</param>
-        public HolidayAPIClient(string apiKey, HttpClient httpClient)
+        public HolidayApiClient(string apiKey, HttpClient httpClient)
         {
             _apiKey = new Guid(apiKey);
             _metadata = new RequestMetadata
@@ -71,7 +71,7 @@ namespace GuiStracini.HolidayAPI
                 return response;
             }
             _metadata.Message = $"Error code: {response.Status}";
-            throw new HolidayAPIException(response.Status, response.Error ?? response.Warning);
+            throw new HolidayApiException(response.Status, response.Error ?? response.Warning);
         }
 
         #endregion
