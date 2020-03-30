@@ -7,6 +7,6 @@
     /// </summary>
     /// <seealso cref="GuiStracini.HolidayAPI.Transport.SearchableRequest" />
     [EndpointRoute("v1/languages?key={Key}")]
-    public class LanguagesRequest : SearchableRequest
+    internal class LanguagesRequest : SearchableRequest
     { }
 }

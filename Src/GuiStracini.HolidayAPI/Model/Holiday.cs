@@ -52,7 +52,7 @@
         /// <value>
         /// The UUID.
         /// </value>
-        public Guid UUID { get; set; }
+        public Guid Uuid { get; set; }
 
         /// <summary>
         /// Gets or sets the weekday.

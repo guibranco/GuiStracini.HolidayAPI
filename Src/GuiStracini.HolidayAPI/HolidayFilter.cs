@@ -2,8 +2,6 @@
 {
     public class HolidayFilter
     {
-        public HolidayFilter() { }
-
         /// <summary>
         /// Initializes a new instance of the <see cref="HolidayFilter"/> class.
         /// </summary>
@@ -21,56 +19,63 @@
         /// <value>
         /// The country.
         /// </value>
-        public string Country { get; set; }
+        public string Country { get; }
+
         /// <summary>
         /// Gets or sets the year.
         /// </summary>
         /// <value>
         /// The year.
         /// </value>
-        public int Year { get; set; }
+        public int Year { get; }
         /// <summary>
         /// Gets or sets the month.
         /// </summary>
         /// <value>
         /// The month.
         /// </value>
-        public int Month { get; set; }
+        public int? Month { get; set; }
+
         /// <summary>
         /// Gets or sets the day.
         /// </summary>
         /// <value>
         /// The day.
         /// </value>
-        public int Day { get; set; }
+        public int? Day { get; set; }
+
         /// <summary>
         /// Gets or sets a value indicating whether this <see cref="HolidayFilter"/> is previous.
         /// </summary>
         /// <value>
         ///   <c>true</c> if previous; otherwise, <c>false</c>.
         /// </value>
-        public bool Previous { get; set; }
+        public bool? Previous { get; set; }
+
         /// <summary>
         /// Gets or sets a value indicating whether this <see cref="HolidayFilter"/> is upcoming.
         /// </summary>
         /// <value>
         ///   <c>true</c> if upcoming; otherwise, <c>false</c>.
         /// </value>
-        public bool Upcoming { get; set; }
+        public bool? Upcoming { get; set; }
+
         /// <summary>
         /// Gets or sets a value indicating whether this <see cref="HolidayFilter"/> is public.
         /// </summary>
         /// <value>
         ///   <c>true</c> if public; otherwise, <c>false</c>.
         /// </value>
-        public bool Public { get; set; }
+        public bool? Public { get; set; }
+
         /// <summary>
         /// Gets or sets a value indicating whether this <see cref="HolidayFilter"/> is subdivisions.
         /// </summary>
         /// <value>
         ///   <c>true</c> if subdivisions; otherwise, <c>false</c>.
         /// </value>
-        public bool Subdivisions { get; set; }
+        public bool? Subdivisions { get; set; }
+
         /// <summary>
         /// Gets or sets the search.
         /// </summary>

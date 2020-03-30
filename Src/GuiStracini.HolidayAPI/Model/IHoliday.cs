@@ -48,7 +48,7 @@
         /// <value>
         /// The UUID.
         /// </value>
-        Guid UUID { get; set; }
+        Guid Uuid { get; set; }
         /// <summary>
         /// Gets or sets the weekday.
         /// </summary>
