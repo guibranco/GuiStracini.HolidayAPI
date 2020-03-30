@@ -117,7 +117,9 @@ namespace GuiStracini.HolidayAPI.Utils
             {
                 if (!(property.GetCustomAttributes(typeof(AdditionalRouteValueAttribute), false) 
                     is AdditionalRouteValueAttribute[] attributes) || !attributes.Any())
+                {
                     continue;
+                }
                 addAsQueryString = attributes.Single().AsQueryString;
 
                 var propertyValue = property.GetValue(request);
