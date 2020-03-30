@@ -39,6 +39,7 @@
         /// The last call.
         /// </value>
         public DateTime LastCall { get; set; }
+
         /// <summary>
         /// Gets or sets the message.
         /// </summary>
@@ -46,5 +47,13 @@
         /// The message.
         /// </value>
         public string Message { get; set; }
+
+        /// <summary>
+        /// Gets or sets the warning.
+        /// </summary>
+        /// <value>
+        /// The warning.
+        /// </value>
+        public string Warning { get; set; }
     }
 }

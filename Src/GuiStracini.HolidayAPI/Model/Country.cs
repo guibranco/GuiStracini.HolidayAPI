@@ -14,6 +14,7 @@
         /// The code.
         /// </value>
         public string Code { get; set; }
+
         /// <summary>
         /// Gets the name.
         /// </summary>
@@ -21,6 +22,7 @@
         /// The name.
         /// </value>
         public string Name { get; set; }
+
         /// <summary>
         /// Gets the languages.
         /// </summary>
@@ -28,6 +30,7 @@
         /// The languages.
         /// </value>
         public string[] Languages { get; set; }
+
         /// <summary>
         /// Gets the codes.
         /// </summary>
@@ -36,8 +39,6 @@
         /// </value>
         public CountryCode Codes { get; set; }
 
-        #endregion
-
         /// <summary>
         /// Gets or sets the flag.
         /// </summary>
@@ -45,6 +46,7 @@
         /// The flag.
         /// </value>
         public string Flag { get; set; }
+
         /// <summary>
         /// Gets or sets the subdivisions.
         /// </summary>
@@ -52,6 +54,8 @@
         /// The subdivisions.
         /// </value>
         public Subdivision[] Subdivisions { get; set; }
+
+        #endregion
     }
 }
 

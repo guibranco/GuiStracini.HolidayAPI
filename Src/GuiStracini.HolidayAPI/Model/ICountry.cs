@@ -33,5 +33,21 @@
         /// The codes.
         /// </value>
         CountryCode Codes { get; }
+
+        /// <summary>
+        /// Gets the flag.
+        /// </summary>
+        /// <value>
+        /// The flag.
+        /// </value>
+        string Flag { get; }
+
+        /// <summary>
+        /// Gets the subdivisions.
+        /// </summary>
+        /// <value>
+        /// The subdivisions.
+        /// </value>
+        Subdivision[] Subdivisions { get; }
     }
 }
