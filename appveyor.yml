@@ -13,6 +13,8 @@ environment:
     secure: VgYYJdvNLy/n9/uxxlaF0bMpIIrVxCb+dGr66U9nWfPWSN2ySdfuilO8klAw0uvF
   CODACY_PROJECT_TOKEN:
     secure: iEH85wnv4wa0T7l+BzBZk14GlRDOPepjeNYvYCq/8Rp7n5P56c7p217mwpJKnTF/
+  apiKey:
+    secure: Rk0Qh8JNpDSZ+q4UmgWYrfJtuEczRnChlGYspnmzOw+Wnblhyde8f1x+/9RB1OdJ
 
 dotnet_csproj: 
   patch: true 
