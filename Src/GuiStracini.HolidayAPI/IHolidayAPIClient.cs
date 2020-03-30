@@ -5,7 +5,7 @@
     using System.Threading.Tasks;
     using Model;
 
-    public interface IHolidayAPIClient
+    public interface IHolidayApiClient
     {
         /// <summary>
         /// Gets the usage data.
