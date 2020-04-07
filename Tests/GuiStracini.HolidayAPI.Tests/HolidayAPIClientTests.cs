@@ -74,7 +74,7 @@ namespace GuiStracini.HolidayAPI.Tests
             var metadata = _client.UsageData;
 
             Assert.Equal("Success", metadata.Message);
-            Assert.Equal("These results do not include state and province holidays. Please see documentation for more information.", metadata.Warning);
+            Assert.Equal("These results do not include state and province holidays. For more information, please visit https://holidayapi.com/docs", metadata.Warning);
             Assert.True(metadata.Available > 1);
             Assert.True(metadata.Used > 1);
             Assert.True(metadata.LastCall > now);
