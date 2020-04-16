@@ -87,12 +87,12 @@ foreach(var holiday in holidays)
     Console.WriteLine("Holiday: {0} | Date: {1}", holiday.Name, holiday.Date);
 
 //Getting all available countries
-var countries = await holidayClient.GetCountries(CancellationToken.None);
+var countries = await holidayClient.GetCountriesAsync(CancellationToken.None);
 foreach(var country in countries)
     Console.WriteLine("Country: {0} | Code: {1} | Flag: {2}", country.Name, country.Code, country.Flag);
 
 //Getting all available languages
-var languages = await holidayClient.GetLanguages(CancellationToken.None);
+var languages = await holidayClient.GetLanguagesAsync(CancellationToken.None);
 foreach(var language in languages)
     Console.WriteLine("Code: {0} | Name: {1}", language.Code, language.Name);
 ```
