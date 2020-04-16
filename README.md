@@ -81,8 +81,8 @@ var myKey = "00000000-0000-0000-0000-000000000000";
 //Instantiate a holidayApi client with your API key (GUID/UUID)
 var holidayClient = new HolidayApiClient(myKey, client);
 
-//Getting all holidays in Brazil for the last year:
-var holidays = await holidayClient.GetHolidaysAsync("BR", DateTime.Now.Year-1, CancellationToken.None);
+//Getting all holidays in Brazil for the year 2019:
+var holidays = await holidayClient.GetHolidaysAsync("BR", 2019, CancellationToken.None);
 foreach(var holiday in holidays)
     Console.WriteLine("Holiday: {0} | Date: {1}", holiday.Name, holiday.Date);
 
