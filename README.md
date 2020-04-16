@@ -6,7 +6,7 @@ A client wrapper of the [Holiday API](https://holidayapi.com/) for .NET projects
 
 ## CI/CD
 
-[![Build status](https://ci.appveyor.com/api/projects/status/2et11cwujyfnsruj?svg=true)](https://ci.appveyor.com/project/guibranco/2et11cwujyfnsruj)
+[![Build status](https://ci.appveyor.com/api/projects/status/b7k3k04cqncid7ji?svg=true)](https://ci.appveyor.com/project/guibranco/b7k3k04cqncid7ji)
 [![GitHub last commit](https://img.shields.io/github/last-commit/guibranco/GuiStracini.HolidayAPI)](https://github.com/guibranco/GuiStracini.HolidayAPI)
 [![Github last release](https://img.shields.io/github/release-date/guibranco/GuiStracini.HolidayAPI.svg?style=flat)](https://github.com/guibranco/GuiStracini.HolidayAPI)
 [![GitHub license](https://img.shields.io/github/license/guibranco/GuiStracini.HolidayAPI)](https://github.com/guibranco/GuiStracini.HolidayAPI)
