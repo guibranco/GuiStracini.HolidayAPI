@@ -39,12 +39,14 @@ A client wrapper of the [Holiday API](https://holidayapi.com/) for .NET projects
 
 Download the latest zip file from the [Release pages](https://github.com/guibranco/GuiStracini.HolidayAPI/releases) or simple install from [NuGet](https://www.nuget.org/packages/GuiStracini.HolidayAPI) package manager
 
-NuGet URL: https://www.nuget.org/packages/GuiStracini.HolidayAPI
+NuGet URL: [https://www.nuget.org/packages/GuiStracini.HolidayAPI](https://www.nuget.org/packages/GuiStracini.HolidayAPI)
 
 NuGet installation via *Package Manager Console*:
 
 ```ps
+
 Install-Package GuiStracini.HolidayAPI
+
 ```
 
 ---
