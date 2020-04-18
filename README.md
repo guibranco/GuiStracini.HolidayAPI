@@ -1,6 +1,6 @@
 # GuiStracini.HolidayAPI
 
-A client wrapper of the [Holiday API](https://holidayapi.com/) for .NET projects (both Core & Framewok)
+A client wrapper of the [Holiday API](https://holidayapi.com/) for .NET projects (both Core & Framewok).
 
 ![HolidayAPI](https://raw.githubusercontent.com/guibranco/GuiStracini.HolidayAPI/master/logo.png)
 
