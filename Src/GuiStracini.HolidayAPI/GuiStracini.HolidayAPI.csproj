@@ -7,12 +7,12 @@
     <Authors>Guilherme Branco Stracini</Authors>
     <Copyright>© 2020 Guilherme Branco Stracini. All rights reserved.</Copyright>
     <Description>The Holiday API client wrapper for .NET Core and .NET Framework projects. Provides fully functional wrapper for the API with all options!</Description>
-    <PackageProjectUrl>https://github.com/guibranco/GuiStracini.HolidayAPI</PackageProjectUrl>
+    <PackageProjectUrl>https://guibranco.github.io/GuiStracini.HolidayAPI</PackageProjectUrl>
     <RepositoryUrl>https://github.com/guibranco/GuiStracini.HolidayAPI</RepositoryUrl>
     <RepositoryType>GIT</RepositoryType>
     <PackageTags>boilerplate</PackageTags>
     <PackageIconUrl>https://raw.githubusercontent.com/guibranco/GuiStracini.HolidayAPI/master/packageLogo.png</PackageIconUrl>
-    <PackageIcon>logo.png</PackageIcon>
+    <PackageIcon>packageLogo.png</PackageIcon>
     <Version>1.0.0</Version>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
@@ -26,6 +26,6 @@
 
   <ItemGroup>
     <None Include="../../LICENSE" Pack="true" PackagePath="\"/>
-    <None Include="../../logo.png" Pack="true" PackagePath="\"/>
+    <None Include="../../packageLogo.png" Pack="true" PackagePath="\"/>
   </ItemGroup>
 </Project>
