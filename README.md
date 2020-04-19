@@ -1,12 +1,12 @@
 # GuiStracini.HolidayAPI
 
-A client wrapper of the [Holiday API](https://holidayapi.com/) for .NET projects (both Core & Framewok)
+A client wrapper of the [Holiday API](https://holidayapi.com/) for .NET projects (both Core & Framewok).
 
 ![HolidayAPI](https://raw.githubusercontent.com/guibranco/GuiStracini.HolidayAPI/master/logo.png)
 
 ## CI/CD
 
-[![Build status](https://ci.appveyor.com/api/projects/status/2et11cwujyfnsruj?svg=true)](https://ci.appveyor.com/project/guibranco/2et11cwujyfnsruj)
+[![Build status](https://ci.appveyor.com/api/projects/status/b7k3k04cqncid7ji?svg=true)](https://ci.appveyor.com/project/guibranco/guistracini-holidayapi)
 [![GitHub last commit](https://img.shields.io/github/last-commit/guibranco/GuiStracini.HolidayAPI)](https://github.com/guibranco/GuiStracini.HolidayAPI)
 [![Github last release](https://img.shields.io/github/release-date/guibranco/GuiStracini.HolidayAPI.svg?style=flat)](https://github.com/guibranco/GuiStracini.HolidayAPI)
 [![GitHub license](https://img.shields.io/github/license/guibranco/GuiStracini.HolidayAPI)](https://github.com/guibranco/GuiStracini.HolidayAPI)
@@ -39,12 +39,14 @@ A client wrapper of the [Holiday API](https://holidayapi.com/) for .NET projects
 
 Download the latest zip file from the [Release pages](https://github.com/guibranco/GuiStracini.HolidayAPI/releases) or simple install from [NuGet](https://www.nuget.org/packages/GuiStracini.HolidayAPI) package manager
 
-NuGet URL: https://www.nuget.org/packages/GuiStracini.HolidayAPI
+NuGet URL: [https://www.nuget.org/packages/GuiStracini.HolidayAPI](https://www.nuget.org/packages/GuiStracini.HolidayAPI)
 
 NuGet installation via *Package Manager Console*:
 
 ```ps
+
 Install-Package GuiStracini.HolidayAPI
+
 ```
 
 ---
@@ -81,18 +83,18 @@ var myKey = "00000000-0000-0000-0000-000000000000";
 //Instantiate a holidayApi client with your API key (GUID/UUID)
 var holidayClient = new HolidayApiClient(myKey, client);
 
-//Getting all holidays in Brazil for the last year:
-var holidays = await holidayClient.GetHolidaysAsync("BR", DateTime.Now.Year-1, CancellationToken.None);
+//Getting all holidays in Brazil for the year 2019:
+var holidays = await holidayClient.GetHolidaysAsync("BR", 2019, CancellationToken.None);
 foreach(var holiday in holidays)
     Console.WriteLine("Holiday: {0} | Date: {1}", holiday.Name, holiday.Date);
 
 //Getting all available countries
-var countries = await holidayClient.GetCountries(CancellationToken.None);
+var countries = await holidayClient.GetCountriesAsync(CancellationToken.None);
 foreach(var country in countries)
     Console.WriteLine("Country: {0} | Code: {1} | Flag: {2}", country.Name, country.Code, country.Flag);
 
 //Getting all available languages
-var languages = await holidayClient.GetLanguages(CancellationToken.None);
+var languages = await holidayClient.GetLanguagesAsync(CancellationToken.None);
 foreach(var language in languages)
     Console.WriteLine("Code: {0} | Name: {1}", language.Code, language.Name);
 ```
