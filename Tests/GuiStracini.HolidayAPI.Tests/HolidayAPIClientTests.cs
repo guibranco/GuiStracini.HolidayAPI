@@ -246,9 +246,9 @@ namespace GuiStracini.HolidayAPI.Tests
             Assert.Equal("Success", metadata.Message);
             Assert.True(metadata.Used > 0);
 
-            Assert.Equal(new DateTime(2019, 7, 2), result.Date);
-            Assert.Equal(2, result.Weekday.Numeric);
-            Assert.Equal("Tuesday", result.Weekday.Name);
+            Assert.Equal(new DateTime(2019, 7, 5), result.Date);
+            Assert.Equal(5, result.Weekday.Numeric);
+            Assert.Equal("Friday", result.Weekday.Name);
         }
     }
 }
