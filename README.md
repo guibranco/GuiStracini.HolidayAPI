@@ -101,6 +101,6 @@ foreach(var language in languages)
 
 //Getting workday
 var workday = await holidayClient.GetWorkdayAsync("BR", "2019-06-23", 10, CancellationToken.None);
-Console.WriteLine("Workday: {0}", workday.Date); //Response should be: 2019-07-02
+Console.WriteLine("Workday: {0}", workday.Date);
 
 ```
