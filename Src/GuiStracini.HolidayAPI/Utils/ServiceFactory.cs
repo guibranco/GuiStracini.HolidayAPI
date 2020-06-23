@@ -1,4 +1,17 @@
-﻿namespace GuiStracini.HolidayAPI.Utils
+﻿// ***********************************************************************
+// Assembly         : GuiStracini.HolidayAPI
+// Author           : Guilherme Branco Stracini
+// Created          : 06-23-2020
+//
+// Last Modified By : Guilherme Branco Stracini
+// Last Modified On : 06-23-2020
+// ***********************************************************************
+// <copyright file="ServiceFactory.cs" company="Guilherme Branco Stracini">
+//     © 2020 Guilherme Branco Stracini. All rights reserved.
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+namespace GuiStracini.HolidayAPI.Utils
 {
     using GoodPractices;
     using System.Net.Http;
@@ -6,6 +19,9 @@
     using System.Threading.Tasks;
     using Transport;
 
+    /// <summary>
+    /// Class ServiceFactory.
+    /// </summary>
     public class ServiceFactory
     {
         /// <summary>
@@ -14,7 +30,7 @@
         private readonly HttpClient _httpClient;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ServiceFactory"/> class.
+        /// Initializes a new instance of the <see cref="ServiceFactory" /> class.
         /// </summary>
         /// <param name="httpClient">The HTTP client.</param>
         public ServiceFactory(HttpClient httpClient)
@@ -29,7 +45,8 @@
         /// <typeparam name="TOut">The type of the out.</typeparam>
         /// <param name="data">The data.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
-        /// <returns></returns>
+        /// <returns>TOut.</returns>
+        /// <exception cref="GuiStracini.HolidayAPI.GoodPractices.HolidayApiException"></exception>
         /// <exception cref="HolidayApiException"></exception>
         public async ValueTask<TOut> Post<TIn, TOut>(TIn data, CancellationToken cancellationToken) where TIn : BaseRequest where TOut : BaseResponse
         {

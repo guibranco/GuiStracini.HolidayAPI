@@ -6,34 +6,36 @@
 // Last Modified By : Guilherme Branco Stracini
 // Last Modified On : 06-23-2020
 // ***********************************************************************
-// <copyright file="IResponseMetadata.cs" company="Guilherme Branco Stracini">
+// <copyright file="Workday.cs" company="Guilherme Branco Stracini">
 //     © 2020 Guilherme Branco Stracini. All rights reserved.
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+using System;
+
 namespace GuiStracini.HolidayAPI.Model
 {
     /// <summary>
-    /// The response metadata interface.
+    /// Class Workday.
+    /// Implements the <see cref="GuiStracini.HolidayAPI.Model.IWorkday" />
     /// </summary>
-    public interface IResponseMetadata
+    /// <seealso cref="GuiStracini.HolidayAPI.Model.IWorkday" />
+    public class Workday : IWorkday
     {
-        /// <summary>
-        /// Gets or sets the status.
-        /// </summary>
-        /// <value>The status.</value>
-        int Status { get; set; }
+        #region Implementation of IWorkday
 
         /// <summary>
-        /// Gets or sets the warning.
+        /// Gets or sets the date.
         /// </summary>
-        /// <value>The warning.</value>
-        string Warning { get; set; }
+        /// <value>The date.</value>
+        public DateTime Date { get; set; }
 
         /// <summary>
-        /// Gets or sets the requests.
+        /// Gets or sets the weekday.
         /// </summary>
-        /// <value>The requests.</value>
-        RequestMetadata Requests { get; set; }
+        /// <value>The weekday.</value>
+        public WeekdayDetail Weekday { get; set; }
+
+        #endregion
     }
 }
