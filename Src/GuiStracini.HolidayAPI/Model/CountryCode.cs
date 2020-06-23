@@ -37,7 +37,7 @@ namespace GuiStracini.HolidayAPI.Model
         /// </summary>
         /// <value>The numeric.</value>
         [JsonProperty("numeric")]
-        public int Numeric { get; set; }
+        public int? Numeric { get; set; }
 
     }
 }
