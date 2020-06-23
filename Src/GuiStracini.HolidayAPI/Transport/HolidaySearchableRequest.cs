@@ -1,4 +1,17 @@
-﻿using GuiStracini.HolidayAPI.Utils;
+﻿// ***********************************************************************
+// Assembly         : GuiStracini.HolidayAPI
+// Author           : Guilherme Branco Stracini
+// Created          : 06-23-2020
+//
+// Last Modified By : Guilherme Branco Stracini
+// Last Modified On : 06-23-2020
+// ***********************************************************************
+// <copyright file="HolidaySearchableRequest.cs" company="Guilherme Branco Stracini">
+//     © 2020 Guilherme Branco Stracini. All rights reserved.
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+using GuiStracini.HolidayAPI.Utils;
 using Newtonsoft.Json;
 
 namespace GuiStracini.HolidayAPI.Transport
@@ -12,9 +25,7 @@ namespace GuiStracini.HolidayAPI.Transport
         /// <summary>
         /// Gets or sets the month.
         /// </summary>
-        /// <value>
-        /// The month.
-        /// </value>
+        /// <value>The month.</value>
         [AdditionalRouteValue(true)]
         [JsonProperty("month")]
         [JsonIgnore]
@@ -23,9 +34,7 @@ namespace GuiStracini.HolidayAPI.Transport
         /// <summary>
         /// Gets or sets the day.
         /// </summary>
-        /// <value>
-        /// The day.
-        /// </value>
+        /// <value>The day.</value>
         [AdditionalRouteValue(true)]
         [JsonProperty("day")]
         [JsonIgnore]
@@ -34,9 +43,7 @@ namespace GuiStracini.HolidayAPI.Transport
         /// <summary>
         /// Gets or sets the previous.
         /// </summary>
-        /// <value>
-        /// The previous.
-        /// </value>
+        /// <value>The previous.</value>
         [AdditionalRouteValue(true)]
         [JsonProperty("previous")]
         [JsonIgnore]
@@ -45,9 +52,7 @@ namespace GuiStracini.HolidayAPI.Transport
         /// <summary>
         /// Gets or sets the upcoming.
         /// </summary>
-        /// <value>
-        /// The upcoming.
-        /// </value>
+        /// <value>The upcoming.</value>
         [AdditionalRouteValue(true)]
         [JsonProperty("upcoming")]
         [JsonIgnore]
@@ -56,9 +61,7 @@ namespace GuiStracini.HolidayAPI.Transport
         /// <summary>
         /// Gets or sets the public.
         /// </summary>
-        /// <value>
-        /// The public.
-        /// </value>
+        /// <value>The public.</value>
         [AdditionalRouteValue(true)]
         [JsonProperty("public")]
         [JsonIgnore]
@@ -67,9 +70,7 @@ namespace GuiStracini.HolidayAPI.Transport
         /// <summary>
         /// Gets or sets the subdivisions.
         /// </summary>
-        /// <value>
-        /// The subdivisions.
-        /// </value>
+        /// <value>The subdivisions.</value>
         [AdditionalRouteValue(true)]
         [JsonProperty("subdivisions")]
         [JsonIgnore]
@@ -78,9 +79,7 @@ namespace GuiStracini.HolidayAPI.Transport
         /// <summary>
         /// Gets or sets the language.
         /// </summary>
-        /// <value>
-        /// The language.
-        /// </value>
+        /// <value>The language.</value>
         [AdditionalRouteValue(true)]
         [JsonProperty("language")]
         [JsonIgnore]

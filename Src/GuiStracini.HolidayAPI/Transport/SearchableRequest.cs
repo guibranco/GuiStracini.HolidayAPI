@@ -1,4 +1,17 @@
-﻿using GuiStracini.HolidayAPI.Utils;
+﻿// ***********************************************************************
+// Assembly         : GuiStracini.HolidayAPI
+// Author           : Guilherme Branco Stracini
+// Created          : 06-23-2020
+//
+// Last Modified By : Guilherme Branco Stracini
+// Last Modified On : 06-23-2020
+// ***********************************************************************
+// <copyright file="SearchableRequest.cs" company="Guilherme Branco Stracini">
+//     © 2020 Guilherme Branco Stracini. All rights reserved.
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+using GuiStracini.HolidayAPI.Utils;
 using Newtonsoft.Json;
 
 namespace GuiStracini.HolidayAPI.Transport
@@ -12,9 +25,7 @@ namespace GuiStracini.HolidayAPI.Transport
         /// <summary>
         /// Gets or sets the search.
         /// </summary>
-        /// <value>
-        /// The search.
-        /// </value>
+        /// <value>The search.</value>
         [AdditionalRouteValue(true)]
         [JsonProperty("search")]
         [JsonIgnore]
