@@ -6,22 +6,23 @@
 // Last Modified By : Guilherme Branco Stracini
 // Last Modified On : 06-23-2020
 // ***********************************************************************
-// <copyright file="HolidayRequest.cs" company="Guilherme Branco Stracini">
+// <copyright file="WorkdayRequest.cs" company="Guilherme Branco Stracini">
 //     © 2020 Guilherme Branco Stracini. All rights reserved.
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+
+using GuiStracini.HolidayAPI.Utils;
+
 namespace GuiStracini.HolidayAPI.Transport
 {
-    using Utils;
-
     /// <summary>
-    /// Class HolidayRequest.
-    /// Implements the <see cref="GuiStracini.HolidayAPI.Transport.HolidaySearchableRequest" />
+    /// Class WorkdayRequest.
+    /// Implements the <see cref="GuiStracini.HolidayAPI.Transport.BaseRequest" />
     /// </summary>
-    /// <seealso cref="GuiStracini.HolidayAPI.Transport.HolidaySearchableRequest" />
-    [EndpointRoute("/v1/holidays?key={Key}&country={Country}&year={Year}")]
-    internal class HolidayRequest : HolidaySearchableRequest
+    /// <seealso cref="GuiStracini.HolidayAPI.Transport.BaseRequest" />
+    [EndpointRoute("/v1/workday?key={Key}&country={Country}&start={Start}&days={Days}")]
+    internal class WorkdayRequest : BaseRequest
     {
         /// <summary>
         /// Gets or sets the country.
@@ -30,9 +31,15 @@ namespace GuiStracini.HolidayAPI.Transport
         public string Country { get; set; }
 
         /// <summary>
-        /// Gets or sets the year.
+        /// Gets or sets the start.
         /// </summary>
-        /// <value>The year.</value>
-        public int Year { get; set; }
+        /// <value>The start.</value>
+        public string Start { get; set; }
+
+        /// <summary>
+        /// Gets or sets the days.
+        /// </summary>
+        /// <value>The days.</value>
+        public int Days { get; set; }
     }
 }

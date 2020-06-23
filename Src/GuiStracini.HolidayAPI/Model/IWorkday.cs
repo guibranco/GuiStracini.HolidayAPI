@@ -6,38 +6,30 @@
 // Last Modified By : Guilherme Branco Stracini
 // Last Modified On : 06-23-2020
 // ***********************************************************************
-// <copyright file="CountryCode.cs" company="Guilherme Branco Stracini">
+// <copyright file="IWorkday.cs" company="Guilherme Branco Stracini">
 //     © 2020 Guilherme Branco Stracini. All rights reserved.
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+using System;
+
 namespace GuiStracini.HolidayAPI.Model
 {
-    using Newtonsoft.Json;
-
     /// <summary>
-    /// The country code class.
+    /// Interface IWorkday
     /// </summary>
-    public class CountryCode
+    public interface IWorkday
     {
         /// <summary>
-        /// Gets or sets the alpha2.
+        /// Gets or sets the date.
         /// </summary>
-        /// <value>The alpha2.</value>
-        [JsonProperty("alpha-2")]
-        public string Alpha2 { get; set; }
-        /// <summary>
-        /// Gets or sets the alpha3.
-        /// </summary>
-        /// <value>The alpha3.</value>
-        [JsonProperty("alpha-3")]
-        public string Alpha3 { get; set; }
-        /// <summary>
-        /// Gets or sets the numeric.
-        /// </summary>
-        /// <value>The numeric.</value>
-        [JsonProperty("numeric")]
-        public int? Numeric { get; set; }
+        /// <value>The date.</value>
+        DateTime Date { get; set; }
 
+        /// <summary>
+        /// Gets or sets the weekday.
+        /// </summary>
+        /// <value>The weekday.</value>
+        WeekdayDetail Weekday { get; set; }
     }
 }

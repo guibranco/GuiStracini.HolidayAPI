@@ -1,4 +1,17 @@
-﻿namespace GuiStracini.HolidayAPI.GoodPractices
+﻿// ***********************************************************************
+// Assembly         : GuiStracini.HolidayAPI
+// Author           : Guilherme Branco Stracini
+// Created          : 06-23-2020
+//
+// Last Modified By : Guilherme Branco Stracini
+// Last Modified On : 06-23-2020
+// ***********************************************************************
+// <copyright file="HolidayAPIException.cs" company="Guilherme Branco Stracini">
+//     © 2020 Guilherme Branco Stracini. All rights reserved.
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+namespace GuiStracini.HolidayAPI.GoodPractices
 {
     using System;
     using System.Runtime.Serialization;
@@ -11,7 +24,7 @@
     public sealed class HolidayApiException : Exception
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="HolidayApiException"/> class.
+        /// Initializes a new instance of the <see cref="HolidayApiException" /> class.
         /// </summary>
         /// <param name="endpoint">The endpoint.</param>
         /// <param name="innerException">The inner exception.</param>
@@ -20,7 +33,7 @@
         { }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="HolidayApiException"/> class.
+        /// Initializes a new instance of the <see cref="HolidayApiException" /> class.
         /// </summary>
         /// <param name="statusCode">The status code.</param>
         /// <param name="errorMessage">The error message.</param>
@@ -28,7 +41,9 @@
         : base($"{statusCode} - {errorMessage}")
         { }
 
-        /// <summary>Initializes a new instance of the <see cref="T:System.Exception"></see> class with serialized data.</summary>
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:System.Exception"></see> class with serialized data.
+        /// </summary>
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo"></see> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext"></see> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info">info</paramref> parameter is null.</exception>

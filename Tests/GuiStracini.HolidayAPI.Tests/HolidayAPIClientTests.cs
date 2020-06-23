@@ -233,5 +233,22 @@ namespace GuiStracini.HolidayAPI.Tests
             Assert.Contains(list, language => language.Code.Equals("pt"));
             Assert.DoesNotContain(list, language => language.Code.Equals("es"));
         }
+
+        /// <summary>
+        /// Defines the test method GetWorkday.
+        /// </summary>
+        [Fact]
+        public async Task GetWorkday()
+        {
+            var result = await _client.GetWorkdayAsync("BR", new DateTime(2019, 6, 23), 10, CancellationToken.None);
+            var metadata = _client.UsageData;
+
+            Assert.Equal("Success", metadata.Message);
+            Assert.True(metadata.Used > 0);
+
+            Assert.Equal(new DateTime(2019, 7, 5), result.Date);
+            Assert.Equal(5, result.Weekday.Numeric);
+            Assert.Equal("Friday", result.Weekday.Name);
+        }
     }
 }

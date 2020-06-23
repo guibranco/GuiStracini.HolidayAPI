@@ -1,4 +1,17 @@
-﻿namespace GuiStracini.HolidayAPI.Model
+﻿// ***********************************************************************
+// Assembly         : GuiStracini.HolidayAPI
+// Author           : Guilherme Branco Stracini
+// Created          : 06-23-2020
+//
+// Last Modified By : Guilherme Branco Stracini
+// Last Modified On : 06-23-2020
+// ***********************************************************************
+// <copyright file="RequestMetadata.cs" company="Guilherme Branco Stracini">
+//     © 2020 Guilherme Branco Stracini. All rights reserved.
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+namespace GuiStracini.HolidayAPI.Model
 {
     using System;
 
@@ -11,49 +24,37 @@
         /// <summary>
         /// Gets or sets the used.
         /// </summary>
-        /// <value>
-        /// The used.
-        /// </value>
+        /// <value>The used.</value>
         public int Used { get; set; }
 
         /// <summary>
         /// Gets or sets the available.
         /// </summary>
-        /// <value>
-        /// The available.
-        /// </value>
+        /// <value>The available.</value>
         public int Available { get; set; }
 
         /// <summary>
         /// Gets or sets the resets.
         /// </summary>
-        /// <value>
-        /// The resets.
-        /// </value>
+        /// <value>The resets.</value>
         public DateTime Resets { get; set; }
 
         /// <summary>
         /// Gets or sets the last call.
         /// </summary>
-        /// <value>
-        /// The last call.
-        /// </value>
+        /// <value>The last call.</value>
         public DateTime LastCall { get; set; }
 
         /// <summary>
         /// Gets or sets the message.
         /// </summary>
-        /// <value>
-        /// The message.
-        /// </value>
+        /// <value>The message.</value>
         public string Message { get; set; }
 
         /// <summary>
         /// Gets or sets the warning.
         /// </summary>
-        /// <value>
-        /// The warning.
-        /// </value>
+        /// <value>The warning.</value>
         public string Warning { get; set; }
     }
 }

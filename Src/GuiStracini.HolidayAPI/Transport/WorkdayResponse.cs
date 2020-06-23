@@ -6,26 +6,25 @@
 // Last Modified By : Guilherme Branco Stracini
 // Last Modified On : 06-23-2020
 // ***********************************************************************
-// <copyright file="CountriesResponse.cs" company="Guilherme Branco Stracini">
+// <copyright file="WorkdayResponse.cs" company="Guilherme Branco Stracini">
 //     © 2020 Guilherme Branco Stracini. All rights reserved.
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+
+using GuiStracini.HolidayAPI.Model;
+
 namespace GuiStracini.HolidayAPI.Transport
 {
-    using Model;
-    using System.Collections.Generic;
-
     /// <summary>
-    /// The countries response class.
+    /// Class WorkdayResponse.
     /// </summary>
-    /// <seealso cref="GuiStracini.HolidayAPI.Transport.BaseResponse" />
-    public class CountriesResponse : BaseResponse
+    internal class WorkdayResponse : BaseResponse
     {
         /// <summary>
-        /// Gets or sets the countries.
+        /// Gets or sets the workday.
         /// </summary>
-        /// <value>The countries.</value>
-        public IEnumerable<Country> Countries { get; set; }
+        /// <value>The workday.</value>
+        public Workday Workday { get; set; }
     }
 }

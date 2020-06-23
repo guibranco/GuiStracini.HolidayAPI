@@ -1,5 +1,18 @@
-﻿using System.Reflection;
+﻿// ***********************************************************************
+// Assembly         : GuiStracini.HolidayAPI
+// Author           : Guilherme Branco Stracini
+// Created          : 06-23-2020
+//
+// Last Modified By : Guilherme Branco Stracini
+// Last Modified On : 06-23-2020
+// ***********************************************************************
+// <copyright file="RequestHelpers.cs" company="Guilherme Branco Stracini">
+//     © 2020 Guilherme Branco Stracini. All rights reserved.
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
 using Newtonsoft.Json;
+using System.Reflection;
 using System.Text;
 
 namespace GuiStracini.HolidayAPI.Utils
@@ -10,13 +23,16 @@ namespace GuiStracini.HolidayAPI.Utils
     using System.Text.RegularExpressions;
     using Transport;
 
+    /// <summary>
+    /// Class RequestHelpers.
+    /// </summary>
     public static class RequestHelpers
     {
         /// <summary>
         /// Gets the request endpoint attribute.
         /// </summary>
         /// <param name="request">The request.</param>
-        /// <returns></returns>
+        /// <returns>EndpointRouteAttribute.</returns>
         private static EndpointRouteAttribute GetRequestEndpointAttribute(this BaseRequest request)
         {
             if (!(request.GetType().GetCustomAttributes(typeof(EndpointRouteAttribute), false) is EndpointRouteAttribute[]
@@ -31,6 +47,7 @@ namespace GuiStracini.HolidayAPI.Utils
         /// </summary>
         /// <param name="request">The request.</param>
         /// <returns>String.</returns>
+        /// <exception cref="GuiStracini.HolidayAPI.GoodPractices.InvalidRequestEndpointException"></exception>
         public static string GetRequestEndpoint(this BaseRequest request)
         {
             var type = request.GetType();
@@ -67,6 +84,7 @@ namespace GuiStracini.HolidayAPI.Utils
         /// <param name="endpoint">The endpoint.</param>
         /// <param name="skipped">The skipped.</param>
         /// <param name="used">The used.</param>
+        /// <exception cref="GuiStracini.HolidayAPI.GoodPractices.EndpointRouteBadFormatException"></exception>
         /// <exception cref="EndpointRouteBadFormatException"></exception>
         private static void ProcessMatch(
             BaseRequest request,
@@ -104,7 +122,7 @@ namespace GuiStracini.HolidayAPI.Utils
         /// Gets the request additional route value.
         /// </summary>
         /// <param name="request">The request.</param>
-        /// <returns></returns>
+        /// <returns>System.String.</returns>
         private static string GetRequestAdditionalRouteValue(this BaseRequest request)
         {
             var type = request.GetType();
@@ -115,10 +133,10 @@ namespace GuiStracini.HolidayAPI.Utils
             var addAsQueryString = false;
             foreach (var property in properties)
             {
-                if (!(property.GetCustomAttributes(typeof(AdditionalRouteValueAttribute), false) 
-                    is AdditionalRouteValueAttribute[] attributes) || !attributes.Any())                
+                if (!(property.GetCustomAttributes(typeof(AdditionalRouteValueAttribute), false)
+                    is AdditionalRouteValueAttribute[] attributes) || !attributes.Any())
                     continue;
-                
+
                 addAsQueryString = attributes.Single().AsQueryString;
 
                 var propertyValue = property.GetValue(request);
@@ -145,6 +163,11 @@ namespace GuiStracini.HolidayAPI.Utils
             return result;
         }
 
+        /// <summary>
+        /// Gets the name of the property.
+        /// </summary>
+        /// <param name="property">The property.</param>
+        /// <returns>System.String.</returns>
         private static string GetPropertyName(PropertyInfo property)
         {
             var propertyName = property.Name;
@@ -154,6 +177,11 @@ namespace GuiStracini.HolidayAPI.Utils
             return propertyName;
         }
 
+        /// <summary>
+        /// Gets the type of the property.
+        /// </summary>
+        /// <param name="property">The property.</param>
+        /// <returns>Type.</returns>
         private static Type GetPropertyType(PropertyInfo property)
         {
             var propertyType = property.PropertyType;
