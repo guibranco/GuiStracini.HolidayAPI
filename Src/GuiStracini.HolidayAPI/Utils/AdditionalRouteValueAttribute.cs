@@ -11,10 +11,10 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-using System;
-
 namespace GuiStracini.HolidayAPI.Utils
 {
+    using System;
+
     /// <summary>
     /// Class AdditionalRouteValueAttribute.
     /// Implements the <see cref="System.Attribute" />

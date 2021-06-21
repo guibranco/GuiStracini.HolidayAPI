@@ -1,9 +1,8 @@
-using GuiStracini.HolidayAPI.GoodPractices;
-using System.Net.Http;
-using System.Net.Http.Headers;
-
 namespace GuiStracini.HolidayAPI.Tests
 {
+    using GuiStracini.HolidayAPI.GoodPractices;
+    using System.Net.Http;
+    using System.Net.Http.Headers;
     using Microsoft.Extensions.Configuration;
     using System;
     using System.Linq;
@@ -249,6 +248,22 @@ namespace GuiStracini.HolidayAPI.Tests
             Assert.Equal(new DateTime(2019, 7, 5), result.Date);
             Assert.Equal(5, result.Weekday.Numeric);
             Assert.Equal("Friday", result.Weekday.Name);
+        }
+
+        /// <summary>
+        /// Defines the test method GetWorkdays.
+        /// </summary>
+        [Fact]
+        public async Task GetWorkdays()
+        {
+            var result = await _client.GetWorkdaysAsync("BR", new DateTime(2020, 6, 21), new DateTime(2020, 7, 1), CancellationToken.None);
+            var metadata = _client.UsageData;
+
+            Assert.Equal("Success", metadata.Message);
+            Assert.True(metadata.Used > 0);
+
+            Assert.Equal(8, result);
+
         }
     }
 }

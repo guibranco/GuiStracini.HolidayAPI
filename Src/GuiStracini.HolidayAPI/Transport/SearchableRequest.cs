@@ -11,11 +11,11 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-using GuiStracini.HolidayAPI.Utils;
-using Newtonsoft.Json;
-
 namespace GuiStracini.HolidayAPI.Transport
 {
+    using GuiStracini.HolidayAPI.Utils;
+    using Newtonsoft.Json;
+
     /// <summary>
     /// The searchable request class.
     /// </summary>

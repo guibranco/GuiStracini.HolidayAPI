@@ -62,6 +62,7 @@ Implements all features of Holiday API available at [HolidayAPI docs](https://ho
   - Get languages list
   - Get filtered languages (search parameter)
   - Get workday **Release 3.1 - 06/2020**
+  - Get workdays **Release 3.2 - 06/2021**
 
 ---
 
@@ -102,5 +103,9 @@ foreach(var language in languages)
 //Getting workday
 var workday = await holidayClient.GetWorkdayAsync("BR", "2019-06-23", 10, CancellationToken.None);
 Console.WriteLine("Workday: {0}", workday.Date);
+
+//Getting workdays between two dates
+var workdays = await holidayClient.GetWorkdaysAsync("BR", "2021-01-01", "2021-06-01", CancellationToken.None);
+Console.WriteLine("Workdays: {0}". workdays.Days);
 
 ```

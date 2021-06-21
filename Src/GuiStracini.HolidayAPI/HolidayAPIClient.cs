@@ -11,18 +11,17 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-using GuiStracini.HolidayAPI.GoodPractices;
-using System.Net.Http;
-
 namespace GuiStracini.HolidayAPI
 {
-    using Model;
+    using GuiStracini.HolidayAPI.GoodPractices;
+    using System.Net.Http;
+    using GuiStracini.HolidayAPI.Model;
     using System;
     using System.Collections.Generic;
     using System.Threading;
     using System.Threading.Tasks;
-    using Transport;
-    using Utils;
+    using GuiStracini.HolidayAPI.Transport;
+    using GuiStracini.HolidayAPI.Utils;
 
     /// <summary>
     /// Class HolidayApiClient.
@@ -211,6 +210,28 @@ namespace GuiStracini.HolidayAPI
             };
             var response = await Execute<WorkdayRequest, WorkdayResponse>(request, cancellationToken).ConfigureAwait(false);
             return response?.Workday;
+        }
+
+        /// <summary>
+        /// get workdays as an asynchronous operation.
+        /// </summary>
+        /// <param name="country">The country.</param>
+        /// <param name="start">The start.</param>
+        /// <param name="end">The end.</param>
+        /// <param name="cancellationToken">The cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        /// <returns>A Task&lt;int&gt; representing the asynchronous operation.</returns>
+        public async Task<int> GetWorkdaysAsync(string country, DateTime start, DateTime end,
+            CancellationToken cancellationToken)
+        {
+            var request = new WorkdaysRequest
+            {
+                Country = country,
+                End = end.ToString("yyyy-MM-dd"),
+                Key = _apiKey,
+                Start = start.ToString("yyyy-MM-dd")
+            };
+            var response = await Execute<WorkdaysRequest, WorkdaysResponse>(request, cancellationToken).ConfigureAwait(false);
+            return response.Workdays;
         }
 
         #endregion

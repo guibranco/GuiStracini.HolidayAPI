@@ -11,17 +11,16 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-using Newtonsoft.Json;
-using System.Reflection;
-using System.Text;
-
 namespace GuiStracini.HolidayAPI.Utils
 {
-    using GoodPractices;
+    using Newtonsoft.Json;
+    using System.Reflection;
+    using System.Text;
+    using GuiStracini.HolidayAPI.GoodPractices;
     using System;
     using System.Linq;
     using System.Text.RegularExpressions;
-    using Transport;
+    using GuiStracini.HolidayAPI.Transport;
 
     /// <summary>
     /// Class RequestHelpers.
