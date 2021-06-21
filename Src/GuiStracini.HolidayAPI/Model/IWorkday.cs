@@ -11,10 +11,10 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-using System;
-
 namespace GuiStracini.HolidayAPI.Model
 {
+    using System;
+
     /// <summary>
     /// Interface IWorkday
     /// </summary>

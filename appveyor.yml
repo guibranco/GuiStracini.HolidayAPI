@@ -1,4 +1,4 @@
-version: 3.1.{build}
+version: 3.2.{build}
 skip_tags: true
 image: Visual Studio 2019
 configuration: Release
@@ -32,7 +32,7 @@ before_build:
 - cmd: nuget restore
 - cmd: choco install opencover.portable
 - cmd: choco install codecov
-- cmd: curl -L https://github.com/codacy/codacy-coverage-reporter/releases/download/7.7.0/codacy-coverage-reporter-assembly-7.7.0.jar > ./codacy-test-reporter.jar
+- cmd: curl -L https://github.com/codacy/codacy-coverage-reporter/releases/download/11.2.3/codacy-coverage-reporter-assembly-11.2.3.jar > ./codacy-test-reporter.jar
 - cmd: dotnet tool install --global dotnet-sonarscanner
 
 build:

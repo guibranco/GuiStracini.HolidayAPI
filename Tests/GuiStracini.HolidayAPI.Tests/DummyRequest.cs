@@ -1,9 +1,9 @@
-﻿using GuiStracini.HolidayAPI.Transport;
-using GuiStracini.HolidayAPI.Utils;
-using Newtonsoft.Json;
-
-namespace GuiStracini.HolidayAPI.Tests
+﻿namespace GuiStracini.HolidayAPI.Tests
 {
+    using GuiStracini.HolidayAPI.Transport;
+    using GuiStracini.HolidayAPI.Utils;
+    using Newtonsoft.Json;
+
     /// <summary>
     /// Dummy request for test purposes.
     /// </summary>

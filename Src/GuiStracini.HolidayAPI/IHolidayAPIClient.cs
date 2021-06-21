@@ -12,11 +12,10 @@
 // <summary></summary>
 // ***********************************************************************
 
-using System;
-
 namespace GuiStracini.HolidayAPI
 {
-    using Model;
+    using System;
+    using GuiStracini.HolidayAPI.Model;
     using System.Collections.Generic;
     using System.Threading;
     using System.Threading.Tasks;
@@ -88,5 +87,15 @@ namespace GuiStracini.HolidayAPI
         /// <param name="cancellationToken">The cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>Task&lt;Workday&gt;.</returns>
         Task<Workday> GetWorkdayAsync(string country, DateTime start, int days, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the workdays asynchronous.
+        /// </summary>
+        /// <param name="country">The country.</param>
+        /// <param name="start">The start.</param>
+        /// <param name="end">The end.</param>
+        /// <param name="cancellationToken">The cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        /// <returns>Task&lt;int&gt;.</returns>
+        Task<int> GetWorkdaysAsync(string country, DateTime start, DateTime end, CancellationToken cancellationToken);
     }
 }

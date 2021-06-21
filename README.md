@@ -55,13 +55,14 @@ Install-Package GuiStracini.HolidayAPI
 
 Implements all features of Holiday API available at [HolidayAPI docs](https://holidayapi.com/)
 
-  - Get holidays list (country code and year required)
-  - Get filtered holidays (day, month, public, upcoming, previous, subdivisions, switch response language, search parameter)
-  - Get countries list
-  - Get filtered countries (search parameter)
-  - Get languages list
-  - Get filtered languages (search parameter)
-  - Get workday **Release 3.1 - 06/2020**
+  -  Get holidays list (country code and year required)
+  -  Get filtered holidays (day, month, public, upcoming, previous, subdivisions, switch response language, search parameter)
+  -  Get countries list
+  -  Get filtered countries (search parameter)
+  -  Get languages list
+  -  Get filtered languages (search parameter)
+  -  Get workday
+  -  Get workdays
 
 ---
 
@@ -102,5 +103,9 @@ foreach(var language in languages)
 //Getting workday
 var workday = await holidayClient.GetWorkdayAsync("BR", "2019-06-23", 10, CancellationToken.None);
 Console.WriteLine("Workday: {0}", workday.Date);
+
+//Getting workdays between two dates
+var workdays = await holidayClient.GetWorkdaysAsync("BR", "2021-01-01", "2021-06-01", CancellationToken.None);
+Console.WriteLine("Workdays: {0}". workdays.Days);
 
 ```

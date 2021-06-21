@@ -11,10 +11,10 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-using System;
-
 namespace GuiStracini.HolidayAPI.Model
 {
+    using System;
+
     /// <summary>
     /// Class Workday.
     /// Implements the <see cref="GuiStracini.HolidayAPI.Model.IWorkday" />

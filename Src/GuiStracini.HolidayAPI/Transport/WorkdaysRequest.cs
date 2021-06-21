@@ -1,28 +1,27 @@
 ﻿// ***********************************************************************
 // Assembly         : GuiStracini.HolidayAPI
 // Author           : Guilherme Branco Stracini
-// Created          : 06-23-2020
+// Created          : 06-21-2021
 //
 // Last Modified By : Guilherme Branco Stracini
-// Last Modified On : 06-23-2020
+// Last Modified On : 06-21-2021
 // ***********************************************************************
-// <copyright file="WorkdayRequest.cs" company="Guilherme Branco Stracini">
+// <copyright file="WorkdaysRequest.cs" company="Guilherme Branco Stracini">
 //     © 2020 Guilherme Branco Stracini. All rights reserved.
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-
 namespace GuiStracini.HolidayAPI.Transport
 {
     using GuiStracini.HolidayAPI.Utils;
 
     /// <summary>
-    /// Class WorkdayRequest.
+    /// Class WorkdaysRequest.
     /// Implements the <see cref="GuiStracini.HolidayAPI.Transport.BaseRequest" />
     /// </summary>
     /// <seealso cref="GuiStracini.HolidayAPI.Transport.BaseRequest" />
-    [EndpointRoute("/v1/workday?key={Key}&country={Country}&start={Start}&days={Days}")]
-    internal class WorkdayRequest : BaseRequest
+    [EndpointRoute("/v1/workdays?key={Key}&country={Country}&start={Start}&end={End}")]
+    internal class WorkdaysRequest : BaseRequest
     {
         /// <summary>
         /// Gets or sets the country.
@@ -37,9 +36,9 @@ namespace GuiStracini.HolidayAPI.Transport
         public string Start { get; set; }
 
         /// <summary>
-        /// Gets or sets the days.
+        /// Gets or sets the end.
         /// </summary>
-        /// <value>The days.</value>
-        public int Days { get; set; }
+        /// <value>The end.</value>
+        public string End { get; set; }
     }
 }

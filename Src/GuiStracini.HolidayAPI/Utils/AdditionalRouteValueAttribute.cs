@@ -11,10 +11,10 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-using System;
-
 namespace GuiStracini.HolidayAPI.Utils
 {
+    using System;
+
     /// <summary>
     /// Class AdditionalRouteValueAttribute.
     /// Implements the <see cref="System.Attribute" />
@@ -33,7 +33,7 @@ namespace GuiStracini.HolidayAPI.Utils
         /// Initializes a new instance of the <see cref="AdditionalRouteValueAttribute" /> class.
         /// </summary>
         /// <param name="asQueryString">if set to <c>true</c> the additional parameter is added in the url as query string.</param>
-        public AdditionalRouteValueAttribute(bool asQueryString = false)
+        public AdditionalRouteValueAttribute(bool asQueryString)
         {
             AsQueryString = asQueryString;
         }
