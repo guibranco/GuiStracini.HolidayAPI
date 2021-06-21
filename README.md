@@ -55,14 +55,14 @@ Install-Package GuiStracini.HolidayAPI
 
 Implements all features of Holiday API available at [HolidayAPI docs](https://holidayapi.com/)
 
-  - Get holidays list (country code and year required)
-  - Get filtered holidays (day, month, public, upcoming, previous, subdivisions, switch response language, search parameter)
-  - Get countries list
-  - Get filtered countries (search parameter)
-  - Get languages list
-  - Get filtered languages (search parameter)
-  - Get workday **Release 3.1 - 06/2020**
-  - Get workdays **Release 3.2 - 06/2021**
+   - Get holidays list (country code and year required)
+   - Get filtered holidays (day, month, public, upcoming, previous, subdivisions, switch response language, search parameter)
+   - Get countries list
+   - Get filtered countries (search parameter)
+   - Get languages list
+   - Get filtered languages (search parameter)
+   - Get workday
+   - Get workdays
 
 ---
 
