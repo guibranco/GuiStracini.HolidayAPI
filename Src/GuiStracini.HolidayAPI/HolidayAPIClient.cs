@@ -189,7 +189,10 @@ namespace GuiStracini.HolidayAPI
         {
             var request = new LanguagesRequest { Key = _apiKey };
             if (!string.IsNullOrWhiteSpace(search))
+            {
                 request.Search = search;
+            }
+
             var response = await Execute<LanguagesRequest, LanguagesResponse>(request, cancellationToken).ConfigureAwait(false);
             return response?.Languages;
         }

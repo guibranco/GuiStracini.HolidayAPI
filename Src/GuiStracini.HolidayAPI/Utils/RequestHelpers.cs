@@ -34,10 +34,14 @@ namespace GuiStracini.HolidayAPI.Utils
         /// <returns>EndpointRouteAttribute.</returns>
         private static EndpointRouteAttribute GetRequestEndpointAttribute(this BaseRequest request)
         {
-            if (!(request.GetType().GetCustomAttributes(typeof(EndpointRouteAttribute), false) is EndpointRouteAttribute[]
+            if (!(request.GetType().GetCustomAttributes(typeof(EndpointRouteAttribute), false) is EndpointRouteAttribute
+                    []
                     endpoints) ||
                 !endpoints.Any())
+            {
                 return null;
+            }
+
             return endpoints.Single();
         }
 
@@ -52,7 +56,10 @@ namespace GuiStracini.HolidayAPI.Utils
             var type = request.GetType();
             var endpointAttribute = request.GetRequestEndpointAttribute();
             if (endpointAttribute == null)
+            {
                 return type.Name.ToUpper();
+            }
+
             var originalEndpoint = endpointAttribute.EndPoint;
             var endpoint = originalEndpoint;
             var additional = request.GetRequestAdditionalRouteValue();
@@ -125,7 +132,10 @@ namespace GuiStracini.HolidayAPI.Utils
             {
                 endpoint = endpoint.Replace(match.Value, string.Empty);
                 if (skipped == 0)
+                {
                     skipped = counter;
+                }
+
                 return;
             }
             used = counter;
@@ -142,7 +152,10 @@ namespace GuiStracini.HolidayAPI.Utils
             var type = request.GetType();
             var properties = type.GetProperties().Where(prop => prop.IsDefined(typeof(AdditionalRouteValueAttribute), false)).ToList();
             if (!properties.Any())
+            {
                 return string.Empty;
+            }
+
             var builder = new StringBuilder();
             var addAsQueryString = false;
             foreach (var property in properties)
