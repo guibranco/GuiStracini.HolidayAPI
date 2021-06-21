@@ -195,7 +195,10 @@ namespace GuiStracini.HolidayAPI.Utils
 
             var result = builder.ToString();
             if (addAsQueryString && result.Length > 1)
+            {
                 result = result.Substring(0, result.Length - 1);
+            }
+
             return result;
         }
 
