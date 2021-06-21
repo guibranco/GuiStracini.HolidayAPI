@@ -159,8 +159,12 @@ namespace GuiStracini.HolidayAPI
         public async Task<IEnumerable<ICountry>> GetCountriesAsync(string search, CancellationToken cancellationToken)
         {
             var request = new CountriesRequest { Key = _apiKey };
+
             if (!string.IsNullOrWhiteSpace(search))
+            {
                 request.Search = search;
+            }
+
             var response = await Execute<CountriesRequest, CountriesResponse>(request, cancellationToken).ConfigureAwait(false);
             return response?.Countries;
         }
