@@ -1,9 +1,8 @@
-using GuiStracini.HolidayAPI.GoodPractices;
-using System.Net.Http;
-using System.Net.Http.Headers;
-
 namespace GuiStracini.HolidayAPI.Tests
 {
+    using GuiStracini.HolidayAPI.GoodPractices;
+    using System.Net.Http;
+    using System.Net.Http.Headers;
     using Microsoft.Extensions.Configuration;
     using System;
     using System.Linq;
@@ -123,7 +122,7 @@ namespace GuiStracini.HolidayAPI.Tests
             Assert.True(list.Any());
             Assert.DoesNotContain(list, holiday => holiday.Date.Equals(new DateTime(year, 12, 25)) && holiday.Name.Equals("Christmas Day"));
             Assert.DoesNotContain(list, holiday => holiday.Date.Equals(new DateTime(year, 9, 7)) && holiday.Name.Equals("Independence Day"));
-            Assert.Contains(list, holiday => holiday.Date.Equals(new DateTime(year, 8, 11)) && holiday.Name.Equals("Father's Day"));
+            Assert.Contains(list, holiday => holiday.Date.Equals(new DateTime(year, 8, 9)) && holiday.Name.Equals("Father's Day"));
         }
 
         /// <summary>
@@ -240,15 +239,31 @@ namespace GuiStracini.HolidayAPI.Tests
         [Fact]
         public async Task GetWorkday()
         {
-            var result = await _client.GetWorkdayAsync("BR", new DateTime(2019, 6, 23), 10, CancellationToken.None);
+            var result = await _client.GetWorkdayAsync("BR", new DateTime(2020, 6, 23), 10, CancellationToken.None);
             var metadata = _client.UsageData;
 
             Assert.Equal("Success", metadata.Message);
             Assert.True(metadata.Used > 0);
 
-            Assert.Equal(new DateTime(2019, 7, 5), result.Date);
-            Assert.Equal(5, result.Weekday.Numeric);
-            Assert.Equal("Friday", result.Weekday.Name);
+            Assert.Equal(new DateTime(2020, 7, 7), result.Date);
+            Assert.Equal(2, result.Weekday.Numeric);
+            Assert.Equal("Tuesday", result.Weekday.Name);
+        }
+
+        /// <summary>
+        /// Defines the test method GetWorkdays.
+        /// </summary>
+        [Fact]
+        public async Task GetWorkdays()
+        {
+            var result = await _client.GetWorkdaysAsync("BR", new DateTime(2020, 6, 21), new DateTime(2020, 7, 1), CancellationToken.None);
+            var metadata = _client.UsageData;
+
+            Assert.Equal("Success", metadata.Message);
+            Assert.True(metadata.Used > 0);
+
+            Assert.Equal(8, result);
+
         }
     }
 }

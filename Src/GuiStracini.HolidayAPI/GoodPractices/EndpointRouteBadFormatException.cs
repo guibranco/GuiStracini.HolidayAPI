@@ -14,6 +14,7 @@
 namespace GuiStracini.HolidayAPI.GoodPractices
 {
     using System;
+    using System.Diagnostics.CodeAnalysis;
     using System.Runtime.Serialization;
 
     /// <summary>
@@ -21,6 +22,7 @@ namespace GuiStracini.HolidayAPI.GoodPractices
     /// </summary>
     /// <seealso cref="System.Exception" />
     [Serializable]
+    [ExcludeFromCodeCoverage]
     public sealed class EndpointRouteBadFormatException : Exception
     {
         /// <summary>

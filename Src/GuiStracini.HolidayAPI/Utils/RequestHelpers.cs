@@ -11,17 +11,16 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-using Newtonsoft.Json;
-using System.Reflection;
-using System.Text;
-
 namespace GuiStracini.HolidayAPI.Utils
 {
-    using GoodPractices;
+    using Newtonsoft.Json;
+    using System.Reflection;
+    using System.Text;
+    using GuiStracini.HolidayAPI.GoodPractices;
     using System;
     using System.Linq;
     using System.Text.RegularExpressions;
-    using Transport;
+    using GuiStracini.HolidayAPI.Transport;
 
     /// <summary>
     /// Class RequestHelpers.
@@ -35,10 +34,14 @@ namespace GuiStracini.HolidayAPI.Utils
         /// <returns>EndpointRouteAttribute.</returns>
         private static EndpointRouteAttribute GetRequestEndpointAttribute(this BaseRequest request)
         {
-            if (!(request.GetType().GetCustomAttributes(typeof(EndpointRouteAttribute), false) is EndpointRouteAttribute[]
+            if (!(request.GetType().GetCustomAttributes(typeof(EndpointRouteAttribute), false) is EndpointRouteAttribute
+                    []
                     endpoints) ||
                 !endpoints.Any())
+            {
                 return null;
+            }
+
             return endpoints.Single();
         }
 
@@ -53,23 +56,38 @@ namespace GuiStracini.HolidayAPI.Utils
             var type = request.GetType();
             var endpointAttribute = request.GetRequestEndpointAttribute();
             if (endpointAttribute == null)
+            {
                 return type.Name.ToUpper();
+            }
+
             var originalEndpoint = endpointAttribute.EndPoint;
             var endpoint = originalEndpoint;
             var additional = request.GetRequestAdditionalRouteValue();
             var finalSlash = endpoint.EndsWith("/") ? string.Empty : "/";
             if (!string.IsNullOrWhiteSpace(additional))
+            {
                 endpoint += $"{(endpoint.Contains("?") ? "&" : $"{finalSlash}?")}{additional}";
+            }
+
             var regex = new Regex(@"/?(?<pattern>{(?<propertyName>\w+?)})/?", RegexOptions.Compiled | RegexOptions.CultureInvariant | RegexOptions.IgnoreCase, new TimeSpan(0, 0, 30));
             if (!regex.IsMatch(endpoint))
+            {
                 return endpoint;
+            }
+
             var used = 0;
             var skipped = 0;
             var counter = 0;
             foreach (Match match in regex.Matches(endpoint))
+            {
                 ProcessMatch(request, match, type, originalEndpoint, ref counter, ref endpoint, ref skipped, ref used);
+            }
+
             if (skipped != 0 && skipped < used)
+            {
                 throw new InvalidRequestEndpointException(originalEndpoint, endpoint);
+            }
+
             return endpoint.Trim('/');
         }
 
@@ -100,7 +118,10 @@ namespace GuiStracini.HolidayAPI.Utils
             var propertyName = match.Groups["propertyName"].Value;
             var property = type.GetProperty(propertyName);
             if (property == null)
+            {
                 throw new EndpointRouteBadFormatException(originalEndpoint);
+            }
+
             var propertyType = property.PropertyType;
             var propertyValue = property.GetValue(request, null);
             if (propertyValue == null ||
@@ -111,7 +132,10 @@ namespace GuiStracini.HolidayAPI.Utils
             {
                 endpoint = endpoint.Replace(match.Value, string.Empty);
                 if (skipped == 0)
+                {
                     skipped = counter;
+                }
+
                 return;
             }
             used = counter;
@@ -128,25 +152,34 @@ namespace GuiStracini.HolidayAPI.Utils
             var type = request.GetType();
             var properties = type.GetProperties().Where(prop => prop.IsDefined(typeof(AdditionalRouteValueAttribute), false)).ToList();
             if (!properties.Any())
+            {
                 return string.Empty;
+            }
+
             var builder = new StringBuilder();
             var addAsQueryString = false;
             foreach (var property in properties)
             {
                 if (!(property.GetCustomAttributes(typeof(AdditionalRouteValueAttribute), false)
                     is AdditionalRouteValueAttribute[] attributes) || !attributes.Any())
+                {
                     continue;
+                }
 
                 addAsQueryString = attributes.Single().AsQueryString;
 
                 var propertyValue = property.GetValue(request);
                 if (propertyValue == null)
+                {
                     continue;
+                }
 
                 var propertyType = GetPropertyType(property);
 
                 if (propertyType == typeof(bool))
+                {
                     propertyValue = propertyValue.ToString().ToLower();
+                }
 
                 var propertyName = GetPropertyName(property);
 
@@ -154,12 +187,18 @@ namespace GuiStracini.HolidayAPI.Utils
                     propertyType == typeof(bool) ||
                     propertyType == typeof(int) && Convert.ToInt32(propertyValue) > 0 ||
                     propertyType == typeof(long) && Convert.ToInt64(propertyValue) > 0)
-                    builder.AppendFormat("{0}", addAsQueryString ? $"{propertyName}=" : string.Empty).Append(propertyValue).Append(addAsQueryString ? "&" : "/");
+                {
+                    builder.AppendFormat("{0}", addAsQueryString ? $"{propertyName}=" : string.Empty)
+                        .Append(propertyValue).Append(addAsQueryString ? "&" : "/");
+                }
             }
 
             var result = builder.ToString();
             if (addAsQueryString && result.Length > 1)
+            {
                 result = result.Substring(0, result.Length - 1);
+            }
+
             return result;
         }
 
@@ -171,9 +210,12 @@ namespace GuiStracini.HolidayAPI.Utils
         private static string GetPropertyName(PropertyInfo property)
         {
             var propertyName = property.Name;
-            if (property.GetCustomAttributes(typeof(JsonPropertyAttribute), false) is JsonPropertyAttribute[] attributesJson &&
-                attributesJson.Any())
+            if (property.GetCustomAttributes(typeof(JsonPropertyAttribute), false) is JsonPropertyAttribute[]
+                    attributesJson && attributesJson.Any())
+            {
                 propertyName = attributesJson.Single().PropertyName;
+            }
+
             return propertyName;
         }
 
@@ -186,7 +228,10 @@ namespace GuiStracini.HolidayAPI.Utils
         {
             var propertyType = property.PropertyType;
             if (Nullable.GetUnderlyingType(propertyType) != null)
+            {
                 propertyType = Nullable.GetUnderlyingType(propertyType);
+            }
+
             return propertyType;
         }
     }
