@@ -1,4 +1,6 @@
-﻿namespace GuiStracini.HolidayAPI.Tests
+﻿using GuiStracini.HolidayAPI.Tests.Requests;
+
+namespace GuiStracini.HolidayAPI.Tests
 {
     using Utils;
     using Xunit;
@@ -67,6 +69,41 @@
                 Dummy = "test",
                 FooBar = true
             };
+
+            var actual = dummy.GetRequestEndpoint();
+
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void RequestWithoutValidEndpointAttribute()
+        {
+            var dummy = new DummyRequestNoEndpointAttribute();
+
+            var actual = dummy.GetRequestEndpoint();
+
+            Assert.Equal(nameof(DummyRequestNoEndpointAttribute).ToUpper(), actual);
+        }
+
+        [Fact]
+        public void RequestEndpointEndingWithSlash()
+        {
+            const string expected = "something/test";
+            var dummy = new DummyRequestEndSlash
+            {
+                Dummy = "test"
+            };
+
+            var actual = dummy.GetRequestEndpoint();
+
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void RequestEndpointNoVariables()
+        {
+            const string expected = "something";
+            var dummy = new DummyRequestNoVariable();
 
             var actual = dummy.GetRequestEndpoint();
 

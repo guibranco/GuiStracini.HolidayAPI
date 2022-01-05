@@ -34,10 +34,7 @@ namespace GuiStracini.HolidayAPI.Utils
         /// <returns>EndpointRouteAttribute.</returns>
         private static EndpointRouteAttribute GetRequestEndpointAttribute(this BaseRequest request)
         {
-            if (!(request.GetType().GetCustomAttributes(typeof(EndpointRouteAttribute), false) is EndpointRouteAttribute
-                    []
-                    endpoints) ||
-                !endpoints.Any())
+            if (!(request.GetType().GetCustomAttributes(typeof(EndpointRouteAttribute), false) is EndpointRouteAttribute[] endpoints) || !endpoints.Any())
             {
                 return null;
             }
