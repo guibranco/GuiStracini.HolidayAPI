@@ -13,8 +13,8 @@ A client wrapper of the [Holiday API](https://holidayapi.com/) for .NET projects
 
 ## Code Quality
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/76b91975f0574a8399ec878494813f4d)](https://www.codacy.com/manual/guilherme_9/GuiStracini.HolidayAPI?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=guibranco/GuiStracini.HolidayAPI&amp;utm_campaign=Badge_Grade)
-[![Codacy Badge](https://api.codacy.com/project/badge/Coverage/76b91975f0574a8399ec878494813f4d)](https://www.codacy.com/manual/guilherme_9/GuiStracini.HolidayAPI?utm_source=github.com&utm_medium=referral&utm_content=guibranco/GuiStracini.HolidayAPI&utm_campaign=Badge_Coverage)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/3c8727146d8043ca8bd43d090c02565a)](https://www.codacy.com/gh/guibranco/GuiStracini.HolidayAPI/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=guibranco/GuiStracini.HolidayAPI&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Coverage/3c8727146d8043ca8bd43d090c02565a)](https://www.codacy.com/gh/guibranco/GuiStracini.HolidayAPI/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=guibranco/GuiStracini.HolidayAPI&amp;utm_campaign=Badge_Grade)
 [![codecov](https://codecov.io/gh/guibranco/GuiStracini.HolidayAPI/branch/master/graph/badge.svg)](https://codecov.io/gh/guibranco/GuiStracini.HolidayAPI)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=guibranco_GuiStracini.HolidayAPI&metric=alert_status)](https://sonarcloud.io/dashboard?id=guibranco_GuiStracini.HolidayAPI)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=guibranco_GuiStracini.HolidayAPI&metric=coverage)](https://sonarcloud.io/dashboard?id=guibranco_GuiStracini.HolidayAPI)
