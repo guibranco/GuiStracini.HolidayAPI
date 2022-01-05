@@ -40,7 +40,7 @@ namespace GuiStracini.HolidayAPI.Tests
         public HolidayApiClientTests()
         {
             var configuration = new ConfigurationBuilder()
-                .AddUserSecrets<HolidayApiClientTests>()
+                .AddUserSecrets<HolidayApiClientTests>(true)
                 .AddEnvironmentVariables()
                 .Build();
             var apiKey = string.IsNullOrWhiteSpace(configuration["apiKey"])
