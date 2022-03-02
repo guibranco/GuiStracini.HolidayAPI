@@ -11,12 +11,12 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-using GuiStracini.HolidayAPI.Transport;
-using GuiStracini.HolidayAPI.Utils;
-using Newtonsoft.Json;
-
-namespace GuiStracini.HolidayAPI.Tests.Requests
+namespace GuiStracini.HolidayAPI.UnitTests.Requests
 {
+    using GuiStracini.HolidayAPI.Transport;
+    using GuiStracini.HolidayAPI.Utils;
+    using Newtonsoft.Json;
+
     /// <summary>
     /// Dummy request for test purposes.
     /// </summary>
