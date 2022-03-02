@@ -66,11 +66,11 @@ build_script:
 - codecov -f "%CD%\Tests\%SOLUTION_NAME%.IntegrationTests\coverage.opencover.xml"
 
 - java 
- -jar 
- ./codacy-test-reporter.jar report 
+ -jar ./codacy-test-reporter.jar report 
  -l CSharp 
  -t %CODACY_PROJECT_TOKEN%
  -r "%CD%\Tests\%SOLUTION_NAME%.IntegrationTests\coverage.opencover.xml"
+ --partial
 
 - dotnet test .\Tests\%SOLUTION_NAME%.UnitTests\%SOLUTION_NAME%.UnitTests.csproj 
  /p:CollectCoverage=true 
@@ -79,11 +79,14 @@ build_script:
 - codecov -f "%CD%\Tests\%SOLUTION_NAME%.UnitTests\coverage.opencover.xml"
 
 - java 
- -jar 
- ./codacy-test-reporter.jar report 
+ -jar ./codacy-test-reporter.jar report 
  -l CSharp 
  -t %CODACY_PROJECT_TOKEN%
  -r "%CD%\Tests\%SOLUTION_NAME%.UnitTests\coverage.opencover.xml"
+ --partial
+
+- java 
+ -jar ./codacy-test-reporter.jar final
 
 - dotnet sonarscanner end /d:sonar.login="%SONAR_TOKEN%"
 
