@@ -11,11 +11,13 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-using GuiStracini.HolidayAPI.Tests.Requests;
 
-namespace GuiStracini.HolidayAPI.Tests
+namespace GuiStracini.HolidayAPI.UnitTests
 {
-    using Utils;
+    using System.Threading.Tasks;
+    using GuiStracini.HolidayAPI.GoodPractices;
+    using GuiStracini.HolidayAPI.UnitTests.Requests;
+    using GuiStracini.HolidayAPI.Utils;
     using Xunit;
 
     /// <summary>
@@ -133,6 +135,21 @@ namespace GuiStracini.HolidayAPI.Tests
             var actual = dummy.GetRequestEndpoint();
 
             Assert.Equal(expected, actual);
+        }
+
+        /// <summary>
+        /// Defines the test method RequestEndpointInvalidProperty.
+        /// </summary>
+        [Fact]
+        public async Task RequestEndpointInvalidProperty()
+        {
+            const string expected = "Unable to resolve the endpoint format something/{Invalid}";
+
+            var dummy = new DummyRequestInvalidProperty();
+
+            var exception = await Assert.ThrowsAsync<EndpointRouteBadFormatException>(() => Task.FromResult(dummy.GetRequestEndpoint()));
+
+            Assert.Equal(expected, exception.Message);
         }
     }
 }

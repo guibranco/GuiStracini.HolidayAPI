@@ -11,10 +11,10 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-using GuiStracini.HolidayAPI.Transport;
-
-namespace GuiStracini.HolidayAPI.Tests.Requests
+namespace GuiStracini.HolidayAPI.UnitTests.Requests
 {
+    using GuiStracini.HolidayAPI.Transport;
+
     /// <summary>
     /// Class DummyInvalidRequest.
     /// Implements the <see cref="GuiStracini.HolidayAPI.Transport.BaseRequest" />
