@@ -4,7 +4,7 @@
 // Created          : 06-23-2020
 //
 // Last Modified By : Guilherme Branco Stracini
-// Last Modified On : 06-23-2020
+// Last Modified On : 03-02-2022
 // ***********************************************************************
 // <copyright file="RequestHelpers.cs" company="Guilherme Branco Stracini">
 //     © 2020 Guilherme Branco Stracini. All rights reserved.
@@ -50,42 +50,44 @@ namespace GuiStracini.HolidayAPI.Utils
         /// <exception cref="GuiStracini.HolidayAPI.GoodPractices.InvalidRequestEndpointException"></exception>
         public static string GetRequestEndpoint(this BaseRequest request)
         {
-            var type = request.GetType();
+            var matchData = new ProcessMatchData
+            {
+                Type = request.GetType()
+            };
+
             var endpointAttribute = request.GetRequestEndpointAttribute();
             if (endpointAttribute == null)
             {
-                return type.Name.ToUpper();
+                return matchData.Type.Name.ToUpper();
             }
 
-            var originalEndpoint = endpointAttribute.EndPoint;
-            var endpoint = originalEndpoint;
+            matchData.OriginalEndpoint = endpointAttribute.EndPoint;
+            matchData.Endpoint = matchData.OriginalEndpoint;
+
             var additional = request.GetRequestAdditionalRouteValue();
-            var finalSlash = endpoint.EndsWith("/") ? string.Empty : "/";
+            var finalSlash = matchData.Endpoint.EndsWith("/") ? string.Empty : "/";
             if (!string.IsNullOrWhiteSpace(additional))
             {
-                endpoint += $"{(endpoint.Contains("?") ? "&" : $"{finalSlash}?")}{additional}";
+                matchData.Endpoint += $"{(matchData.Endpoint.Contains("?") ? "&" : $"{finalSlash}?")}{additional}";
             }
 
             var regex = new Regex(@"/?(?<pattern>{(?<propertyName>\w+?)})/?", RegexOptions.Compiled | RegexOptions.CultureInvariant | RegexOptions.IgnoreCase, new TimeSpan(0, 0, 30));
-            if (!regex.IsMatch(endpoint))
+            if (!regex.IsMatch(matchData.Endpoint))
             {
-                return endpoint;
+                return matchData.Endpoint;
             }
 
-            var used = 0;
-            var skipped = 0;
-            var counter = 0;
-            foreach (Match match in regex.Matches(endpoint))
+            foreach (Match match in regex.Matches(matchData.Endpoint))
             {
-                ProcessMatch(request, match, type, originalEndpoint, ref counter, ref endpoint, ref skipped, ref used);
+                ProcessMatch(request, match, matchData);
             }
 
-            if (skipped != 0 && skipped < used)
+            if (matchData.Skipped != 0 && matchData.Skipped < matchData.Used)
             {
-                throw new InvalidRequestEndpointException(originalEndpoint, endpoint);
+                throw new InvalidRequestEndpointException(matchData.OriginalEndpoint, matchData.Endpoint);
             }
 
-            return endpoint.Trim('/');
+            return matchData.Endpoint.Trim('/');
         }
 
         /// <summary>
@@ -93,30 +95,20 @@ namespace GuiStracini.HolidayAPI.Utils
         /// </summary>
         /// <param name="request">The request.</param>
         /// <param name="match">The match.</param>
-        /// <param name="type">The type.</param>
-        /// <param name="originalEndpoint">The original endpoint.</param>
-        /// <param name="counter">The counter.</param>
-        /// <param name="endpoint">The endpoint.</param>
-        /// <param name="skipped">The skipped.</param>
-        /// <param name="used">The used.</param>
+        /// <param name="matchData">The match data.</param>
         /// <exception cref="GuiStracini.HolidayAPI.GoodPractices.EndpointRouteBadFormatException"></exception>
         /// <exception cref="EndpointRouteBadFormatException"></exception>
         private static void ProcessMatch(
             BaseRequest request,
             Match match,
-            Type type,
-            string originalEndpoint,
-            ref int counter,
-            ref string endpoint,
-            ref int skipped,
-            ref int used)
+            ProcessMatchData matchData)
         {
-            counter++;
+            matchData.Counter++;
             var propertyName = match.Groups["propertyName"].Value;
-            var property = type.GetProperty(propertyName);
+            var property = matchData.Type.GetProperty(propertyName);
             if (property == null)
             {
-                throw new EndpointRouteBadFormatException(originalEndpoint);
+                throw new EndpointRouteBadFormatException(matchData.OriginalEndpoint);
             }
 
             var propertyType = property.PropertyType;
@@ -127,16 +119,16 @@ namespace GuiStracini.HolidayAPI.Utils
                 propertyType == typeof(decimal) && Convert.ToDecimal(propertyValue) == new decimal(0) ||
                 propertyType == typeof(string) && string.IsNullOrEmpty(propertyValue.ToString()))
             {
-                endpoint = endpoint.Replace(match.Value, string.Empty);
-                if (skipped == 0)
+                matchData.Endpoint = matchData.Endpoint.Replace(match.Value, string.Empty);
+                if (matchData.Skipped == 0)
                 {
-                    skipped = counter;
+                    matchData.Skipped = matchData.Counter;
                 }
 
                 return;
             }
-            used = counter;
-            endpoint = endpoint.Replace(match.Groups["pattern"].Value, propertyValue.ToString());
+            matchData.Used = matchData.Counter;
+            matchData.Endpoint = matchData.Endpoint.Replace(match.Groups["pattern"].Value, propertyValue.ToString());
         }
 
         /// <summary>
@@ -154,49 +146,61 @@ namespace GuiStracini.HolidayAPI.Utils
             }
 
             var builder = new StringBuilder();
-            var addAsQueryString = false;
-            foreach (var property in properties)
-            {
-                if (!(property.GetCustomAttributes(typeof(AdditionalRouteValueAttribute), false)
-                    is AdditionalRouteValueAttribute[] attributes) || !attributes.Any())
-                {
-                    continue;
-                }
-
-                addAsQueryString = attributes.Single().AsQueryString;
-
-                var propertyValue = property.GetValue(request);
-                if (propertyValue == null)
-                {
-                    continue;
-                }
-
-                var propertyType = GetPropertyType(property);
-
-                if (propertyType == typeof(bool))
-                {
-                    propertyValue = propertyValue.ToString().ToLower();
-                }
-
-                var propertyName = GetPropertyName(property);
-
-                if (propertyType == typeof(string) ||
-                    propertyType == typeof(bool) ||
-                    propertyType == typeof(int) && Convert.ToInt32(propertyValue) > 0 ||
-                    propertyType == typeof(long) && Convert.ToInt64(propertyValue) > 0)
-                {
-                    builder.AppendFormat("{0}", addAsQueryString ? $"{propertyName}=" : string.Empty)
-                        .Append(propertyValue).Append(addAsQueryString ? "&" : "/");
-                }
-            }
-
+            var addAsQueryString = properties.Aggregate(false, (current, property) => ParseProperty(request, property, current, builder));
             var result = builder.ToString();
+
             if (addAsQueryString && result.Length > 1)
             {
                 result = result.Substring(0, result.Length - 1);
             }
 
             return result;
+        }
+
+        /// <summary>
+        /// Parses the property.
+        /// </summary>
+        /// <param name="request">The request.</param>
+        /// <param name="property">The property.</param>
+        /// <param name="addAsQueryString">if set to <c>true</c> [add as query string].</param>
+        /// <param name="builder">The builder.</param>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        private static bool ParseProperty(BaseRequest request, PropertyInfo property, bool addAsQueryString,
+            StringBuilder builder)
+        {
+            if (!(property.GetCustomAttributes(typeof(AdditionalRouteValueAttribute), false)
+                    is AdditionalRouteValueAttribute[] attributes) || !attributes.Any())
+            {
+                return addAsQueryString;
+            }
+
+            addAsQueryString = attributes.Single().AsQueryString;
+
+            var propertyValue = property.GetValue(request);
+            if (propertyValue == null)
+            {
+                return addAsQueryString;
+            }
+
+            var propertyType = GetPropertyType(property);
+
+            if (propertyType == typeof(bool))
+            {
+                propertyValue = propertyValue.ToString().ToLower();
+            }
+
+            var propertyName = GetPropertyName(property);
+
+            if (propertyType == typeof(string) ||
+                propertyType == typeof(bool) ||
+                propertyType == typeof(int) && Convert.ToInt32(propertyValue) > 0 ||
+                propertyType == typeof(long) && Convert.ToInt64(propertyValue) > 0)
+            {
+                builder.AppendFormat("{0}", addAsQueryString ? $"{propertyName}=" : string.Empty)
+                    .Append(propertyValue).Append(addAsQueryString ? "&" : "/");
+            }
+
+            return addAsQueryString;
         }
 
         /// <summary>
