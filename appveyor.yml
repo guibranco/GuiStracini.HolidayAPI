@@ -54,39 +54,50 @@ build_script:
  /d:sonar.login="%SONAR_TOKEN%" 
  /v:"%APPVEYOR_BUILD_NUMBER%" 
  /d:sonar.exclusions="**/bin/**/*,**/obj/**/*" 
- /d:sonar.coverage.exclusions="**/%SOLUTION_NAME%.IntegrationTests/**,**/*Tests.cs" 
- /d:sonar.cs.opencover.reportsPaths="%CD%\Tests\%SOLUTION_NAME%.IntegrationTests\coverage.opencover.xml"
-- dotnet sonarscanner begin 
- /k:"%SONAR_PROJECT%" 
- /o:"%SONAR_ORGANIZATION%" 
- /d:sonar.host.url="https://sonarcloud.io" 
- /d:sonar.login="%SONAR_TOKEN%" 
- /v:"%APPVEYOR_BUILD_NUMBER%" 
- /d:sonar.exclusions="**/bin/**/*,**/obj/**/*" 
- /d:sonar.coverage.exclusions="**/%SOLUTION_NAME%.UnitTests/**,**/*Tests.cs" 
- /d:sonar.cs.opencover.reportsPaths="%CD%\Tests\%SOLUTION_NAME%.UnitTests\coverage.opencover.xml"
+ /d:sonar.coverage.exclusions="**/%SOLUTION_NAME%.*Tests/**" 
+ /d:sonar.cs.opencover.reportsPaths="%CD%\Tests\%SOLUTION_NAME%.IntegrationTests\coverage.opencover.xml,%CD%\Tests\%SOLUTION_NAME%.UnitTests\coverage.opencover.xml"
+
 - dotnet build %SOLUTION_NAME%.sln
+
 - dotnet test .\Tests\%SOLUTION_NAME%.IntegrationTests\%SOLUTION_NAME%.IntegrationTests.csproj 
+ /p:CollectCoverage=true 
+ /p:CoverletOutputFormat="opencover"
+
+- codecov -f "%CD%\Tests\%SOLUTION_NAME%.IntegrationTests\coverage.opencover.xml"
+
+- java 
+ -jar ./codacy-test-reporter.jar report 
+ -l CSharp 
+ -t %CODACY_PROJECT_TOKEN%
+ -r "%CD%\Tests\%SOLUTION_NAME%.IntegrationTests\coverage.opencover.xml"
+ --partial
+
 - dotnet test .\Tests\%SOLUTION_NAME%.UnitTests\%SOLUTION_NAME%.UnitTests.csproj 
  /p:CollectCoverage=true 
  /p:CoverletOutputFormat="opencover"
-- dotnet sonarscanner end /d:sonar.login="%SONAR_TOKEN%"
+
 - codecov -f "%CD%\Tests\%SOLUTION_NAME%.UnitTests\coverage.opencover.xml"
+
 - java 
- -jar 
- ./codacy-test-reporter.jar report 
+ -jar ./codacy-test-reporter.jar report 
  -l CSharp 
  -t %CODACY_PROJECT_TOKEN%
  -r "%CD%\Tests\%SOLUTION_NAME%.UnitTests\coverage.opencover.xml"
+ --partial
+
+- java 
+ -jar ./codacy-test-reporter.jar final
+
+- dotnet sonarscanner end /d:sonar.login="%SONAR_TOKEN%"
 
 after_build:
 - xcopy %CD%\Src\%SOLUTION_NAME%\bin\Release\netstandard2.1\*.* %CD%\Build\
 - copy %CD%\Src\%SOLUTION_NAME%\bin\Release\%SOLUTION_NAME%.%APPVEYOR_BUILD_VERSION%.nupkg %SOLUTION_NAME%.%APPVEYOR_BUILD_VERSION%.nupkg
 - rd /s /q %CD%\Src\%SOLUTION_NAME%\bin\Release\
-- xcopy %CD%\Tests\%SOLUTION_NAME%.IntegrationTests\*.xml %CD%\Coverage\
-- xcopy %CD%\Tests\%SOLUTION_NAME%.IntegrationTests\*.json %CD%\Coverage\
-- xcopy %CD%\Tests\%SOLUTION_NAME%.UnitTests\*.xml %CD%\Coverage\
-- xcopy %CD%\Tests\%SOLUTION_NAME%.UnitTests\*.json %CD%\Coverage\
+- xcopy %CD%\Tests\%SOLUTION_NAME%.IntegrationTests\*.xml %CD%\Coverage\Integration\
+- xcopy %CD%\Tests\%SOLUTION_NAME%.IntegrationTests\*.json %CD%\Coverage\Integration\
+- xcopy %CD%\Tests\%SOLUTION_NAME%.UnitTests\*.xml %CD%\Coverage\Unit\
+- xcopy %CD%\Tests\%SOLUTION_NAME%.UnitTests\*.json %CD%\Coverage\Unit\
 - cd %CD%
 - 7z a -tzip -mx9 "%SOLUTION_NAME%.%APPVEYOR_BUILD_VERSION%.zip" Build
 - 7z a -tzip -mx9 "%SOLUTION_NAME%.%APPVEYOR_BUILD_VERSION%.Coverage.zip" Coverage

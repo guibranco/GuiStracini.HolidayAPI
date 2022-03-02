@@ -14,6 +14,7 @@
 
 namespace GuiStracini.HolidayAPI.UnitTests
 {
+    using System.Globalization;
     using System.Threading.Tasks;
     using GuiStracini.HolidayAPI.GoodPractices;
     using GuiStracini.HolidayAPI.UnitTests.Requests;
@@ -103,7 +104,7 @@ namespace GuiStracini.HolidayAPI.UnitTests
 
             var actual = dummy.GetRequestEndpoint();
 
-            Assert.Equal(nameof(DummyRequestNoEndpointAttribute).ToUpper(), actual);
+            Assert.Equal(nameof(DummyRequestNoEndpointAttribute).ToUpper(CultureInfo.InvariantCulture), actual);
         }
 
         /// <summary>
