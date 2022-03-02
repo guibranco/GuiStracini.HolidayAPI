@@ -1,4 +1,17 @@
-﻿using GuiStracini.HolidayAPI.Transport;
+﻿// ***********************************************************************
+// Assembly         : GuiStracini.HolidayAPI.Tests
+// Author           : Guilherme Branco Stracini
+// Created          : 03-02-2022
+//
+// Last Modified By : Guilherme Branco Stracini
+// Last Modified On : 03-02-2022
+// ***********************************************************************
+// <copyright file="DummyRequestEndSlash.cs" company="GuiStracini.HolidayAPI.Tests">
+//     Copyright (c) Guilherme Branco Stracini ME. All rights reserved.
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+using GuiStracini.HolidayAPI.Transport;
 using GuiStracini.HolidayAPI.Utils;
 
 namespace GuiStracini.HolidayAPI.Tests.Requests
