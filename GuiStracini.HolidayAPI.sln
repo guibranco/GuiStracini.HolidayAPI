@@ -12,14 +12,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{6DEBBD96-125F-4DA1-B325-E2E4EDC12A90}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{65E6CEC4-AFB1-445D-BB25-11B6B38046D8}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GuiStracini.HolidayAPI", "Src\GuiStracini.HolidayAPI\GuiStracini.HolidayAPI.csproj", "{12BF88BB-C4C5-4074-8623-CD166A033E36}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GuiStracini.HolidayAPI.UnitTests", "Tests\GuiStracini.HolidayAPI.Tests\GuiStracini.HolidayAPI.UnitTests.csproj", "{96A31323-EEDE-48A1-9ECE-4344F1FBE571}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{65E6CEC4-AFB1-445D-BB25-11B6B38046D8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuiStracini.HolidayAPI.IntegrationTests", "Tests\GuiStracini.HolidayAPI.IntegrationTests\GuiStracini.HolidayAPI.IntegrationTests.csproj", "{9CDE7484-6ECB-4837-9D9D-908CBE8B87D2}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GuiStracini.HolidayAPI.UnitTests", "Tests\GuiStracini.HolidayAPI.UnitTests\GuiStracini.HolidayAPI.UnitTests.csproj", "{96A31323-EEDE-48A1-9ECE-4344F1FBE571}"
+EndProject
+
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,23 +30,23 @@ Global
 		{12BF88BB-C4C5-4074-8623-CD166A033E36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{12BF88BB-C4C5-4074-8623-CD166A033E36}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12BF88BB-C4C5-4074-8623-CD166A033E36}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{12BF88BB-C4C5-4074-8623-CD166A033E36}.Release|Any CPU.Build.0 = Release|Any CPU
-		{96A31323-EEDE-48A1-9ECE-4344F1FBE571}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{96A31323-EEDE-48A1-9ECE-4344F1FBE571}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{96A31323-EEDE-48A1-9ECE-4344F1FBE571}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{96A31323-EEDE-48A1-9ECE-4344F1FBE571}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12BF88BB-C4C5-4074-8623-CD166A033E36}.Release|Any CPU.Build.0 = Release|Any CPU		
 		{9CDE7484-6ECB-4837-9D9D-908CBE8B87D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9CDE7484-6ECB-4837-9D9D-908CBE8B87D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9CDE7484-6ECB-4837-9D9D-908CBE8B87D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9CDE7484-6ECB-4837-9D9D-908CBE8B87D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96A31323-EEDE-48A1-9ECE-4344F1FBE571}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96A31323-EEDE-48A1-9ECE-4344F1FBE571}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96A31323-EEDE-48A1-9ECE-4344F1FBE571}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96A31323-EEDE-48A1-9ECE-4344F1FBE571}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{12BF88BB-C4C5-4074-8623-CD166A033E36} = {6DEBBD96-125F-4DA1-B325-E2E4EDC12A90}
-		{96A31323-EEDE-48A1-9ECE-4344F1FBE571} = {65E6CEC4-AFB1-445D-BB25-11B6B38046D8}
+		{12BF88BB-C4C5-4074-8623-CD166A033E36} = {6DEBBD96-125F-4DA1-B325-E2E4EDC12A90}		
 		{9CDE7484-6ECB-4837-9D9D-908CBE8B87D2} = {65E6CEC4-AFB1-445D-BB25-11B6B38046D8}
+		{96A31323-EEDE-48A1-9ECE-4344F1FBE571} = {65E6CEC4-AFB1-445D-BB25-11B6B38046D8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1DCBB6AA-B925-4BF2-873B-16565A15FBCF}
