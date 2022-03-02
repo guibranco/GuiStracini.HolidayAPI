@@ -66,7 +66,8 @@ build_script:
  /d:sonar.coverage.exclusions="**/%SOLUTION_NAME%.UnitTests/**,**/*Tests.cs" 
  /d:sonar.cs.opencover.reportsPaths="%CD%\Tests\%SOLUTION_NAME%.UnitTests\coverage.opencover.xml"
 - dotnet build %SOLUTION_NAME%.sln
-- dotnet test .\Tests\%SOLUTION_NAME%.Tests\%SOLUTION_NAME%.Tests.csproj 
+- dotnet test .\Tests\%SOLUTION_NAME%.IntegrationTests\%SOLUTION_NAME%.IntegrationTests.csproj 
+- dotnet test .\Tests\%SOLUTION_NAME%.UnitTests\%SOLUTION_NAME%.UnitTests.csproj 
  /p:CollectCoverage=true 
  /p:CoverletOutputFormat="opencover"
 - dotnet sonarscanner end /d:sonar.login="%SONAR_TOKEN%"
