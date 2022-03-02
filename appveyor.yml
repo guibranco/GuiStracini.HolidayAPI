@@ -85,7 +85,7 @@ build_script:
  -t %CODACY_PROJECT_TOKEN%
  -r "%CD%\Tests\%SOLUTION_NAME%.UnitTests\coverage.opencover.xml"
 
- - dotnet sonarscanner end /d:sonar.login="%SONAR_TOKEN%"
+- dotnet sonarscanner end /d:sonar.login="%SONAR_TOKEN%"
 
 after_build:
 - xcopy %CD%\Src\%SOLUTION_NAME%\bin\Release\netstandard2.1\*.* %CD%\Build\
