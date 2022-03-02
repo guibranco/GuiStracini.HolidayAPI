@@ -54,7 +54,7 @@ build_script:
  /d:sonar.login="%SONAR_TOKEN%" 
  /v:"%APPVEYOR_BUILD_NUMBER%" 
  /d:sonar.exclusions="**/bin/**/*,**/obj/**/*" 
- /d:sonar.coverage.exclusions="**/%SOLUTION_NAME%.*Tests/**,**/*Tests.cs" 
+ /d:sonar.coverage.exclusions="**/%SOLUTION_NAME%.*Tests/**" 
  /d:sonar.cs.opencover.reportsPaths="%CD%\Tests\%SOLUTION_NAME%.IntegrationTests\coverage.opencover.xml,%CD%\Tests\%SOLUTION_NAME%.UnitTests\coverage.opencover.xml"
 
 - dotnet build %SOLUTION_NAME%.sln
