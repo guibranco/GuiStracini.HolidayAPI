@@ -73,6 +73,8 @@ build_script:
  -r "%CD%\Tests\%SOLUTION_NAME%.IntegrationTests\coverage.opencover.xml"
 
 - dotnet test .\Tests\%SOLUTION_NAME%.UnitTests\%SOLUTION_NAME%.UnitTests.csproj 
+ /p:CollectCoverage=true 
+ /p:CoverletOutputFormat="opencover"
 
 - codecov -f "%CD%\Tests\%SOLUTION_NAME%.UnitTests\coverage.opencover.xml"
 
