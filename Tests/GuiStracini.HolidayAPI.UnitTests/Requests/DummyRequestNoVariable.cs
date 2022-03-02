@@ -1,26 +1,30 @@
 ﻿// ***********************************************************************
 // Assembly         : GuiStracini.HolidayAPI.Tests
 // Author           : Guilherme Branco Stracini
-// Created          : 03-02-2022
+// Created          : 01-05-2022
 //
 // Last Modified By : Guilherme Branco Stracini
 // Last Modified On : 03-02-2022
 // ***********************************************************************
-// <copyright file="DummyRequestNoEndpointAttribute.cs" company="GuiStracini.HolidayAPI.Tests">
+// <copyright file="DummyRequestNoVariable.cs" company="GuiStracini.HolidayAPI.Tests">
 //     Copyright (c) Guilherme Branco Stracini ME. All rights reserved.
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-using GuiStracini.HolidayAPI.Transport;
 
-namespace GuiStracini.HolidayAPI.Tests.Requests
+namespace GuiStracini.HolidayAPI.UnitTests.Requests
 {
+    using GuiStracini.HolidayAPI.Transport;
+    using GuiStracini.HolidayAPI.Utils;
+
     /// <summary>
-    /// Class DummyInvalidRequest.
+    /// Class DummyRequestNoVariable.
     /// Implements the <see cref="GuiStracini.HolidayAPI.Transport.BaseRequest" />
     /// </summary>
     /// <seealso cref="GuiStracini.HolidayAPI.Transport.BaseRequest" />
-    public class DummyRequestNoEndpointAttribute : BaseRequest
+    [EndpointRoute("something")]
+
+    public class DummyRequestNoVariable : BaseRequest
     {
         /// <summary>
         /// Gets or sets the dummy.

@@ -27,5 +27,6 @@
   <ItemGroup>
     <None Include="../../LICENSE" Pack="true" PackagePath="\" />
     <None Include="../../packageLogo.png" Pack="true" PackagePath="\" />
+    <None Include="..\..\.editorconfig" Link=".editorconfig" />
   </ItemGroup>
 </Project>
