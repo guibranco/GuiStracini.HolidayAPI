@@ -1,4 +1,17 @@
-﻿using GuiStracini.HolidayAPI.Transport;
+﻿// ***********************************************************************
+// Assembly         : GuiStracini.HolidayAPI.Tests
+// Author           : Guilherme Branco Stracini
+// Created          : 03-02-2022
+//
+// Last Modified By : Guilherme Branco Stracini
+// Last Modified On : 03-02-2022
+// ***********************************************************************
+// <copyright file="DummyRequestNoEndpointAttribute.cs" company="GuiStracini.HolidayAPI.Tests">
+//     Copyright (c) Guilherme Branco Stracini ME. All rights reserved.
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+using GuiStracini.HolidayAPI.Transport;
 
 namespace GuiStracini.HolidayAPI.Tests.Requests
 {
@@ -12,9 +25,7 @@ namespace GuiStracini.HolidayAPI.Tests.Requests
         /// <summary>
         /// Gets or sets the dummy.
         /// </summary>
-        /// <value>
-        /// The dummy.
-        /// </value>
+        /// <value>The dummy.</value>
         public string Dummy { get; set; }
     }
 }

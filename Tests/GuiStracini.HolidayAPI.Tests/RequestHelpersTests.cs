@@ -1,4 +1,17 @@
-﻿using GuiStracini.HolidayAPI.Tests.Requests;
+﻿// ***********************************************************************
+// Assembly         : GuiStracini.HolidayAPI.Tests
+// Author           : Guilherme Branco Stracini
+// Created          : 01-05-2022
+//
+// Last Modified By : Guilherme Branco Stracini
+// Last Modified On : 03-02-2022
+// ***********************************************************************
+// <copyright file="RequestHelpersTests.cs" company="GuiStracini.HolidayAPI.Tests">
+//     Copyright (c) Guilherme Branco Stracini ME. All rights reserved.
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+using GuiStracini.HolidayAPI.Tests.Requests;
 
 namespace GuiStracini.HolidayAPI.Tests
 {
@@ -60,6 +73,9 @@ namespace GuiStracini.HolidayAPI.Tests
         }
 
 
+        /// <summary>
+        /// Defines the test method RequestEndpointWithAdditionalValuesNullable.
+        /// </summary>
         [Fact]
         public void RequestEndpointWithAdditionalValuesNullable()
         {
@@ -75,6 +91,9 @@ namespace GuiStracini.HolidayAPI.Tests
             Assert.Equal(expected, actual);
         }
 
+        /// <summary>
+        /// Defines the test method RequestWithoutValidEndpointAttribute.
+        /// </summary>
         [Fact]
         public void RequestWithoutValidEndpointAttribute()
         {
@@ -85,6 +104,9 @@ namespace GuiStracini.HolidayAPI.Tests
             Assert.Equal(nameof(DummyRequestNoEndpointAttribute).ToUpper(), actual);
         }
 
+        /// <summary>
+        /// Defines the test method RequestEndpointEndingWithSlash.
+        /// </summary>
         [Fact]
         public void RequestEndpointEndingWithSlash()
         {
@@ -99,6 +121,9 @@ namespace GuiStracini.HolidayAPI.Tests
             Assert.Equal(expected, actual);
         }
 
+        /// <summary>
+        /// Defines the test method RequestEndpointNoVariables.
+        /// </summary>
         [Fact]
         public void RequestEndpointNoVariables()
         {

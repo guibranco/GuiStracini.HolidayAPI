@@ -1,3 +1,16 @@
+// ***********************************************************************
+// Assembly         : GuiStracini.HolidayAPI.Tests
+// Author           : Guilherme Branco Stracini
+// Created          : 01-05-2022
+//
+// Last Modified By : Guilherme Branco Stracini
+// Last Modified On : 01-05-2022
+// ***********************************************************************
+// <copyright file="HolidayAPIClientTests.cs" company="GuiStracini.HolidayAPI.Tests">
+//     Copyright (c) Guilherme Branco Stracini ME. All rights reserved.
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
 namespace GuiStracini.HolidayAPI.Tests
 {
     using GuiStracini.HolidayAPI.GoodPractices;
@@ -23,7 +36,7 @@ namespace GuiStracini.HolidayAPI.Tests
         /// <summary>
         /// Creates the HTTP client.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>HttpClient.</returns>
         private HttpClient CreateHttpClient()
         {
             var httpClient = HttpClientFactory.Create();
@@ -35,7 +48,7 @@ namespace GuiStracini.HolidayAPI.Tests
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="HolidayApiClientTests"/> class.
+        /// Initializes a new instance of the <see cref="HolidayApiClientTests" /> class.
         /// </summary>
         public HolidayApiClientTests()
         {

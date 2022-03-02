@@ -4,7 +4,7 @@
 // Created          : 06-23-2020
 //
 // Last Modified By : Guilherme Branco Stracini
-// Last Modified On : 06-23-2020
+// Last Modified On : 03-02-2022
 // ***********************************************************************
 // <copyright file="HolidayAPIClient.cs" company="Guilherme Branco Stracini">
 //     © 2020 Guilherme Branco Stracini. All rights reserved.
@@ -137,7 +137,7 @@ namespace GuiStracini.HolidayAPI
                 Upcoming = filter.Upcoming
             };
             var response = await Execute<HolidayRequest, HolidayResponse>(request, cancellationToken).ConfigureAwait(false);
-            return response?.Holidays;
+            return response.Holidays;
         }
 
         /// <summary>
@@ -166,7 +166,7 @@ namespace GuiStracini.HolidayAPI
             }
 
             var response = await Execute<CountriesRequest, CountriesResponse>(request, cancellationToken).ConfigureAwait(false);
-            return response?.Countries;
+            return response.Countries;
         }
 
         /// <summary>
@@ -194,7 +194,7 @@ namespace GuiStracini.HolidayAPI
             }
 
             var response = await Execute<LanguagesRequest, LanguagesResponse>(request, cancellationToken).ConfigureAwait(false);
-            return response?.Languages;
+            return response.Languages;
         }
 
         /// <summary>
@@ -216,7 +216,7 @@ namespace GuiStracini.HolidayAPI
                 Start = start.ToString("yyyy-MM-dd")
             };
             var response = await Execute<WorkdayRequest, WorkdayResponse>(request, cancellationToken).ConfigureAwait(false);
-            return response?.Workday;
+            return response.Workday;
         }
 
         /// <summary>
