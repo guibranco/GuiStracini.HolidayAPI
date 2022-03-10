@@ -6,23 +6,21 @@
 // Last Modified By : Guilherme Branco Stracini
 // Last Modified On : 03-02-2022
 // ***********************************************************************
-// <copyright file="DummyRequestEndSlash.cs" company="GuiStracini.HolidayAPI.Tests">
+// <copyright file="DummyRequestNoEndpointAttribute.cs" company="GuiStracini.HolidayAPI.Tests">
 //     Copyright (c) Guilherme Branco Stracini ME. All rights reserved.
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-using GuiStracini.HolidayAPI.Transport;
-using GuiStracini.HolidayAPI.Utils;
-
-namespace GuiStracini.HolidayAPI.Tests.Requests
+namespace GuiStracini.HolidayAPI.UnitTests.Requests
 {
+    using GuiStracini.HolidayAPI.Transport;
+
     /// <summary>
-    /// Class DummyRequestEndSlash.
+    /// Class DummyInvalidRequest.
     /// Implements the <see cref="GuiStracini.HolidayAPI.Transport.BaseRequest" />
     /// </summary>
     /// <seealso cref="GuiStracini.HolidayAPI.Transport.BaseRequest" />
-    [EndpointRoute("something/{Dummy}/")]
-    public class DummyRequestEndSlash : BaseRequest
+    public class DummyRequestNoEndpointAttribute : BaseRequest
     {
         /// <summary>
         /// Gets or sets the dummy.
