@@ -18,6 +18,7 @@ namespace GuiStracini.HolidayAPI.Utils
     using System.Text;
     using GuiStracini.HolidayAPI.GoodPractices;
     using System;
+    using System.Globalization;
     using System.Linq;
     using System.Text.RegularExpressions;
     using GuiStracini.HolidayAPI.Transport;
@@ -186,7 +187,7 @@ namespace GuiStracini.HolidayAPI.Utils
 
             if (propertyType == typeof(bool))
             {
-                propertyValue = propertyValue.ToString().ToLower();
+                propertyValue = propertyValue.ToString().ToLower(CultureInfo.InvariantCulture);
             }
 
             var propertyName = GetPropertyName(property);
