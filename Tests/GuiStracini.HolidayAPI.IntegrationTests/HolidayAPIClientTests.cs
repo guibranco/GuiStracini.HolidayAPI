@@ -37,7 +37,7 @@ namespace GuiStracini.HolidayAPI.IntegrationTests
         /// Creates the HTTP client.
         /// </summary>
         /// <returns>HttpClient.</returns>
-        private HttpClient CreateHttpClient()
+        private static HttpClient CreateHttpClient()
         {
             var httpClient = HttpClientFactory.Create();
             httpClient.BaseAddress = new Uri("https://holidayapi.com/");
