@@ -4,7 +4,7 @@
 // Created          : 06-23-2020
 //
 // Last Modified By : Guilherme Branco Stracini
-// Last Modified On : 01-05-2022
+// Last Modified On : 28/01/2023
 // ***********************************************************************
 // <copyright file="ServiceFactory.cs" company="Guilherme Branco Stracini">
 //     © 2020 Guilherme Branco Stracini. All rights reserved.
@@ -47,7 +47,6 @@ namespace GuiStracini.HolidayAPI.Utils
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>TOut.</returns>
         /// <exception cref="GuiStracini.HolidayAPI.GoodPractices.HolidayApiException"></exception>
-        /// <exception cref="HolidayApiException"></exception>
         public async ValueTask<TOut> Post<TIn, TOut>(TIn data, CancellationToken cancellationToken) where TIn : BaseRequest where TOut : BaseResponse
         {
             var endpoint = data.GetRequestEndpoint();

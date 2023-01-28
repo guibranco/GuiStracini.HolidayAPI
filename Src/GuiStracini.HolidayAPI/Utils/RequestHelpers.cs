@@ -4,7 +4,7 @@
 // Created          : 06-23-2020
 //
 // Last Modified By : Guilherme Branco Stracini
-// Last Modified On : 03-02-2022
+// Last Modified On : 28/01/2023
 // ***********************************************************************
 // <copyright file="RequestHelpers.cs" company="Guilherme Branco Stracini">
 //     © 2020 Guilherme Branco Stracini. All rights reserved.
@@ -98,7 +98,6 @@ namespace GuiStracini.HolidayAPI.Utils
         /// <param name="match">The match.</param>
         /// <param name="matchData">The match data.</param>
         /// <exception cref="GuiStracini.HolidayAPI.GoodPractices.EndpointRouteBadFormatException"></exception>
-        /// <exception cref="EndpointRouteBadFormatException"></exception>
         private static void ProcessMatch(
             BaseRequest request,
             Match match,
