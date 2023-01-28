@@ -189,7 +189,7 @@ namespace GuiStracini.HolidayAPI.IntegrationTests
             Assert.Contains(list, country => country.Name.Equals("Argentina"));
 
             Assert.Contains(list, country => country.Code.Equals("BR"));
-            Assert.Contains(list, country => country.Flag.Equals("https://www.countryflags.io/BR/flat/64.png"));
+            Assert.Contains(list, country => country.Flag.Equals("https://flagsapi.com/BR/flat/64.png"));
         }
 
         /// <summary>
