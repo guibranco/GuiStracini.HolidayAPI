@@ -4,7 +4,7 @@
 // Created          : 01-05-2022
 //
 // Last Modified By : Guilherme Branco Stracini
-// Last Modified On : 01-05-2022
+// Last Modified On : 28/01/2023
 // ***********************************************************************
 // <copyright file="HolidayAPIClientTests.cs" company="GuiStracini.HolidayAPI.Tests">
 //     Copyright (c) Guilherme Branco Stracini ME. All rights reserved.
@@ -37,7 +37,7 @@ namespace GuiStracini.HolidayAPI.IntegrationTests
         /// Creates the HTTP client.
         /// </summary>
         /// <returns>HttpClient.</returns>
-        private HttpClient CreateHttpClient()
+        private static HttpClient CreateHttpClient()
         {
             var httpClient = HttpClientFactory.Create();
             httpClient.BaseAddress = new Uri("https://holidayapi.com/");
@@ -189,7 +189,7 @@ namespace GuiStracini.HolidayAPI.IntegrationTests
             Assert.Contains(list, country => country.Name.Equals("Argentina"));
 
             Assert.Contains(list, country => country.Code.Equals("BR"));
-            Assert.Contains(list, country => country.Flag.Equals("https://www.countryflags.io/BR/flat/64.png"));
+            Assert.Contains(list, country => country.Flag.Equals("https://flagsapi.com/BR/flat/64.png"));
         }
 
         /// <summary>
