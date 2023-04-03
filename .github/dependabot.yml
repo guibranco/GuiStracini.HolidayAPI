@@ -4,16 +4,16 @@ updates:
   directory: "/"
   schedule:
     interval: weekly
-  open-pull-requests-limit: 10
+  open-pull-requests-limit: 25
   
 - package-ecosystem: "nuget"
   directory: "/"
   schedule:
     interval: weekly
-  open-pull-requests-limit: 10
+  open-pull-requests-limit: 25
   
 - package-ecosystem: "github-actions"
   directory: "/"
   schedule:
     interval: weekly
-  open-pull-requests-limit: 10
+  open-pull-requests-limit: 25
