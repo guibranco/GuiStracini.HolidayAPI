@@ -19,6 +19,9 @@ A client wrapper of the [Holiday API](https://holidayapi.com/) for .NET projects
 [![Codacy Badge](https://app.codacy.com/project/badge/3c8727146d8043ca8bd43d090c02565a)](https://www.codacy.com/gh/guibranco/GuiStracini.HolidayAPI/dashboard)
 [![Codecov](https://codecov.io/gh/guibranco/GuiStracini.HolidayAPI/branch/main/graph/badge.svg)](https://codecov.io/gh/guibranco/GuiStracini.HolidayAPI)
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/4f93ccda7ee35ad1c4ad/maintainability)](https://codeclimate.com/github/guibranco/GuiStracini.HolidayAPI/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/4f93ccda7ee35ad1c4ad/test_coverage)](https://codeclimate.com/github/guibranco/GuiStracini.HolidayAPI/test_coverage)
+
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=guibranco_GuiStracini.HolidayAPI&metric=alert_status)](https://sonarcloud.io/dashboard?id=guibranco_GuiStracini.HolidayAPI)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=guibranco_GuiStracini.HolidayAPI&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=guibranco_GuiStracini.HolidayAPI)
 
