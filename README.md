@@ -16,8 +16,11 @@ A client wrapper of the [Holiday API](https://holidayapi.com/) for .NET projects
 
 ## Code Quality
 
-[![Codacy Badge](https://app.codacy.com/project/badge/3c8727146d8043ca8bd43d090c02565a)](https://www.codacy.com/gh/guibranco/GuiStracini.HolidayAPI/dashboard)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/3c8727146d8043ca8bd43d090c02565a)](https://www.codacy.com/gh/guibranco/GuiStracini.HolidayAPI/dashboard)
+[![Codacy Badge](https://app.codacy.com/project/badge/Coverage/3c8727146d8043ca8bd43d090c02565a)](https://www.codacy.com/gh/guibranco/GuiStracini.HolidayAPI/dashboard)
+
 [![Codecov](https://codecov.io/gh/guibranco/GuiStracini.HolidayAPI/branch/main/graph/badge.svg)](https://codecov.io/gh/guibranco/GuiStracini.HolidayAPI)
+[![CodeFactor](https://www.codefactor.io/repository/github/guibranco/GuiStracini.HolidayAPI/badge)](https://www.codefactor.io/repository/github/guibranco/GuiStracini.HolidayAPI)
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/4f93ccda7ee35ad1c4ad/maintainability)](https://codeclimate.com/github/guibranco/GuiStracini.HolidayAPI/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/4f93ccda7ee35ad1c4ad/test_coverage)](https://codeclimate.com/github/guibranco/GuiStracini.HolidayAPI/test_coverage)
