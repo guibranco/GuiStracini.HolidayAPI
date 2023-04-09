@@ -4,7 +4,7 @@ image: Visual Studio 2019
 configuration: Release
 
 environment:
-
+  SOLUTION_NAME: GuiStracini.HolidayAPI
   SONAR_TOKEN: 
     secure: RrgnyBWUgGKOwEnWRGPS6usKzoUY0oOhVx0lW2KuhEwVvCd76sP1Kxv+goWO2h1+
   GITHUB_TOKEN:
@@ -24,7 +24,7 @@ dotnet_csproj:
   assembly_version: '{version}'
   file_version: '{version}'
   informational_version: '{version}'
-  
+
 init:
 - SET JAVA_HOME=C:\Program Files\Java\jdk19
 - SET PATH=%JAVA_HOME%\bin;%PATH%
@@ -96,7 +96,7 @@ deploy:
   on:
    branch: main
   artifact: Package
-  
+
 - provider: GitHub
   on:
    branch: main
