@@ -4,38 +4,39 @@ image: Visual Studio 2019
 configuration: Release
 
 environment:
-
+  SOLUTION_NAME: GuiStracini.HolidayAPI
   SONAR_TOKEN: 
     secure: RrgnyBWUgGKOwEnWRGPS6usKzoUY0oOhVx0lW2KuhEwVvCd76sP1Kxv+goWO2h1+
   GITHUB_TOKEN:
     secure: AD1z81FqZlvGkCEyDzJ3g6sIJ93ecUE9EuqfUxc4CMiFGW139pWZk+/huuTY5jzG
   CODACY_PROJECT_TOKEN:
     secure: Nxq5KFipyTbqGMIeLQe2gxKZOLjIhp3NmWCJZix24URUoL8XV59zK0NOk/zYCL3A
+  CODECLIMATE_TOKEN:
+    secure: FsMCyhy51d3EUvLAucW0ePqoUkP/6Vu13xl0bvRfkbhD6K9iH/UFnTgQpD7WgsnogMu93f9TmY5cilNKiZ7JMh2K+Yk8ZrJbnRkVQk7WY5E=
   apiKey:
     secure: Rk0Qh8JNpDSZ+q4UmgWYrfJtuEczRnChlGYspnmzOw+Wnblhyde8f1x+/9RB1OdJ
 
 dotnet_csproj: 
-  patch: true 
-  file: '**\*.csproj' 
-  version: '{version}' 
-  package_version: '{version}' 
-  assembly_version: '{version}' 
-  file_version: '{version}' 
-  informational_version: '{version}' 
+  patch: true
+  file: '**\*.csproj'
+  version: '{version}'
+  package_version: '{version}'
+  assembly_version: '{version}'
+  file_version: '{version}'
+  informational_version: '{version}'
 
 init:
-- set PATH=C:\Program Files\Java\jdk15\bin;%PATH%
-- set JAVA_HOME_11_X64=C:\Program Files\Java\jdk15
-- set JAVA_HOME=C:\Program Files\Java\jdk15
+- SET JAVA_HOME=C:\Program Files\Java\jdk19
+- SET PATH=%JAVA_HOME%\bin;%PATH%
 
 before_build:
-- ps: $env:SOLUTION_NAME = "$env:APPVEYOR_REPO_NAME" -replace ".*/","" -replace "-SDK-dotnet",""
 - ps: $env:SONAR_PROJECT = "$env:APPVEYOR_REPO_NAME" -replace "/","_"
 - ps: $env:SONAR_ORGANIZATION = "$env:APPVEYOR_REPO_NAME" -replace "/.*$","-github"
 - cmd: nuget restore
 - cmd: choco install opencover.portable
 - cmd: choco install codecov
-- cmd: curl -L https://github.com/codacy/codacy-coverage-reporter/releases/download/13.11.17/codacy-coverage-reporter-assembly.jar > ./codacy-test-reporter.jar
+- cmd: curl -L https://github.com/codacy/codacy-coverage-reporter/releases/latest/download/codacy-coverage-reporter-assembly.jar > ./codacy-test-reporter.jar
+- cmd: curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-windows-amd64 > codeclimate-test-reporter.exe
 - cmd: dotnet tool install --global dotnet-sonarscanner
 
 build:
@@ -45,57 +46,41 @@ build:
   verbosity: normal
 
 build_script:
-- dotnet sonarscanner begin 
- /k:"%SONAR_PROJECT%" 
- /o:"%SONAR_ORGANIZATION%" 
- /d:sonar.host.url="https://sonarcloud.io" 
- /d:sonar.login="%SONAR_TOKEN%" 
- /v:"%APPVEYOR_BUILD_NUMBER%" 
- /d:sonar.exclusions="**/bin/**/*,**/obj/**/*" 
- /d:sonar.coverage.exclusions="**/%SOLUTION_NAME%.*Tests/**" 
- /d:sonar.cs.opencover.reportsPaths="**\coverage.opencover.xml"
-
+- ps: $Params =  "/k:`"$env:SONAR_PROJECT`"", "/o:`"$env:SONAR_ORGANIZATION`"", "/v:`"$env:APPVEYOR_BUILD_NUMBER`""
+- ps: $Params += "/d:sonar.host.url=`"https://sonarcloud.io`"", "/d:sonar.login=`"$env:SONAR_TOKEN`""
+- ps: $Params += "/d:sonar.exclusions=`"**/bin/**/*,**/obj/**/*`"", "/d:sonar.coverage.exclusions=`"**/$env:SOLUTION_NAME.UnitTests/**,**/*Tests.cs`""
+- ps: $Params += "/d:sonar.cs.opencover.reportsPaths=`"$env:CD\Tests\$env:SOLUTION_NAME.UnitTests\coverage.opencover.xml`""
+- ps: if(-Not $env:APPVEYOR_PULL_REQUEST_NUMBER) { $Params += "/d:sonar.branch.name=`"$env:APPVEYOR_REPO_BRANCH`"" }
+- ps: if($env:APPVEYOR_PULL_REQUEST_NUMBER) { $Params += "/d:sonar.pullrequest.key=$env:APPVEYOR_PULL_REQUEST_NUMBER" }
+- ps: Start-process "dotnet" "sonarscanner begin $($Params -join ' ')"
+- codeclimate-test-reporter before-build
 - dotnet build %SOLUTION_NAME%.sln
-
-- dotnet test .\Tests\%SOLUTION_NAME%.IntegrationTests\%SOLUTION_NAME%.IntegrationTests.csproj 
- /p:CollectCoverage=true 
- /p:CoverletOutputFormat="opencover"
-
-- codecov -f "%CD%\Tests\%SOLUTION_NAME%.IntegrationTests\coverage.opencover.xml"
-
-- java 
- -jar ./codacy-test-reporter.jar report 
- -l CSharp 
- -t %CODACY_PROJECT_TOKEN%
- -r "%CD%\Tests\%SOLUTION_NAME%.IntegrationTests\coverage.opencover.xml"
- --partial
-
-- dotnet test .\Tests\%SOLUTION_NAME%.UnitTests\%SOLUTION_NAME%.UnitTests.csproj 
- /p:CollectCoverage=true 
- /p:CoverletOutputFormat="opencover"
-
+- dotnet test .\Tests\%SOLUTION_NAME%.UnitTests\%SOLUTION_NAME%.UnitTests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat="cobertura"
+- dotnet test .\Tests\%SOLUTION_NAME%.UnitTests\%SOLUTION_NAME%.UnitTests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat="lcov"
+- dotnet test .\Tests\%SOLUTION_NAME%.UnitTests\%SOLUTION_NAME%.UnitTests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat="opencover"
+- dotnet test .\Tests\%SOLUTION_NAME%.IntegrationTests\%SOLUTION_NAME%.IntegrationTests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat="cobertura"
+- dotnet test .\Tests\%SOLUTION_NAME%.IntegrationTests\%SOLUTION_NAME%.IntegrationTests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat="lcov"
+- dotnet test .\Tests\%SOLUTION_NAME%.IntegrationTests\%SOLUTION_NAME%.IntegrationTests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat="opencover"
+- codeclimate-test-reporter format-coverage -t lcov -o "%CD%\Tests\%SOLUTION_NAME%.UnitTests\code-climate.json" "%CD%\Tests\%SOLUTION_NAME%.UnitTests\coverage.info"
+- codeclimate-test-reporter upload-coverage -i "%CD%\Tests\%SOLUTION_NAME%.UnitTests\code-climate.json" -r %CODECLIMATE_TOKEN%
 - codecov -f "%CD%\Tests\%SOLUTION_NAME%.UnitTests\coverage.opencover.xml"
-
-- java 
- -jar ./codacy-test-reporter.jar report 
- -l CSharp 
- -t %CODACY_PROJECT_TOKEN%
- -r "%CD%\Tests\%SOLUTION_NAME%.UnitTests\coverage.opencover.xml"
- --partial
-
-- java 
- -jar ./codacy-test-reporter.jar final
-
+- java -jar ./codacy-test-reporter.jar report -l CSharp -t %CODACY_PROJECT_TOKEN% -r "%CD%\Tests\%SOLUTION_NAME%.UnitTests\coverage.opencover.xml"
 - dotnet sonarscanner end /d:sonar.login="%SONAR_TOKEN%"
 
 after_build:
 - xcopy %CD%\Src\%SOLUTION_NAME%\bin\Release\netstandard2.1\*.* %CD%\Build\
+
 - copy %CD%\Src\%SOLUTION_NAME%\bin\Release\%SOLUTION_NAME%.%APPVEYOR_BUILD_VERSION%.nupkg %SOLUTION_NAME%.%APPVEYOR_BUILD_VERSION%.nupkg
+
 - rd /s /q %CD%\Src\%SOLUTION_NAME%\bin\Release\
+
 - xcopy %CD%\Tests\%SOLUTION_NAME%.IntegrationTests\*.xml %CD%\Coverage\Integration\
 - xcopy %CD%\Tests\%SOLUTION_NAME%.IntegrationTests\*.json %CD%\Coverage\Integration\
+
 - xcopy %CD%\Tests\%SOLUTION_NAME%.UnitTests\*.xml %CD%\Coverage\Unit\
 - xcopy %CD%\Tests\%SOLUTION_NAME%.UnitTests\*.json %CD%\Coverage\Unit\
+- xcopy %CD%\Tests\%SOLUTION_NAME%.UnitTests\*.info %CD%\Coverage\Unit\
+
 - cd %CD%
 - 7z a -tzip -mx9 "%SOLUTION_NAME%.%APPVEYOR_BUILD_VERSION%.zip" Build
 - 7z a -tzip -mx9 "%SOLUTION_NAME%.%APPVEYOR_BUILD_VERSION%.Coverage.zip" Coverage
@@ -114,6 +99,7 @@ deploy:
   on:
    branch: main
   artifact: Package
+
 - provider: GitHub
   on:
    branch: main
@@ -121,3 +107,11 @@ deploy:
   auth_token: $(GITHUB_TOKEN)
   force_update: true
   artifact: ZipFile
+
+- provider: GitHub
+  on:
+   branch: main
+  tag: $(appveyor_build_version)
+  auth_token: $(GITHUB_TOKEN)
+  force_update: true
+  artifact: Coverage
