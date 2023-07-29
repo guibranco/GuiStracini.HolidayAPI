@@ -43,11 +43,13 @@ namespace GuiStracini.HolidayAPI.Utils
         /// </summary>
         /// <value>The used.</value>
         public int Used { get; set; }
+
         /// <summary>
         /// Gets or sets the skipped.
         /// </summary>
         /// <value>The skipped.</value>
         public int Skipped { get; set; }
+
         /// <summary>
         /// Gets or sets the counter.
         /// </summary>

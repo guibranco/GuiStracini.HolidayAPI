@@ -31,8 +31,7 @@ namespace GuiStracini.HolidayAPI.GoodPractices
         /// <param name="endpoint">The endpoint.</param>
         /// <param name="innerException">The inner exception.</param>
         public HolidayApiException(string endpoint, Exception innerException)
-            : base($"Unable to complete request to {endpoint}", innerException)
-        { }
+            : base($"Unable to complete request to {endpoint}", innerException) { }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="HolidayApiException" /> class.
@@ -40,8 +39,7 @@ namespace GuiStracini.HolidayAPI.GoodPractices
         /// <param name="statusCode">The status code.</param>
         /// <param name="errorMessage">The error message.</param>
         public HolidayApiException(int statusCode, string errorMessage)
-        : base($"{statusCode} - {errorMessage}")
-        { }
+            : base($"{statusCode} - {errorMessage}") { }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="T:System.Exception"></see> class with serialized data.
@@ -50,7 +48,7 @@ namespace GuiStracini.HolidayAPI.GoodPractices
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext"></see> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info">info</paramref> parameter is null.</exception>
         /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult"></see> is zero (0).</exception>
-        private HolidayApiException(SerializationInfo info, StreamingContext context) : base(info, context)
-        { }
+        private HolidayApiException(SerializationInfo info, StreamingContext context)
+            : base(info, context) { }
     }
 }

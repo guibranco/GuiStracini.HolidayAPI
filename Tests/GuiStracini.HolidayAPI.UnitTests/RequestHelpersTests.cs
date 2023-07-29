@@ -33,10 +33,7 @@ namespace GuiStracini.HolidayAPI.UnitTests
         public void RequestEndpoint()
         {
             const string expected = "something/my-string";
-            var dummy = new DummyRequest
-            {
-                Dummy = "my-string"
-            };
+            var dummy = new DummyRequest { Dummy = "my-string" };
 
             var actual = dummy.GetRequestEndpoint();
 
@@ -64,17 +61,12 @@ namespace GuiStracini.HolidayAPI.UnitTests
         public void RequestEndpointWithAdditionalValues()
         {
             const string expected = "something/test/?foo=bar";
-            var dummy = new DummyRequest
-            {
-                Dummy = "test",
-                Foo = "bar"
-            };
+            var dummy = new DummyRequest { Dummy = "test", Foo = "bar" };
 
             var actual = dummy.GetRequestEndpoint();
 
             Assert.Equal(expected, actual);
         }
-
 
         /// <summary>
         /// Defines the test method RequestEndpointWithAdditionalValuesNullable.
@@ -83,11 +75,7 @@ namespace GuiStracini.HolidayAPI.UnitTests
         public void RequestEndpointWithAdditionalValuesNullable()
         {
             const string expected = "something/test/?fooBar=true";
-            var dummy = new DummyRequest
-            {
-                Dummy = "test",
-                FooBar = true
-            };
+            var dummy = new DummyRequest { Dummy = "test", FooBar = true };
 
             var actual = dummy.GetRequestEndpoint();
 
@@ -104,7 +92,10 @@ namespace GuiStracini.HolidayAPI.UnitTests
 
             var actual = dummy.GetRequestEndpoint();
 
-            Assert.Equal(nameof(DummyRequestNoEndpointAttribute).ToUpper(CultureInfo.InvariantCulture), actual);
+            Assert.Equal(
+                nameof(DummyRequestNoEndpointAttribute).ToUpper(CultureInfo.InvariantCulture),
+                actual
+            );
         }
 
         /// <summary>
@@ -114,10 +105,7 @@ namespace GuiStracini.HolidayAPI.UnitTests
         public void RequestEndpointEndingWithSlash()
         {
             const string expected = "something/test";
-            var dummy = new DummyRequestEndSlash
-            {
-                Dummy = "test"
-            };
+            var dummy = new DummyRequestEndSlash { Dummy = "test" };
 
             var actual = dummy.GetRequestEndpoint();
 
@@ -148,7 +136,9 @@ namespace GuiStracini.HolidayAPI.UnitTests
 
             var dummy = new DummyRequestInvalidProperty();
 
-            var exception = await Assert.ThrowsAsync<EndpointRouteBadFormatException>(() => Task.FromResult(dummy.GetRequestEndpoint()));
+            var exception = await Assert.ThrowsAsync<EndpointRouteBadFormatException>(
+                () => Task.FromResult(dummy.GetRequestEndpoint())
+            );
 
             Assert.Equal(expected, exception.Message);
         }

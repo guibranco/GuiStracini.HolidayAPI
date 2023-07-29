@@ -75,10 +75,16 @@ namespace GuiStracini.HolidayAPI
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>TResponse.</returns>
         /// <exception cref="GuiStracini.HolidayAPI.GoodPractices.HolidayApiException"></exception>
-        private async ValueTask<TResponse> Execute<TRequest, TResponse>(TRequest request,
-            CancellationToken cancellationToken) where TRequest : BaseRequest where TResponse : BaseResponse
+        private async ValueTask<TResponse> Execute<TRequest, TResponse>(
+            TRequest request,
+            CancellationToken cancellationToken
+        )
+            where TRequest : BaseRequest
+            where TResponse : BaseResponse
         {
-            var response = await _serviceFactory.Post<TRequest, TResponse>(request, cancellationToken).ConfigureAwait(false);
+            var response = await _serviceFactory
+                .Post<TRequest, TResponse>(request, cancellationToken)
+                .ConfigureAwait(false);
 
             _metadata = response.Requests ?? new RequestMetadata();
             _metadata.Warning = response.Warning;
@@ -109,9 +115,14 @@ namespace GuiStracini.HolidayAPI
         /// <param name="year">The year.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>IEnumerable&lt;IHoliday&gt;.</returns>
-        public async Task<IEnumerable<IHoliday>> GetHolidaysAsync(string country, int year, CancellationToken cancellationToken)
+        public async Task<IEnumerable<IHoliday>> GetHolidaysAsync(
+            string country,
+            int year,
+            CancellationToken cancellationToken
+        )
         {
-            return await GetHolidaysAsync(new HolidayFilter(country, year), cancellationToken).ConfigureAwait(false);
+            return await GetHolidaysAsync(new HolidayFilter(country, year), cancellationToken)
+                .ConfigureAwait(false);
         }
 
         /// <summary>
@@ -120,7 +131,10 @@ namespace GuiStracini.HolidayAPI
         /// <param name="filter">The filter.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>IEnumerable&lt;IHoliday&gt;.</returns>
-        public async Task<IEnumerable<IHoliday>> GetHolidaysAsync(HolidayFilter filter, CancellationToken cancellationToken)
+        public async Task<IEnumerable<IHoliday>> GetHolidaysAsync(
+            HolidayFilter filter,
+            CancellationToken cancellationToken
+        )
         {
             var request = new HolidayRequest
             {
@@ -136,7 +150,11 @@ namespace GuiStracini.HolidayAPI
                 Subdivisions = filter.Subdivisions,
                 Upcoming = filter.Upcoming
             };
-            var response = await Execute<HolidayRequest, HolidayResponse>(request, cancellationToken).ConfigureAwait(false);
+            var response = await Execute<HolidayRequest, HolidayResponse>(
+                    request,
+                    cancellationToken
+                )
+                .ConfigureAwait(false);
             return response.Holidays;
         }
 
@@ -145,7 +163,9 @@ namespace GuiStracini.HolidayAPI
         /// </summary>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>IEnumerable&lt;ICountry&gt;.</returns>
-        public async Task<IEnumerable<ICountry>> GetCountriesAsync(CancellationToken cancellationToken)
+        public async Task<IEnumerable<ICountry>> GetCountriesAsync(
+            CancellationToken cancellationToken
+        )
         {
             return await GetCountriesAsync(string.Empty, cancellationToken).ConfigureAwait(false);
         }
@@ -156,7 +176,10 @@ namespace GuiStracini.HolidayAPI
         /// <param name="search">The search.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>IEnumerable&lt;ICountry&gt;.</returns>
-        public async Task<IEnumerable<ICountry>> GetCountriesAsync(string search, CancellationToken cancellationToken)
+        public async Task<IEnumerable<ICountry>> GetCountriesAsync(
+            string search,
+            CancellationToken cancellationToken
+        )
         {
             var request = new CountriesRequest { Key = _apiKey };
 
@@ -165,7 +188,11 @@ namespace GuiStracini.HolidayAPI
                 request.Search = search;
             }
 
-            var response = await Execute<CountriesRequest, CountriesResponse>(request, cancellationToken).ConfigureAwait(false);
+            var response = await Execute<CountriesRequest, CountriesResponse>(
+                    request,
+                    cancellationToken
+                )
+                .ConfigureAwait(false);
             return response.Countries;
         }
 
@@ -174,7 +201,9 @@ namespace GuiStracini.HolidayAPI
         /// </summary>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>IEnumerable&lt;ILanguage&gt;.</returns>
-        public async Task<IEnumerable<ILanguage>> GetLanguagesAsync(CancellationToken cancellationToken)
+        public async Task<IEnumerable<ILanguage>> GetLanguagesAsync(
+            CancellationToken cancellationToken
+        )
         {
             return await GetLanguagesAsync(string.Empty, cancellationToken).ConfigureAwait(false);
         }
@@ -185,7 +214,10 @@ namespace GuiStracini.HolidayAPI
         /// <param name="search">The search.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>IEnumerable&lt;ILanguage&gt;.</returns>
-        public async Task<IEnumerable<ILanguage>> GetLanguagesAsync(string search, CancellationToken cancellationToken)
+        public async Task<IEnumerable<ILanguage>> GetLanguagesAsync(
+            string search,
+            CancellationToken cancellationToken
+        )
         {
             var request = new LanguagesRequest { Key = _apiKey };
             if (!string.IsNullOrWhiteSpace(search))
@@ -193,7 +225,11 @@ namespace GuiStracini.HolidayAPI
                 request.Search = search;
             }
 
-            var response = await Execute<LanguagesRequest, LanguagesResponse>(request, cancellationToken).ConfigureAwait(false);
+            var response = await Execute<LanguagesRequest, LanguagesResponse>(
+                    request,
+                    cancellationToken
+                )
+                .ConfigureAwait(false);
             return response.Languages;
         }
 
@@ -205,8 +241,12 @@ namespace GuiStracini.HolidayAPI
         /// <param name="days">The days.</param>
         /// <param name="cancellationToken">The cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>Task&lt;Workday&gt;.</returns>
-        public async Task<Workday> GetWorkdayAsync(string country, DateTime start, int days,
-            CancellationToken cancellationToken)
+        public async Task<Workday> GetWorkdayAsync(
+            string country,
+            DateTime start,
+            int days,
+            CancellationToken cancellationToken
+        )
         {
             var request = new WorkdayRequest
             {
@@ -215,7 +255,11 @@ namespace GuiStracini.HolidayAPI
                 Key = _apiKey,
                 Start = start.ToString("yyyy-MM-dd")
             };
-            var response = await Execute<WorkdayRequest, WorkdayResponse>(request, cancellationToken).ConfigureAwait(false);
+            var response = await Execute<WorkdayRequest, WorkdayResponse>(
+                    request,
+                    cancellationToken
+                )
+                .ConfigureAwait(false);
             return response.Workday;
         }
 
@@ -227,8 +271,12 @@ namespace GuiStracini.HolidayAPI
         /// <param name="end">The end.</param>
         /// <param name="cancellationToken">The cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>A Task&lt;int&gt; representing the asynchronous operation.</returns>
-        public async Task<int> GetWorkdaysAsync(string country, DateTime start, DateTime end,
-            CancellationToken cancellationToken)
+        public async Task<int> GetWorkdaysAsync(
+            string country,
+            DateTime start,
+            DateTime end,
+            CancellationToken cancellationToken
+        )
         {
             var request = new WorkdaysRequest
             {
@@ -237,7 +285,11 @@ namespace GuiStracini.HolidayAPI
                 Key = _apiKey,
                 Start = start.ToString("yyyy-MM-dd")
             };
-            var response = await Execute<WorkdaysRequest, WorkdaysResponse>(request, cancellationToken).ConfigureAwait(false);
+            var response = await Execute<WorkdaysRequest, WorkdaysResponse>(
+                    request,
+                    cancellationToken
+                )
+                .ConfigureAwait(false);
             return response.Workdays;
         }
 
