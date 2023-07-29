@@ -23,7 +23,6 @@ namespace GuiStracini.HolidayAPI.UnitTests.Requests
     /// </summary>
     /// <seealso cref="GuiStracini.HolidayAPI.Transport.BaseRequest" />
     [EndpointRoute("something")]
-
     public class DummyRequestNoVariable : BaseRequest
     {
         /// <summary>

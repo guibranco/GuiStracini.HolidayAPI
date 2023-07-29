@@ -40,6 +40,7 @@ namespace GuiStracini.HolidayAPI
         /// </summary>
         /// <value>The year.</value>
         public int Year { get; }
+
         /// <summary>
         /// Gets or sets the month.
         /// </summary>
@@ -81,6 +82,7 @@ namespace GuiStracini.HolidayAPI
         /// </summary>
         /// <value>The search.</value>
         public string Search { get; set; }
+
         /// <summary>
         /// Gets or sets the language.
         /// </summary>

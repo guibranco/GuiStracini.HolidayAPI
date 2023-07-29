@@ -59,4 +59,3 @@ namespace GuiStracini.HolidayAPI.Model
         #endregion
     }
 }
-

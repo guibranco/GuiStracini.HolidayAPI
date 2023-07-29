@@ -84,6 +84,5 @@ namespace GuiStracini.HolidayAPI.Transport
         [JsonProperty("language")]
         [JsonIgnore]
         public string Language { get; set; }
-
     }
 }
