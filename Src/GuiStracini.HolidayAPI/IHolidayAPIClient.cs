@@ -38,7 +38,11 @@ namespace GuiStracini.HolidayAPI
         /// <param name="year">The year.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>Task&lt;IEnumerable&lt;IHoliday&gt;&gt;.</returns>
-        Task<IEnumerable<IHoliday>> GetHolidaysAsync(string country, int year, CancellationToken cancellationToken);
+        Task<IEnumerable<IHoliday>> GetHolidaysAsync(
+            string country,
+            int year,
+            CancellationToken cancellationToken
+        );
 
         /// <summary>
         /// Gets the holidays asynchronous.
@@ -46,7 +50,10 @@ namespace GuiStracini.HolidayAPI
         /// <param name="filter">The filter.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>Task&lt;IEnumerable&lt;IHoliday&gt;&gt;.</returns>
-        Task<IEnumerable<IHoliday>> GetHolidaysAsync(HolidayFilter filter, CancellationToken cancellationToken);
+        Task<IEnumerable<IHoliday>> GetHolidaysAsync(
+            HolidayFilter filter,
+            CancellationToken cancellationToken
+        );
 
         /// <summary>
         /// Gets the countries asynchronous.
@@ -61,7 +68,10 @@ namespace GuiStracini.HolidayAPI
         /// <param name="search">The search.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>Task&lt;IEnumerable&lt;ICountry&gt;&gt;.</returns>
-        Task<IEnumerable<ICountry>> GetCountriesAsync(string search, CancellationToken cancellationToken);
+        Task<IEnumerable<ICountry>> GetCountriesAsync(
+            string search,
+            CancellationToken cancellationToken
+        );
 
         /// <summary>
         /// Gets the languages asynchronous.
@@ -76,7 +86,10 @@ namespace GuiStracini.HolidayAPI
         /// <param name="search">The search.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>Task&lt;IEnumerable&lt;ILanguage&gt;&gt;.</returns>
-        Task<IEnumerable<ILanguage>> GetLanguagesAsync(string search, CancellationToken cancellationToken);
+        Task<IEnumerable<ILanguage>> GetLanguagesAsync(
+            string search,
+            CancellationToken cancellationToken
+        );
 
         /// <summary>
         /// Gets the workday asynchronous.
@@ -86,7 +99,12 @@ namespace GuiStracini.HolidayAPI
         /// <param name="days">The days.</param>
         /// <param name="cancellationToken">The cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>Task&lt;Workday&gt;.</returns>
-        Task<Workday> GetWorkdayAsync(string country, DateTime start, int days, CancellationToken cancellationToken);
+        Task<Workday> GetWorkdayAsync(
+            string country,
+            DateTime start,
+            int days,
+            CancellationToken cancellationToken
+        );
 
         /// <summary>
         /// Gets the workdays asynchronous.
@@ -96,6 +114,11 @@ namespace GuiStracini.HolidayAPI
         /// <param name="end">The end.</param>
         /// <param name="cancellationToken">The cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>Task&lt;int&gt;.</returns>
-        Task<int> GetWorkdaysAsync(string country, DateTime start, DateTime end, CancellationToken cancellationToken);
+        Task<int> GetWorkdaysAsync(
+            string country,
+            DateTime start,
+            DateTime end,
+            CancellationToken cancellationToken
+        );
     }
 }

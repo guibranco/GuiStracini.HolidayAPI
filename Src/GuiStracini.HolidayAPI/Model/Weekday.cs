@@ -23,6 +23,7 @@ namespace GuiStracini.HolidayAPI.Model
         /// </summary>
         /// <value>The date.</value>
         public WeekdayDetail Date { get; set; }
+
         /// <summary>
         /// Gets or sets the observed.
         /// </summary>

@@ -9,10 +9,9 @@ A client wrapper of the [Holiday API](https://holidayapi.com/) for .NET projects
 
 ## CI/CD
 
-| Build status | Last commit | Tests | Coverage | Code Smells | LoC | 
+| Build status | Last commit | Tests | Coverage | Code Smells | LoC |
 |--------------|-------------|-------|----------|-------------|-----|
 | [![Build status](https://ci.appveyor.com/api/projects/status/b7k3k04cqncid7ji/branch/main?svg=true)](https://ci.appveyor.com/project/guibranco/guistracini-holidayapi/branch/main) | [![GitHub last commit](https://img.shields.io/github/last-commit/guibranco/GuiStracini.HolidayAPI/main)](https://github.com/guibranco/GuiStracini.HolidayAPI) | [![AppVeyor tests (branch)](https://img.shields.io/appveyor/tests/guibranco/GuiStracini-HolidayAPI/main?compact_message)](https://ci.appveyor.com/project/guibranco/guistracini-holidayapi/branch/main) | [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=guibranco_GuiStracini.HolidayAPI&metric=coverage)](https://sonarcloud.io/dashboard?id=guibranco_GuiStracini.HolidayAPI) | [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=guibranco_GuiStracini.HolidayAPI&metric=code_smells)](https://sonarcloud.io/dashboard?id=guibranco_GuiStracini.HolidayAPI) | [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=guibranco_GuiStracini.HolidayAPI&metric=ncloc)](https://sonarcloud.io/dashboard?id=guibranco_GuiStracini.HolidayAPI)
-
 
 ## Code Quality
 
@@ -36,6 +35,8 @@ A client wrapper of the [Holiday API](https://holidayapi.com/) for .NET projects
 
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=guibranco_GuiStracini.HolidayAPI&metric=bugs)](https://sonarcloud.io/dashboard?id=guibranco_GuiStracini.HolidayAPI)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=guibranco_GuiStracini.HolidayAPI&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=guibranco_GuiStracini.HolidayAPI)
+
+[![DeepSource](https://app.deepsource.com/gh/guibranco/GuiStracini.HolidayAPI.svg/?label=active+issues&show_trend=true&token=9EaN4XexPAuG1hZ5fUpZquom)](https://app.deepsource.com/gh/guibranco/GuiStracini.HolidayAPI/?ref=repository-badge)
 
 ## Installation
 

@@ -44,6 +44,5 @@ namespace GuiStracini.HolidayAPI.Utils
         public string EndPoint { get; }
 
         #endregion
-
     }
 }

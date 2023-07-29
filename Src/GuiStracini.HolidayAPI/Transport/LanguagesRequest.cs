@@ -20,6 +20,5 @@ namespace GuiStracini.HolidayAPI.Transport
     /// </summary>
     /// <seealso cref="GuiStracini.HolidayAPI.Transport.SearchableRequest" />
     [EndpointRoute("v1/languages?key={Key}")]
-    internal class LanguagesRequest : SearchableRequest
-    { }
+    internal class LanguagesRequest : SearchableRequest { }
 }

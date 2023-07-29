@@ -23,6 +23,7 @@ namespace GuiStracini.HolidayAPI.Model
         /// </summary>
         /// <value>The code.</value>
         string Code { get; }
+
         /// <summary>
         /// Gets the name.
         /// </summary>

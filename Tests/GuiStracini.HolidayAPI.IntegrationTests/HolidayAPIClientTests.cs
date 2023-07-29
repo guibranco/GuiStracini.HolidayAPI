@@ -43,7 +43,9 @@ namespace GuiStracini.HolidayAPI.IntegrationTests
             httpClient.BaseAddress = new Uri("https://holidayapi.com/");
             httpClient.DefaultRequestHeaders.ExpectContinue = false;
             httpClient.DefaultRequestHeaders.Accept.Clear();
-            httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            httpClient.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/json")
+            );
             return httpClient;
         }
 
@@ -70,8 +72,13 @@ namespace GuiStracini.HolidayAPI.IntegrationTests
         {
             var year = DateTime.Now.Year - 1;
             var client = new HolidayApiClient(Guid.Empty.ToString(), CreateHttpClient());
-            var ex = await Assert.ThrowsAsync<HolidayApiException>(async () => await client.GetHolidaysAsync("BR", year, CancellationToken.None));
-            Assert.Equal("401 - Invalid API key. For more information, please visit https://holidayapi.com/docs", ex.Message);
+            var ex = await Assert.ThrowsAsync<HolidayApiException>(
+                async () => await client.GetHolidaysAsync("BR", year, CancellationToken.None)
+            );
+            Assert.Equal(
+                "401 - Invalid API key. For more information, please visit https://holidayapi.com/docs",
+                ex.Message
+            );
         }
 
         /// <summary>
@@ -86,7 +93,10 @@ namespace GuiStracini.HolidayAPI.IntegrationTests
             var metadata = _client.UsageData;
 
             Assert.Equal("Success", metadata.Message);
-            Assert.Equal("These results do not include state and province holidays. For more information, please visit https://holidayapi.com/docs", metadata.Warning);
+            Assert.Equal(
+                "These results do not include state and province holidays. For more information, please visit https://holidayapi.com/docs",
+                metadata.Warning
+            );
             Assert.True(metadata.Available > 1);
             Assert.True(metadata.Used > 1);
             Assert.True(metadata.LastCall > now);
@@ -109,9 +119,22 @@ namespace GuiStracini.HolidayAPI.IntegrationTests
 
             var list = result.ToList();
             Assert.True(list.Any());
-            Assert.Contains(list, holiday => holiday.Date.Equals(new DateTime(year, 12, 25)) && holiday.Name.Equals("Christmas Day"));
-            Assert.Contains(list, holiday => holiday.Date.Equals(new DateTime(year, 9, 7)) && holiday.Name.Equals("Independence Day"));
-            Assert.DoesNotContain(list, holiday => holiday.Name.Equals("George Washington's Birthday"));
+            Assert.Contains(
+                list,
+                holiday =>
+                    holiday.Date.Equals(new DateTime(year, 12, 25))
+                    && holiday.Name.Equals("Christmas Day")
+            );
+            Assert.Contains(
+                list,
+                holiday =>
+                    holiday.Date.Equals(new DateTime(year, 9, 7))
+                    && holiday.Name.Equals("Independence Day")
+            );
+            Assert.DoesNotContain(
+                list,
+                holiday => holiday.Name.Equals("George Washington's Birthday")
+            );
         }
 
         /// <summary>
@@ -121,10 +144,7 @@ namespace GuiStracini.HolidayAPI.IntegrationTests
         public async Task GetBrazilianHolidaysFromTheLastYearWithSearch()
         {
             var year = DateTime.Now.Year - 1;
-            var filter = new HolidayFilter("BR", year)
-            {
-                Search = "Father"
-            };
+            var filter = new HolidayFilter("BR", year) { Search = "Father" };
             var result = await _client.GetHolidaysAsync(filter, CancellationToken.None);
             var metadata = _client.UsageData;
 
@@ -133,9 +153,34 @@ namespace GuiStracini.HolidayAPI.IntegrationTests
 
             var list = result.ToList();
             Assert.True(list.Any());
-            Assert.DoesNotContain(list, holiday => holiday.Date.Equals(new DateTime(year, 12, 25)) && holiday.Name.Equals("Christmas Day", StringComparison.InvariantCultureIgnoreCase));
-            Assert.DoesNotContain(list, holiday => holiday.Date.Equals(new DateTime(year, 9, 7)) && holiday.Name.Equals("Independence Day", StringComparison.InvariantCultureIgnoreCase));
-            Assert.Contains(list, holiday => holiday.Date.Month.Equals(8) && holiday.Date.DayOfWeek == DayOfWeek.Sunday && holiday.Name.Equals("Father's Day", StringComparison.InvariantCultureIgnoreCase));
+            Assert.DoesNotContain(
+                list,
+                holiday =>
+                    holiday.Date.Equals(new DateTime(year, 12, 25))
+                    && holiday.Name.Equals(
+                        "Christmas Day",
+                        StringComparison.InvariantCultureIgnoreCase
+                    )
+            );
+            Assert.DoesNotContain(
+                list,
+                holiday =>
+                    holiday.Date.Equals(new DateTime(year, 9, 7))
+                    && holiday.Name.Equals(
+                        "Independence Day",
+                        StringComparison.InvariantCultureIgnoreCase
+                    )
+            );
+            Assert.Contains(
+                list,
+                holiday =>
+                    holiday.Date.Month.Equals(8)
+                    && holiday.Date.DayOfWeek == DayOfWeek.Sunday
+                    && holiday.Name.Equals(
+                        "Father's Day",
+                        StringComparison.InvariantCultureIgnoreCase
+                    )
+            );
         }
 
         /// <summary>
@@ -166,9 +211,33 @@ namespace GuiStracini.HolidayAPI.IntegrationTests
 
             var list = result.ToList();
             Assert.True(list.Any());
-            Assert.DoesNotContain(list, holiday => holiday.Date.Equals(new DateTime(year, 12, 25)) && holiday.Name.Equals("Christmas Day", StringComparison.InvariantCultureIgnoreCase));
-            Assert.DoesNotContain(list, holiday => holiday.Date.Equals(new DateTime(year, 9, 7)) && holiday.Name.Equals("Independence Day", StringComparison.InvariantCultureIgnoreCase));
-            Assert.Contains(list, holiday => holiday.Date.Equals(new DateTime(year, 12, 25)) && holiday.Name.Equals("Dia de Natal", StringComparison.InvariantCultureIgnoreCase));
+            Assert.DoesNotContain(
+                list,
+                holiday =>
+                    holiday.Date.Equals(new DateTime(year, 12, 25))
+                    && holiday.Name.Equals(
+                        "Christmas Day",
+                        StringComparison.InvariantCultureIgnoreCase
+                    )
+            );
+            Assert.DoesNotContain(
+                list,
+                holiday =>
+                    holiday.Date.Equals(new DateTime(year, 9, 7))
+                    && holiday.Name.Equals(
+                        "Independence Day",
+                        StringComparison.InvariantCultureIgnoreCase
+                    )
+            );
+            Assert.Contains(
+                list,
+                holiday =>
+                    holiday.Date.Equals(new DateTime(year, 12, 25))
+                    && holiday.Name.Equals(
+                        "Dia de Natal",
+                        StringComparison.InvariantCultureIgnoreCase
+                    )
+            );
         }
 
         /// <summary>
@@ -189,7 +258,10 @@ namespace GuiStracini.HolidayAPI.IntegrationTests
             Assert.Contains(list, country => country.Name.Equals("Argentina"));
 
             Assert.Contains(list, country => country.Code.Equals("BR"));
-            Assert.Contains(list, country => country.Flag.Equals("https://flagsapi.com/BR/flat/64.png"));
+            Assert.Contains(
+                list,
+                country => country.Flag.Equals("https://flagsapi.com/BR/flat/64.png")
+            );
         }
 
         /// <summary>
@@ -273,14 +345,18 @@ namespace GuiStracini.HolidayAPI.IntegrationTests
             const int days = 10;
             var date = new DateTime(DateTime.Now.Year - 1, 1, 1);
 
-            var result = await _client.GetWorkdaysAsync("BR", date, date.AddDays(days), CancellationToken.None);
+            var result = await _client.GetWorkdaysAsync(
+                "BR",
+                date,
+                date.AddDays(days),
+                CancellationToken.None
+            );
             var metadata = _client.UsageData;
 
             Assert.Equal("Success", metadata.Message);
             Assert.True(metadata.Used > 0);
 
             Assert.True(result < days);
-
         }
     }
 }

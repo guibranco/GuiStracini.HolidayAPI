@@ -47,19 +47,24 @@ namespace GuiStracini.HolidayAPI.Utils
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>TOut.</returns>
         /// <exception cref="GuiStracini.HolidayAPI.GoodPractices.HolidayApiException"></exception>
-        public async ValueTask<TOut> Post<TIn, TOut>(TIn data, CancellationToken cancellationToken) where TIn : BaseRequest where TOut : BaseResponse
+        public async ValueTask<TOut> Post<TIn, TOut>(TIn data, CancellationToken cancellationToken)
+            where TIn : BaseRequest
+            where TOut : BaseResponse
         {
             var endpoint = data.GetRequestEndpoint();
             try
             {
-                var response = await _httpClient.GetAsync(endpoint, cancellationToken).ConfigureAwait(false);
-                return await response.Content.ReadAsAsync<TOut>(cancellationToken).ConfigureAwait(false);
+                var response = await _httpClient
+                    .GetAsync(endpoint, cancellationToken)
+                    .ConfigureAwait(false);
+                return await response.Content
+                    .ReadAsAsync<TOut>(cancellationToken)
+                    .ConfigureAwait(false);
             }
             catch (HttpRequestException e)
             {
                 throw new HolidayApiException(endpoint, e);
             }
         }
-
     }
 }
