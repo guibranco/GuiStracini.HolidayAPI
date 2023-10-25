@@ -27,6 +27,7 @@ jobs:
       - name: Build and analyze
         env:
           DEEPSOURCE_DSN: ${{ secrets.DEEPSOURCE_DSN }}
+          apiKey: ${{ secrets.APIKEY }}
         run: |
           dotnet build -c Debug --verbosity minimal
           dotnet test  -c Debug --verbosity minimal --no-build --no-restore /p:CollectCoverage=true /p:CoverletOutputFormat="cobertura"
