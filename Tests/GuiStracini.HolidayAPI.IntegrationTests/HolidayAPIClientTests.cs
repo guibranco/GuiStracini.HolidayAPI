@@ -233,7 +233,7 @@ namespace GuiStracini.HolidayAPI.IntegrationTests
                 list,
                 holiday =>
                     holiday.Date.Equals(new DateTime(year, 12, 25))
-                    && holiday.Name.Container(
+                    && holiday.Name.Contains(
                         "Natal",
                         StringComparison.InvariantCultureIgnoreCase
                     )
