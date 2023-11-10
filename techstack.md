@@ -138,7 +138,6 @@ Full tech stack [here](/techstack.md)
 </tr>
 </table>
 
-
 ## <img src='https://img.stackshare.io/group.svg' /> Open source packages (5)</h2>
 
 ## <img width='24' height='24' src='https://img.stackshare.io/service/2637/6I3oEOP4_400x400.jpg'/> NuGet (5)
@@ -146,10 +145,10 @@ Full tech stack [here](/techstack.md)
 |NAME|VERSION|LAST UPDATED|LAST UPDATED BY|LICENSE|VULNERABILITIES|
 |:------|:------|:------|:------|:------|:------|
 |[Microsoft.AspNet.WebApi.Client](https://www.nuget.org/Microsoft.AspNet.WebApi.Client)|v6.0.0|10/25/23|Guilherme Branco Stracini |Apache-2.0|N/A|
-|[Microsoft.Extensions.Configuration.EnvironmentVariables](https://www.nuget.org/Microsoft.Extensions.Configuration.EnvironmentVariables)|v7.0.0|11/06/23|dependabot[bot] |Apache-2.0|N/A|
-|[Microsoft.Extensions.Configuration.UserSecrets](https://www.nuget.org/Microsoft.Extensions.Configuration.UserSecrets)|v7.0.0|11/06/23|dependabot[bot] |Apache-2.0|N/A|
+|[Microsoft.Extensions.Configuration.EnvironmentVariables](https://www.nuget.org/Microsoft.Extensions.Configuration.EnvironmentVariables)|v7.0.0|11/06/23|dependabot\[bot] |Apache-2.0|N/A|
+|[Microsoft.Extensions.Configuration.UserSecrets](https://www.nuget.org/Microsoft.Extensions.Configuration.UserSecrets)|v7.0.0|11/06/23|dependabot\[bot] |Apache-2.0|N/A|
 |[System.Threading.Tasks.Extensions](https://www.nuget.org/System.Threading.Tasks.Extensions)|v4.5.4|10/25/23|Guilherme Branco Stracini |N/A|N/A|
-|[xunit.runner.visualstudio](https://www.nuget.org/xunit.runner.visualstudio)|v2.5.3|11/06/23|dependabot[bot] |Other|N/A|
+|[xunit.runner.visualstudio](https://www.nuget.org/xunit.runner.visualstudio)|v2.5.3|11/06/23|dependabot\[bot] |Other|N/A|
 
 <br/>
 <div align='center'>
