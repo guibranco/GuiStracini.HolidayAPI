@@ -13,8 +13,8 @@
 // ***********************************************************************
 namespace GuiStracini.HolidayAPI.Transport
 {
-    using Model;
     using System.Collections.Generic;
+    using Model;
 
     /// <summary>
     /// The countries response class.

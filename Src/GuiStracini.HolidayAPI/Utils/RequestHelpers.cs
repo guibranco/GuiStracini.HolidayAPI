@@ -13,15 +13,15 @@
 // ***********************************************************************
 namespace GuiStracini.HolidayAPI.Utils
 {
-    using Newtonsoft.Json;
-    using System.Reflection;
-    using System.Text;
-    using GuiStracini.HolidayAPI.GoodPractices;
     using System;
     using System.Globalization;
     using System.Linq;
+    using System.Reflection;
+    using System.Text;
     using System.Text.RegularExpressions;
+    using GuiStracini.HolidayAPI.GoodPractices;
     using GuiStracini.HolidayAPI.Transport;
+    using Newtonsoft.Json;
 
     /// <summary>
     /// Class RequestHelpers.
@@ -142,10 +142,9 @@ namespace GuiStracini.HolidayAPI.Utils
                 return;
             }
             matchData.Used = matchData.Counter;
-            matchData.Endpoint = matchData.Endpoint.Replace(
-                match.Groups["pattern"].Value,
-                propertyValue.ToString()
-            );
+            matchData.Endpoint = matchData
+                .Endpoint
+                .Replace(match.Groups["pattern"].Value, propertyValue.ToString());
         }
 
         /// <summary>

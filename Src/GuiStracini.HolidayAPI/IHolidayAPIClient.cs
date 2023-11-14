@@ -15,10 +15,10 @@
 namespace GuiStracini.HolidayAPI
 {
     using System;
-    using GuiStracini.HolidayAPI.Model;
     using System.Collections.Generic;
     using System.Threading;
     using System.Threading.Tasks;
+    using GuiStracini.HolidayAPI.Model;
 
     /// <summary>
     /// Interface IHolidayApiClient

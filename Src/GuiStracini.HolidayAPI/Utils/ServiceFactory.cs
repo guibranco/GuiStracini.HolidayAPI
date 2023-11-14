@@ -13,10 +13,10 @@
 // ***********************************************************************
 namespace GuiStracini.HolidayAPI.Utils
 {
-    using GoodPractices;
     using System.Net.Http;
     using System.Threading;
     using System.Threading.Tasks;
+    using GoodPractices;
     using Transport;
 
     /// <summary>
@@ -57,7 +57,8 @@ namespace GuiStracini.HolidayAPI.Utils
                 var response = await _httpClient
                     .GetAsync(endpoint, cancellationToken)
                     .ConfigureAwait(false);
-                return await response.Content
+                return await response
+                    .Content
                     .ReadAsAsync<TOut>(cancellationToken)
                     .ConfigureAwait(false);
             }

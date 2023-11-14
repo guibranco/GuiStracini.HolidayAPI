@@ -13,13 +13,13 @@
 // ***********************************************************************
 namespace GuiStracini.HolidayAPI
 {
-    using GuiStracini.HolidayAPI.GoodPractices;
-    using System.Net.Http;
-    using GuiStracini.HolidayAPI.Model;
     using System;
     using System.Collections.Generic;
+    using System.Net.Http;
     using System.Threading;
     using System.Threading.Tasks;
+    using GuiStracini.HolidayAPI.GoodPractices;
+    using GuiStracini.HolidayAPI.Model;
     using GuiStracini.HolidayAPI.Transport;
     using GuiStracini.HolidayAPI.Utils;
 

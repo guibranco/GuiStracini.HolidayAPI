@@ -13,8 +13,8 @@
 // ***********************************************************************
 namespace GuiStracini.HolidayAPI.Transport
 {
-    using Newtonsoft.Json;
     using System;
+    using Newtonsoft.Json;
 
     /// <summary>
     /// The base request class.
