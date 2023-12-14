@@ -1,8 +1,8 @@
 repo_name: guibranco/GuiStracini.HolidayAPI
-report_id: e9bf589f86afcb8a848dd5b264d5dfe9
+report_id: 3aa934fc33b4ce483f38d35f5e5d6af5
 repo_type: Public
-timestamp: '2023-11-09T15:33:05+00:00'
-requested_by: guibranco
+timestamp: '2023-12-14T09:37:32+00:00'
+requested_by: dependabot[bot]
 provider: github
 branch: main
 detected_tools_count: 15
@@ -27,9 +27,9 @@ tools:
   category: Languages & Frameworks
   sub_category: Frameworks (Full Stack)
   image_url: https://img.stackshare.io/service/1014/IoPy1dce_400x400.png
-  detection_source: Tests/GuiStracini.HolidayAPI.UnitTests/GuiStracini.HolidayAPI.UnitTests.csproj
+  detection_source: Tests/GuiStracini.HolidayAPI.IntegrationTests/GuiStracini.HolidayAPI.IntegrationTests.csproj
   last_updated_by: dependabot[bot]
-  last_updated_on: 2023-09-04 10:44:09.000000000 Z
+  last_updated_on: 2023-11-14 23:03:44.000000000 Z
 - name: ".NET Core"
   description: An Open Source, General-Purpose Development Platform Maintained by
     Microsoft and the .NET Community
@@ -41,10 +41,10 @@ tools:
   category: Languages & Frameworks
   sub_category: Frameworks (Full Stack)
   image_url: https://img.stackshare.io/service/6403/default_91fc1f0ee315262794273aa1387eaf8fed8436e6.png
-  detection_source_url: Tests/GuiStracini.HolidayAPI.IntegrationTests/GuiStracini.HolidayAPI.IntegrationTests.csproj
-  detection_source: Tests/GuiStracini.HolidayAPI.UnitTests/GuiStracini.HolidayAPI.UnitTests.csproj
+  detection_source_url: https://github.com/guibranco/GuiStracini.HolidayAPI/blob/main/Tests/GuiStracini.HolidayAPI.IntegrationTests/GuiStracini.HolidayAPI.IntegrationTests.csproj
+  detection_source: Tests/GuiStracini.HolidayAPI.IntegrationTests/GuiStracini.HolidayAPI.IntegrationTests.csproj
   last_updated_by: dependabot[bot]
-  last_updated_on: 2023-09-04 10:44:09.000000000 Z
+  last_updated_on: 2023-11-14 23:03:44.000000000 Z
 - name: ASP.NET Core
   description: A cross-platform .NET framework for building modern cloud-based web
     applications on Windows, Mac, or Linux
@@ -56,10 +56,10 @@ tools:
   category: Languages & Frameworks
   sub_category: Frameworks (Full Stack)
   image_url: https://img.stackshare.io/service/11331/asp.net-core.png
-  detection_source_url: Tests/GuiStracini.HolidayAPI.IntegrationTests/GuiStracini.HolidayAPI.IntegrationTests.csproj
-  detection_source: Tests/GuiStracini.HolidayAPI.UnitTests/GuiStracini.HolidayAPI.UnitTests.csproj
+  detection_source_url: https://github.com/guibranco/GuiStracini.HolidayAPI/blob/main/Tests/GuiStracini.HolidayAPI.IntegrationTests/GuiStracini.HolidayAPI.IntegrationTests.csproj
+  detection_source: Tests/GuiStracini.HolidayAPI.IntegrationTests/GuiStracini.HolidayAPI.IntegrationTests.csproj
   last_updated_by: dependabot[bot]
-  last_updated_on: 2023-09-04 10:44:09.000000000 Z
+  last_updated_on: 2023-11-14 23:03:44.000000000 Z
 - name: Git
   description: Fast, scalable, distributed revision control system
   website_url: http://git-scm.com/
@@ -77,7 +77,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Continuous Integration
   image_url: https://img.stackshare.io/service/11563/actions.png
-  detection_source: ".github/workflows/size-label.yml"
+  detection_source: ".github/workflows/codeql-analysis.yml"
   last_updated_by: dependabot[bot]
   last_updated_on: 2023-09-13 12:52:07.000000000 Z
 - name: NuGet
@@ -88,7 +88,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Package Managers
   image_url: https://img.stackshare.io/service/2637/6I3oEOP4_400x400.jpg
-  detection_source: Tests/GuiStracini.HolidayAPI.UnitTests/GuiStracini.HolidayAPI.UnitTests.csproj
+  detection_source: Tests/GuiStracini.HolidayAPI.IntegrationTests/GuiStracini.HolidayAPI.IntegrationTests.csproj
   last_updated_by: Guilherme Branco Stracini
   last_updated_on: 2020-01-05 00:37:20.000000000 Z
 - name: Visual Studio
@@ -106,14 +106,14 @@ tools:
 - name: xUnit
   description: An open source, community-focused unit testing tool
   website_url: http://xunit.github.io/
-  version: 2.6.1
+  version: 2.6.3
   open_source: true
   hosted_saas: false
   category: Build, Test, Deploy
   sub_category: Testing Frameworks
   image_url: https://img.stackshare.io/service/3077/ca5a327feb49ddfe1f4b11548907e5a1_400x400.png
-  detection_source_url: Tests/GuiStracini.HolidayAPI.IntegrationTests/GuiStracini.HolidayAPI.IntegrationTests.csproj
-  detection_source: Tests/GuiStracini.HolidayAPI.UnitTests/GuiStracini.HolidayAPI.UnitTests.csproj
+  detection_source_url: https://github.com/guibranco/GuiStracini.HolidayAPI/blob/main/Tests/GuiStracini.HolidayAPI.IntegrationTests/GuiStracini.HolidayAPI.IntegrationTests.csproj
+  detection_source: Tests/GuiStracini.HolidayAPI.IntegrationTests/GuiStracini.HolidayAPI.IntegrationTests.csproj
   last_updated_by: Guilherme Branco Stracini
   last_updated_on: 2020-01-05 00:37:20.000000000 Z
 - name: Shell
@@ -137,38 +137,38 @@ tools:
   category: Libraries
   sub_category: NuGet Packages
   image_url: https://img.stackshare.io/package/12870/default_3ee9e3bfd65cbae9db28ab78b712a58bcd81af27.png
-  detection_source_url: Src/GuiStracini.HolidayAPI/GuiStracini.HolidayAPI.csproj
+  detection_source_url: https://github.com/guibranco/GuiStracini.HolidayAPI/blob/main/Src/GuiStracini.HolidayAPI/GuiStracini.HolidayAPI.csproj
   detection_source: Src/GuiStracini.HolidayAPI/GuiStracini.HolidayAPI.csproj
   last_updated_by: Guilherme Branco Stracini
   last_updated_on: 2023-10-25 15:30:44.000000000 Z
 - name: Microsoft.Extensions.Configuration.EnvironmentVariables
   description: Environment variables configuration provider implementation for Microsoft.Extensions.Configuration
   package_url: https://www.nuget.org/Microsoft.Extensions.Configuration.EnvironmentVariables
-  version: 7.0.0
+  version: 8.0.0
   license: Apache-2.0
   open_source: true
   hosted_saas: false
   category: Libraries
   sub_category: NuGet Packages
   image_url: https://img.stackshare.io/package/12955/default_85d1877c90581261989cc5e05023faec547467b3.png
-  detection_source_url: Tests/GuiStracini.HolidayAPI.IntegrationTests/GuiStracini.HolidayAPI.IntegrationTests.csproj
-  detection_source: Tests/GuiStracini.HolidayAPI.UnitTests/GuiStracini.HolidayAPI.UnitTests.csproj
+  detection_source_url: https://github.com/guibranco/GuiStracini.HolidayAPI/blob/main/Tests/GuiStracini.HolidayAPI.IntegrationTests/GuiStracini.HolidayAPI.IntegrationTests.csproj
+  detection_source: Tests/GuiStracini.HolidayAPI.IntegrationTests/GuiStracini.HolidayAPI.IntegrationTests.csproj
   last_updated_by: dependabot[bot]
-  last_updated_on: 2023-11-06 11:13:55.000000000 Z
+  last_updated_on: 2023-12-11 13:14:07.000000000 Z
 - name: Microsoft.Extensions.Configuration.UserSecrets
   description: User secrets configuration provider implementation for Microsoft.Extensions.Configuration
   package_url: https://www.nuget.org/Microsoft.Extensions.Configuration.UserSecrets
-  version: 7.0.0
+  version: 8.0.0
   license: Apache-2.0
   open_source: true
   hosted_saas: false
   category: Libraries
   sub_category: NuGet Packages
   image_url: https://img.stackshare.io/package/13212/default_18a92235046d8c8db548cd22b87cf5792dc31759.png
-  detection_source_url: Tests/GuiStracini.HolidayAPI.IntegrationTests/GuiStracini.HolidayAPI.IntegrationTests.csproj
-  detection_source: Tests/GuiStracini.HolidayAPI.UnitTests/GuiStracini.HolidayAPI.UnitTests.csproj
+  detection_source_url: https://github.com/guibranco/GuiStracini.HolidayAPI/blob/main/Tests/GuiStracini.HolidayAPI.IntegrationTests/GuiStracini.HolidayAPI.IntegrationTests.csproj
+  detection_source: Tests/GuiStracini.HolidayAPI.IntegrationTests/GuiStracini.HolidayAPI.IntegrationTests.csproj
   last_updated_by: dependabot[bot]
-  last_updated_on: 2023-11-06 11:13:55.000000000 Z
+  last_updated_on: 2023-12-11 13:14:07.000000000 Z
 - name: System.Threading.Tasks.Extensions
   description: Provides additional types that simplify the work of writing concurrent
     and asynchronous code
@@ -179,21 +179,21 @@ tools:
   category: Libraries
   sub_category: NuGet Packages
   image_url: https://img.stackshare.io/package/12998/default_aa8a6e377c22dbeff795489a5ab127b1d597b5ed.png
-  detection_source_url: Src/GuiStracini.HolidayAPI/GuiStracini.HolidayAPI.csproj
+  detection_source_url: https://github.com/guibranco/GuiStracini.HolidayAPI/blob/main/Src/GuiStracini.HolidayAPI/GuiStracini.HolidayAPI.csproj
   detection_source: Src/GuiStracini.HolidayAPI/GuiStracini.HolidayAPI.csproj
   last_updated_by: Guilherme Branco Stracini
   last_updated_on: 2023-10-25 15:30:44.000000000 Z
 - name: xunit.runner.visualstudio
   description: Visual Studio 2012+ Test Explorer runner for the xUnit.net framework
   package_url: https://www.nuget.org/xunit.runner.visualstudio
-  version: 2.5.3
+  version: 2.5.5
   license: Other
   open_source: true
   hosted_saas: false
   category: Libraries
   sub_category: NuGet Packages
   image_url: https://img.stackshare.io/package/13260/default_d2db5a200c4fe2d08cbdb2174cc230708973870b.png
-  detection_source_url: Tests/GuiStracini.HolidayAPI.IntegrationTests/GuiStracini.HolidayAPI.IntegrationTests.csproj
-  detection_source: Tests/GuiStracini.HolidayAPI.UnitTests/GuiStracini.HolidayAPI.UnitTests.csproj
+  detection_source_url: https://github.com/guibranco/GuiStracini.HolidayAPI/blob/main/Tests/GuiStracini.HolidayAPI.IntegrationTests/GuiStracini.HolidayAPI.IntegrationTests.csproj
+  detection_source: Tests/GuiStracini.HolidayAPI.IntegrationTests/GuiStracini.HolidayAPI.IntegrationTests.csproj
   last_updated_by: dependabot[bot]
-  last_updated_on: 2023-11-06 11:13:55.000000000 Z
+  last_updated_on: 2023-12-11 13:14:07.000000000 Z
