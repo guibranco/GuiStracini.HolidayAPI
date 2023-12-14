@@ -1,7 +1,8 @@
 <!--
---- Readme.md Snippet without images Start ---
+&lt;--- Readme.md Snippet without images Start ---&gt;
 ## Tech Stack
 guibranco/GuiStracini.HolidayAPI is built on the following main stack:
+
 - [.NET](http://www.microsoft.com/net/) – Frameworks (Full Stack)
 - [C#](http://csharp.net) – Languages
 - [Visual Studio](http://msdn.microsoft.com/en-us/vstudio/aa718325.aspx) – Integrated Development Environment
@@ -12,11 +13,13 @@ guibranco/GuiStracini.HolidayAPI is built on the following main stack:
 - [GitHub Actions](https://github.com/features/actions) – Continuous Integration
 
 Full tech stack [here](/techstack.md)
---- Readme.md Snippet without images End ---
 
---- Readme.md Snippet with images Start ---
+&lt;--- Readme.md Snippet without images End ---&gt;
+
+&lt;--- Readme.md Snippet with images Start ---&gt;
 ## Tech Stack
 guibranco/GuiStracini.HolidayAPI is built on the following main stack:
+
 - <img width='25' height='25' src='https://img.stackshare.io/service/1014/IoPy1dce_400x400.png' alt='.NET'/> [.NET](http://www.microsoft.com/net/) – Frameworks (Full Stack)
 - <img width='25' height='25' src='https://img.stackshare.io/service/1015/1200px-C_Sharp_wordmark.svg.png' alt='C#'/> [C#](http://csharp.net) – Languages
 - <img width='25' height='25' src='https://img.stackshare.io/service/1451/SR2hUhQN.png' alt='Visual Studio'/> [Visual Studio](http://msdn.microsoft.com/en-us/vstudio/aa718325.aspx) – Integrated Development Environment
@@ -27,14 +30,15 @@ guibranco/GuiStracini.HolidayAPI is built on the following main stack:
 - <img width='25' height='25' src='https://img.stackshare.io/service/11563/actions.png' alt='GitHub Actions'/> [GitHub Actions](https://github.com/features/actions) – Continuous Integration
 
 Full tech stack [here](/techstack.md)
---- Readme.md Snippet with images End ---
+
+&lt;--- Readme.md Snippet with images End ---&gt;
 -->
 <div align="center">
 
 # Tech Stack File
 ![](https://img.stackshare.io/repo.svg "repo") [guibranco/GuiStracini.HolidayAPI](https://github.com/guibranco/GuiStracini.HolidayAPI)![](https://img.stackshare.io/public_badge.svg "public")
 <br/><br/>
-|15<br/>Tools used|11/09/23 <br/>Report generated|
+|15<br/>Tools used|12/14/23 <br/>Report generated|
 |------|------|
 </div>
 
@@ -119,7 +123,7 @@ Full tech stack [here](/techstack.md)
   <br>
   <sub><a href="http://xunit.github.io/">xUnit</a></sub>
   <br>
-  <sub>v2.6.1</sub>
+  <sub>v2.6.3</sub>
 </td>
 
 </tr>
@@ -138,6 +142,7 @@ Full tech stack [here](/techstack.md)
 </tr>
 </table>
 
+
 ## <img src='https://img.stackshare.io/group.svg' /> Open source packages (5)</h2>
 
 ## <img width='24' height='24' src='https://img.stackshare.io/service/2637/6I3oEOP4_400x400.jpg'/> NuGet (5)
@@ -145,12 +150,12 @@ Full tech stack [here](/techstack.md)
 |NAME|VERSION|LAST UPDATED|LAST UPDATED BY|LICENSE|VULNERABILITIES|
 |:------|:------|:------|:------|:------|:------|
 |[Microsoft.AspNet.WebApi.Client](https://www.nuget.org/Microsoft.AspNet.WebApi.Client)|v6.0.0|10/25/23|Guilherme Branco Stracini |Apache-2.0|N/A|
-|[Microsoft.Extensions.Configuration.EnvironmentVariables](https://www.nuget.org/Microsoft.Extensions.Configuration.EnvironmentVariables)|v7.0.0|11/06/23|dependabot\[bot] |Apache-2.0|N/A|
-|[Microsoft.Extensions.Configuration.UserSecrets](https://www.nuget.org/Microsoft.Extensions.Configuration.UserSecrets)|v7.0.0|11/06/23|dependabot\[bot] |Apache-2.0|N/A|
+|[Microsoft.Extensions.Configuration.EnvironmentVariables](https://www.nuget.org/Microsoft.Extensions.Configuration.EnvironmentVariables)|v8.0.0|12/11/23|dependabot[bot] |Apache-2.0|N/A|
+|[Microsoft.Extensions.Configuration.UserSecrets](https://www.nuget.org/Microsoft.Extensions.Configuration.UserSecrets)|v8.0.0|12/11/23|dependabot[bot] |Apache-2.0|N/A|
 |[System.Threading.Tasks.Extensions](https://www.nuget.org/System.Threading.Tasks.Extensions)|v4.5.4|10/25/23|Guilherme Branco Stracini |N/A|N/A|
-|[xunit.runner.visualstudio](https://www.nuget.org/xunit.runner.visualstudio)|v2.5.3|11/06/23|dependabot\[bot] |Other|N/A|
+|[xunit.runner.visualstudio](https://www.nuget.org/xunit.runner.visualstudio)|v2.5.5|12/11/23|dependabot[bot] |Other|N/A|
 
 <br/>
 <div align='center'>
 
-Generated via [Stack File](https://github.com/apps/stack-file)
+Generated via [Stack File](https://github.com/marketplace/stack-file)
