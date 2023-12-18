@@ -58,8 +58,7 @@ namespace GuiStracini.HolidayAPI.Utils
                     .GetAsync(endpoint, cancellationToken)
                     .ConfigureAwait(false);
                 return await response
-                    .Content
-                    .ReadAsAsync<TOut>(cancellationToken)
+                    .Content.ReadAsAsync<TOut>(cancellationToken)
                     .ConfigureAwait(false);
             }
             catch (HttpRequestException e)
