@@ -142,9 +142,10 @@ namespace GuiStracini.HolidayAPI.Utils
                 return;
             }
             matchData.Used = matchData.Counter;
-            matchData.Endpoint = matchData
-                .Endpoint
-                .Replace(match.Groups["pattern"].Value, propertyValue.ToString());
+            matchData.Endpoint = matchData.Endpoint.Replace(
+                match.Groups["pattern"].Value,
+                propertyValue.ToString()
+            );
         }
 
         /// <summary>
