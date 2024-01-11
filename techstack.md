@@ -38,7 +38,7 @@ Full tech stack [here](/techstack.md)
 # Tech Stack File
 ![](https://img.stackshare.io/repo.svg "repo") [guibranco/GuiStracini.HolidayAPI](https://github.com/guibranco/GuiStracini.HolidayAPI)![](https://img.stackshare.io/public_badge.svg "public")
 <br/><br/>
-|15<br/>Tools used|12/14/23 <br/>Report generated|
+|15<br/>Tools used|01/11/24 <br/>Report generated|
 |------|------|
 </div>
 
@@ -123,7 +123,7 @@ Full tech stack [here](/techstack.md)
   <br>
   <sub><a href="http://xunit.github.io/">xUnit</a></sub>
   <br>
-  <sub>v2.6.3</sub>
+  <sub>v2.6.5</sub>
 </td>
 
 </tr>
@@ -150,10 +150,10 @@ Full tech stack [here](/techstack.md)
 |NAME|VERSION|LAST UPDATED|LAST UPDATED BY|LICENSE|VULNERABILITIES|
 |:------|:------|:------|:------|:------|:------|
 |[Microsoft.AspNet.WebApi.Client](https://www.nuget.org/Microsoft.AspNet.WebApi.Client)|v6.0.0|10/25/23|Guilherme Branco Stracini |Apache-2.0|N/A|
-|[Microsoft.Extensions.Configuration.EnvironmentVariables](https://www.nuget.org/Microsoft.Extensions.Configuration.EnvironmentVariables)|v8.0.0|12/11/23|dependabot[bot] |Apache-2.0|N/A|
-|[Microsoft.Extensions.Configuration.UserSecrets](https://www.nuget.org/Microsoft.Extensions.Configuration.UserSecrets)|v8.0.0|12/11/23|dependabot[bot] |Apache-2.0|N/A|
+|[Microsoft.Extensions.Configuration.EnvironmentVariables](https://www.nuget.org/Microsoft.Extensions.Configuration.EnvironmentVariables)|v8.0.0|01/08/24|dependabot[bot] |Apache-2.0|N/A|
+|[Microsoft.Extensions.Configuration.UserSecrets](https://www.nuget.org/Microsoft.Extensions.Configuration.UserSecrets)|v8.0.0|01/08/24|dependabot[bot] |Apache-2.0|N/A|
 |[System.Threading.Tasks.Extensions](https://www.nuget.org/System.Threading.Tasks.Extensions)|v4.5.4|10/25/23|Guilherme Branco Stracini |N/A|N/A|
-|[xunit.runner.visualstudio](https://www.nuget.org/xunit.runner.visualstudio)|v2.5.5|12/11/23|dependabot[bot] |Other|N/A|
+|[xunit.runner.visualstudio](https://www.nuget.org/xunit.runner.visualstudio)|v2.5.6|01/08/24|dependabot[bot] |Other|N/A|
 
 <br/>
 <div align='center'>
