@@ -1,4 +1,4 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : GuiStracini.HolidayAPI
 // Author           : Guilherme Branco Stracini
 // Created          : 06-23-2020
@@ -126,11 +126,15 @@ namespace GuiStracini.HolidayAPI.Utils
             var propertyValue = property.GetValue(request, null);
             if (
                 propertyValue == null
-                || propertyType == typeof(int) && Convert.ToInt32(propertyValue) == 0
-                || propertyType == typeof(long) && Convert.ToInt64(propertyValue) == 0
-                || propertyType == typeof(decimal)
+                || (propertyType == typeof(int) && Convert.ToInt32(propertyValue) == 0)
+                || (propertyType == typeof(long) && Convert.ToInt64(propertyValue) == 0)
+                || (
+                    propertyType == typeof(decimal)
                     && Convert.ToDecimal(propertyValue) == new decimal(0)
-                || propertyType == typeof(string) && string.IsNullOrEmpty(propertyValue.ToString())
+                )
+                || (
+                    propertyType == typeof(string) && string.IsNullOrEmpty(propertyValue.ToString())
+                )
             )
             {
                 matchData.Endpoint = matchData.Endpoint.Replace(match.Value, string.Empty);
@@ -224,8 +228,8 @@ namespace GuiStracini.HolidayAPI.Utils
             if (
                 propertyType == typeof(string)
                 || propertyType == typeof(bool)
-                || propertyType == typeof(int) && Convert.ToInt32(propertyValue) > 0
-                || propertyType == typeof(long) && Convert.ToInt64(propertyValue) > 0
+                || (propertyType == typeof(int) && Convert.ToInt32(propertyValue) > 0)
+                || (propertyType == typeof(long) && Convert.ToInt64(propertyValue) > 0)
             )
             {
                 builder
