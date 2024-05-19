@@ -128,9 +128,13 @@ namespace GuiStracini.HolidayAPI.Utils
                 propertyValue == null
                 || (propertyType == typeof(int) && Convert.ToInt32(propertyValue) == 0)
                 || (propertyType == typeof(long) && Convert.ToInt64(propertyValue) == 0)
-                || (propertyType == typeof(decimal)
-                    && Convert.ToDecimal(propertyValue) == new decimal(0))
-                || (propertyType == typeof(string) && string.IsNullOrEmpty(propertyValue.ToString()))
+                || (
+                    propertyType == typeof(decimal)
+                    && Convert.ToDecimal(propertyValue) == new decimal(0)
+                )
+                || (
+                    propertyType == typeof(string) && string.IsNullOrEmpty(propertyValue.ToString())
+                )
             )
             {
                 matchData.Endpoint = matchData.Endpoint.Replace(match.Value, string.Empty);
