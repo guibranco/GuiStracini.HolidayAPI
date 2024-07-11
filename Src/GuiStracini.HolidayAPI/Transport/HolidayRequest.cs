@@ -13,6 +13,7 @@
 // ***********************************************************************
 namespace GuiStracini.HolidayAPI.Transport
 {
+    using Newtonsoft.Json;
     using Utils;
 
     /// <summary>
@@ -34,5 +35,12 @@ namespace GuiStracini.HolidayAPI.Transport
         /// </summary>
         /// <value>The year.</value>
         public int Year { get; set; }
+
+        /// <summary>
+        /// Gets or sets the subdivisions.
+        /// </summary>
+        [AdditionalRouteValue(true)]
+        [JsonProperty("subdivisions")]
+        public bool SubDivisions { get; set; }
     }
 }
