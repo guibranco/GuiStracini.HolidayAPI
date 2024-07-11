@@ -14,11 +14,13 @@
 
 namespace GuiStracini.HolidayAPI.UnitTests
 {
+    using System;
     using System.Globalization;
     using System.Threading.Tasks;
     using GuiStracini.HolidayAPI.GoodPractices;
     using GuiStracini.HolidayAPI.UnitTests.Requests;
     using GuiStracini.HolidayAPI.Utils;
+    using Transport;
     using Xunit;
 
     /// <summary>
@@ -141,6 +143,24 @@ namespace GuiStracini.HolidayAPI.UnitTests
             );
 
             Assert.Equal(expected, exception.Message);
+        }
+
+        [Fact]
+        public void RequestEndpointWithAdditionalValuesHolidays()
+        {
+            const string expected =
+                "v1/holidays?key=00000000-0000-0000-0000-000000000000&country=XX&year=2024&subdivisions=true";
+            var holidaysRequest = new HolidayRequest
+            {
+                Key = Guid.Empty,
+                Country = "XX",
+                Year = 2024,
+                SubDivisions = true
+            };
+
+            var actual = holidaysRequest.GetRequestEndpoint();
+
+            Assert.Equal(expected, actual);
         }
     }
 }
