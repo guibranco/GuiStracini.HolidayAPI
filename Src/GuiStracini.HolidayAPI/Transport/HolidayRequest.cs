@@ -34,5 +34,11 @@ namespace GuiStracini.HolidayAPI.Transport
         /// </summary>
         /// <value>The year.</value>
         public int Year { get; set; }
+
+        /// <summary>
+        /// Gets or sets the sub-divisions.
+        /// </summary>
+        [AdditionalRouteValue(true)]
+        public bool SubDivisions { get; set; }
     }
 }
