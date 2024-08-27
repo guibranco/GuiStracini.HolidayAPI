@@ -184,8 +184,16 @@ namespace GuiStracini.HolidayAPI.IntegrationTests
         }
 
         /// <summary>
-        /// Gets the brazilian holidays from the last year with filters.
+        /// Asynchronously retrieves Brazilian holidays from the previous year with specified filters and validates the results.
         /// </summary>
+        /// <remarks>
+        /// This test method is designed to ensure that the holiday retrieval functionality works correctly for the Brazilian holidays of the previous year.
+        /// It sets up a filter to search for holidays in December, specifically focusing on Christmas, while also checking for metadata about the request.
+        /// The method asserts that the response is successful and that the usage data indicates that the API was used.
+        /// It also verifies that certain holidays, such as "Christmas Day" and "Independence Day," are not present in the results, while ensuring that
+        /// a holiday containing "Natal" (the Portuguese word for Christmas) is included in the list.
+        /// The test uses various assertions to confirm that the expected conditions are met, ensuring the reliability of the holiday retrieval feature.
+        /// </remarks>
         [Fact]
         public async Task GetBrazilianHolidaysFromTheLastYearWithFilters()
         {

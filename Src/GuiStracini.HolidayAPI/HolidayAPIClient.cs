@@ -109,12 +109,17 @@ namespace GuiStracini.HolidayAPI
         public RequestMetadata UsageData => _metadata;
 
         /// <summary>
-        /// Gets the holidays asynchronous.
+        /// Asynchronously retrieves a list of holidays based on the specified filter criteria.
         /// </summary>
-        /// <param name="country">The country.</param>
-        /// <param name="year">The year.</param>
-        /// <param name="cancellationToken">The cancellation token.</param>
-        /// <returns>IEnumerable&lt;IHoliday&gt;.</returns>
+        /// <param name="filter">An instance of <see cref="HolidayFilter"/> containing the criteria for filtering holidays.</param>
+        /// <param name="cancellationToken">A <see cref="CancellationToken"/> to monitor for cancellation requests.</param>
+        /// <returns>A task that represents the asynchronous operation. The task result contains an enumerable collection of <see cref="IHoliday"/> objects representing the holidays.</returns>
+        /// <remarks>
+        /// This method constructs a <see cref="HolidayRequest"/> using the provided filter parameters, including country, year, month, day, language, and other optional fields.
+        /// It then sends this request to an external service to fetch the holiday data asynchronously.
+        /// The method will return the list of holidays contained in the response from the external service.
+        /// If the operation is canceled before completion, the cancellation token will be triggered, and an appropriate exception will be thrown.
+        /// </remarks>
         public async Task<IEnumerable<IHoliday>> GetHolidaysAsync(
             string country,
             int year,
@@ -234,13 +239,19 @@ namespace GuiStracini.HolidayAPI
         }
 
         /// <summary>
-        /// get workday as an asynchronous operation.
+        /// Asynchronously retrieves the workday information for a specified country and date range.
         /// </summary>
-        /// <param name="country">The country.</param>
-        /// <param name="start">The start.</param>
-        /// <param name="days">The days.</param>
-        /// <param name="cancellationToken">The cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-        /// <returns>Task&lt;Workday&gt;.</returns>
+        /// <param name="country">The country for which to retrieve the workday information.</param>
+        /// <param name="start">The starting date from which to calculate the workdays.</param>
+        /// <param name="days">The number of workdays to retrieve.</param>
+        /// <param name="cancellationToken">A cancellation token to cancel the operation if needed.</param>
+        /// <returns>A task that represents the asynchronous operation, containing the workday information for the specified parameters.</returns>
+        /// <remarks>
+        /// This method constructs a request to fetch workday data based on the provided country, start date, and number of days.
+        /// It sends the request asynchronously and awaits the response. The response is expected to contain a Workday object,
+        /// which encapsulates the workday details for the specified parameters. If the operation is canceled via the
+        /// <paramref name="cancellationToken"/>, an OperationCanceledException may be thrown.
+        /// </remarks>
         public async Task<Workday> GetWorkdayAsync(
             string country,
             DateTime start,
@@ -264,13 +275,19 @@ namespace GuiStracini.HolidayAPI
         }
 
         /// <summary>
-        /// get workdays as an asynchronous operation.
+        /// Asynchronously retrieves the number of workdays between two dates for a specified country.
         /// </summary>
-        /// <param name="country">The country.</param>
-        /// <param name="start">The start.</param>
-        /// <param name="end">The end.</param>
-        /// <param name="cancellationToken">The cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-        /// <returns>A Task&lt;int&gt; representing the asynchronous operation.</returns>
+        /// <param name="country">The country code for which to retrieve workdays.</param>
+        /// <param name="start">The start date for the workdays calculation.</param>
+        /// <param name="end">The end date for the workdays calculation.</param>
+        /// <param name="cancellationToken">A token to monitor for cancellation requests.</param>
+        /// <returns>A task that represents the asynchronous operation. The task result contains the number of workdays between the specified start and end dates.</returns>
+        /// <remarks>
+        /// This method constructs a request to an external service to calculate the number of workdays based on the provided country and date range.
+        /// It formats the start and end dates to the "yyyy-MM-dd" format required by the service.
+        /// The method uses an asynchronous pattern to execute the request and retrieve the response, ensuring that it does not block the calling thread.
+        /// The result is extracted from the response and returned as an integer representing the total workdays within the specified period.
+        /// </remarks>
         public async Task<int> GetWorkdaysAsync(
             string country,
             DateTime start,

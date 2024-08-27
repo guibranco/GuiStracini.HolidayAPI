@@ -145,6 +145,16 @@ namespace GuiStracini.HolidayAPI.UnitTests
             Assert.Equal(expected, exception.Message);
         }
 
+        /// <summary>
+        /// Tests the generation of the request endpoint for holiday data with additional values.
+        /// </summary>
+        /// <remarks>
+        /// This unit test verifies that the <see cref="HolidayRequest"/> class correctly constructs a request endpoint
+        /// for retrieving holiday information based on the specified parameters. The test checks that the generated
+        /// endpoint matches the expected URL format, which includes the API key, country code, year, and subdivision
+        /// information. It ensures that the method <see cref="HolidayRequest.GetRequestEndpoint"/> behaves as expected
+        /// when provided with a set of predefined values.
+        /// </remarks>
         [Fact]
         public void RequestEndpointWithAdditionalValuesHolidays()
         {
