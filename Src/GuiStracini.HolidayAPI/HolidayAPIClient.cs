@@ -57,7 +57,7 @@ namespace GuiStracini.HolidayAPI
             _apiKey = new Guid(apiKey);
             _metadata = new RequestMetadata
             {
-                Message = "Make at least on request before get the metadata"
+                Message = "Make at least on request before get the metadata",
             };
             _serviceFactory = new ServiceFactory(httpClient);
         }
@@ -148,7 +148,7 @@ namespace GuiStracini.HolidayAPI
                 Public = filter.Public,
                 Search = filter.Search,
                 Subdivisions = filter.Subdivisions,
-                Upcoming = filter.Upcoming
+                Upcoming = filter.Upcoming,
             };
             var response = await Execute<HolidayRequest, HolidayResponse>(
                     request,
@@ -253,7 +253,7 @@ namespace GuiStracini.HolidayAPI
                 Country = country,
                 Days = days,
                 Key = _apiKey,
-                Start = start.ToString("yyyy-MM-dd")
+                Start = start.ToString("yyyy-MM-dd"),
             };
             var response = await Execute<WorkdayRequest, WorkdayResponse>(
                     request,
@@ -283,7 +283,7 @@ namespace GuiStracini.HolidayAPI
                 Country = country,
                 End = end.ToString("yyyy-MM-dd"),
                 Key = _apiKey,
-                Start = start.ToString("yyyy-MM-dd")
+                Start = start.ToString("yyyy-MM-dd"),
             };
             var response = await Execute<WorkdaysRequest, WorkdaysResponse>(
                     request,

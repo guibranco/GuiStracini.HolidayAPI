@@ -155,7 +155,7 @@ namespace GuiStracini.HolidayAPI.UnitTests
                 Key = Guid.Empty,
                 Country = "XX",
                 Year = 2024,
-                SubDivisions = true
+                SubDivisions = true,
             };
 
             var actual = holidaysRequest.GetRequestEndpoint();
