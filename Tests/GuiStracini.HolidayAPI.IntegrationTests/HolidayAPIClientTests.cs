@@ -199,7 +199,7 @@ namespace GuiStracini.HolidayAPI.IntegrationTests
                 Language = "pt",
                 Public = true,
                 Subdivisions = false,
-                Search = "Christmas"
+                Search = "Christmas",
             };
             var result = await _client.GetHolidaysAsync(filter, CancellationToken.None);
             var metadata = _client.UsageData;
