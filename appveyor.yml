@@ -8,8 +8,6 @@ environment:
     secure: Nxq5KFipyTbqGMIeLQe2gxKZOLjIhp3NmWCJZix24URUoL8XV59zK0NOk/zYCL3A
   CODECLIMATE_TOKEN:
     secure: FsMCyhy51d3EUvLAucW0ePqoUkP/6Vu13xl0bvRfkbhD6K9iH/UFnTgQpD7WgsnogMu93f9TmY5cilNKiZ7JMh2K+Yk8ZrJbnRkVQk7WY5E=
-  SONAR_TOKEN: 
-    secure: RrgnyBWUgGKOwEnWRGPS6usKzoUY0oOhVx0lW2KuhEwVvCd76sP1Kxv+goWO2h1+
   apiKey:
     secure: Rk0Qh8JNpDSZ+q4UmgWYrfJtuEczRnChlGYspnmzOw+Wnblhyde8f1x+/9RB1OdJ
 
