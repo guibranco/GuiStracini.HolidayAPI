@@ -72,8 +72,8 @@ namespace GuiStracini.HolidayAPI.IntegrationTests
         {
             var year = DateTime.Now.Year - 1;
             var client = new HolidayApiClient(Guid.Empty.ToString(), CreateHttpClient());
-            var ex = await Assert.ThrowsAsync<HolidayApiException>(
-                async () => await client.GetHolidaysAsync("BR", year, CancellationToken.None)
+            var ex = await Assert.ThrowsAsync<HolidayApiException>(async () =>
+                await client.GetHolidaysAsync("BR", year, CancellationToken.None)
             );
             Assert.Equal(
                 "401 - Invalid API key. For more information, please visit https://holidayapi.com/docs",

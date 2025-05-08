@@ -138,8 +138,8 @@ namespace GuiStracini.HolidayAPI.UnitTests
 
             var dummy = new DummyRequestInvalidProperty();
 
-            var exception = await Assert.ThrowsAsync<EndpointRouteBadFormatException>(
-                () => Task.FromResult(dummy.GetRequestEndpoint())
+            var exception = await Assert.ThrowsAsync<EndpointRouteBadFormatException>(() =>
+                Task.FromResult(dummy.GetRequestEndpoint())
             );
 
             Assert.Equal(expected, exception.Message);
