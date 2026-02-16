@@ -5,13 +5,13 @@
     <UserSecretsId>bb296659-3bdd-497c-b46d-72f1fd3647a9</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="coverlet.msbuild" Version="6.0.4">
+    <PackageReference Include="coverlet.msbuild" Version="8.0.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference
       Include="Microsoft.Extensions.Configuration.EnvironmentVariables"
-      Version="10.0.2"
+      Version="10.0.3"
     />
     <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="10.0.3" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
