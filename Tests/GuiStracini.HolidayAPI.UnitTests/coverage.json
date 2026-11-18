@@ -1,0 +1,1757 @@
+{
+  "GuiStracini.HolidayAPI.dll": {
+    "/home/claude/guistracini.holidayapi/Src/GuiStracini.HolidayAPI/HolidayAPIClient.cs": {
+      "GuiStracini.HolidayAPI.HolidayApiClient": {
+        "GuiStracini.HolidayAPI.Model.RequestMetadata GuiStracini.HolidayAPI.HolidayApiClient::get_UsageData()": {
+          "Lines": {
+            "109": 0
+          },
+          "Branches": []
+        },
+        "System.Void GuiStracini.HolidayAPI.HolidayApiClient::.ctor(System.String,System.Net.Http.HttpClient)": {
+          "Lines": {
+            "55": 0,
+            "57": 0,
+            "58": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0
+          },
+          "Branches": []
+        }
+      },
+      "GuiStracini.HolidayAPI.HolidayApiClient/<Execute>d__4`2": {
+        "System.Void GuiStracini.HolidayAPI.HolidayApiClient/<Execute>d__4`2::MoveNext()": {
+          "Lines": {
+            "85": 0,
+            "86": 0,
+            "87": 0,
+            "89": 0,
+            "90": 0,
+            "91": 0,
+            "92": 0,
+            "94": 0,
+            "95": 0,
+            "97": 0,
+            "98": 0,
+            "99": 0
+          },
+          "Branches": [
+            {
+              "Line": 89,
+              "Offset": 156,
+              "EndOffset": 158,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0,
+              "IsReachable": true
+            },
+            {
+              "Line": 89,
+              "Offset": 156,
+              "EndOffset": 164,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0,
+              "IsReachable": true
+            },
+            {
+              "Line": 92,
+              "Offset": 223,
+              "EndOffset": 225,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0,
+              "IsReachable": true
+            },
+            {
+              "Line": 92,
+              "Offset": 223,
+              "EndOffset": 245,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0,
+              "IsReachable": true
+            },
+            {
+              "Line": 98,
+              "Offset": 326,
+              "EndOffset": 328,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0,
+              "IsReachable": true
+            },
+            {
+              "Line": 98,
+              "Offset": 326,
+              "EndOffset": 340,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0,
+              "IsReachable": true
+            }
+          ]
+        }
+      },
+      "GuiStracini.HolidayAPI.HolidayApiClient/<GetCountriesAsync>d__10": {
+        "System.Void GuiStracini.HolidayAPI.HolidayApiClient/<GetCountriesAsync>d__10::MoveNext()": {
+          "Lines": {
+            "189": 0,
+            "191": 0,
+            "193": 0,
+            "196": 0,
+            "197": 0,
+            "198": 0,
+            "199": 0,
+            "200": 0,
+            "201": 0,
+            "202": 0
+          },
+          "Branches": [
+            {
+              "Line": 191,
+              "Offset": 46,
+              "EndOffset": 48,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0,
+              "IsReachable": true
+            },
+            {
+              "Line": 191,
+              "Offset": 46,
+              "EndOffset": 60,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0,
+              "IsReachable": true
+            }
+          ]
+        }
+      },
+      "GuiStracini.HolidayAPI.HolidayApiClient/<GetCountriesAsync>d__9": {
+        "System.Void GuiStracini.HolidayAPI.HolidayApiClient/<GetCountriesAsync>d__9::MoveNext()": {
+          "Lines": {
+            "175": 0,
+            "176": 0
+          },
+          "Branches": []
+        }
+      },
+      "GuiStracini.HolidayAPI.HolidayApiClient/<GetHolidaysAsync>d__7": {
+        "System.Void GuiStracini.HolidayAPI.HolidayApiClient/<GetHolidaysAsync>d__7::MoveNext()": {
+          "Lines": {
+            "129": 0,
+            "130": 0,
+            "131": 0
+          },
+          "Branches": []
+        }
+      },
+      "GuiStracini.HolidayAPI.HolidayApiClient/<GetHolidaysAsync>d__8": {
+        "System.Void GuiStracini.HolidayAPI.HolidayApiClient/<GetHolidaysAsync>d__8::MoveNext()": {
+          "Lines": {
+            "144": 0,
+            "145": 0,
+            "146": 0,
+            "147": 0,
+            "148": 0,
+            "149": 0,
+            "150": 0,
+            "151": 0,
+            "152": 0,
+            "153": 0,
+            "154": 0,
+            "155": 0,
+            "156": 0,
+            "157": 0,
+            "158": 0,
+            "159": 0,
+            "160": 0,
+            "161": 0,
+            "162": 0,
+            "163": 0,
+            "164": 0
+          },
+          "Branches": []
+        }
+      },
+      "GuiStracini.HolidayAPI.HolidayApiClient/<GetLanguagesAsync>d__11": {
+        "System.Void GuiStracini.HolidayAPI.HolidayApiClient/<GetLanguagesAsync>d__11::MoveNext()": {
+          "Lines": {
+            "213": 0,
+            "214": 0
+          },
+          "Branches": []
+        }
+      },
+      "GuiStracini.HolidayAPI.HolidayApiClient/<GetLanguagesAsync>d__12": {
+        "System.Void GuiStracini.HolidayAPI.HolidayApiClient/<GetLanguagesAsync>d__12::MoveNext()": {
+          "Lines": {
+            "227": 0,
+            "228": 0,
+            "230": 0,
+            "233": 0,
+            "234": 0,
+            "235": 0,
+            "236": 0,
+            "237": 0,
+            "238": 0,
+            "239": 0
+          },
+          "Branches": [
+            {
+              "Line": 228,
+              "Offset": 46,
+              "EndOffset": 48,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0,
+              "IsReachable": true
+            },
+            {
+              "Line": 228,
+              "Offset": 46,
+              "EndOffset": 60,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0,
+              "IsReachable": true
+            }
+          ]
+        }
+      },
+      "GuiStracini.HolidayAPI.HolidayApiClient/<GetWorkdayAsync>d__13": {
+        "System.Void GuiStracini.HolidayAPI.HolidayApiClient/<GetWorkdayAsync>d__13::MoveNext()": {
+          "Lines": {
+            "262": 0,
+            "263": 0,
+            "264": 0,
+            "265": 0,
+            "266": 0,
+            "267": 0,
+            "268": 0,
+            "269": 0,
+            "270": 0,
+            "271": 0,
+            "272": 0,
+            "273": 0,
+            "274": 0,
+            "275": 0
+          },
+          "Branches": []
+        }
+      },
+      "GuiStracini.HolidayAPI.HolidayApiClient/<GetWorkdaysAsync>d__14": {
+        "System.Void GuiStracini.HolidayAPI.HolidayApiClient/<GetWorkdaysAsync>d__14::MoveNext()": {
+          "Lines": {
+            "298": 0,
+            "299": 0,
+            "300": 0,
+            "301": 0,
+            "302": 0,
+            "303": 0,
+            "304": 0,
+            "305": 0,
+            "306": 0,
+            "307": 0,
+            "308": 0,
+            "309": 0,
+            "310": 0,
+            "311": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/claude/guistracini.holidayapi/Src/GuiStracini.HolidayAPI/HolidayFilter.cs": {
+      "GuiStracini.HolidayAPI.HolidayFilter": {
+        "System.String GuiStracini.HolidayAPI.HolidayFilter::get_Country()": {
+          "Lines": {
+            "36": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 GuiStracini.HolidayAPI.HolidayFilter::get_Year()": {
+          "Lines": {
+            "42": 0
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.Int32> GuiStracini.HolidayAPI.HolidayFilter::get_Month()": {
+          "Lines": {
+            "48": 0
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.Int32> GuiStracini.HolidayAPI.HolidayFilter::get_Day()": {
+          "Lines": {
+            "54": 0
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.Boolean> GuiStracini.HolidayAPI.HolidayFilter::get_Previous()": {
+          "Lines": {
+            "60": 0
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.Boolean> GuiStracini.HolidayAPI.HolidayFilter::get_Upcoming()": {
+          "Lines": {
+            "66": 0
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.Boolean> GuiStracini.HolidayAPI.HolidayFilter::get_Public()": {
+          "Lines": {
+            "72": 0
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.Boolean> GuiStracini.HolidayAPI.HolidayFilter::get_Subdivisions()": {
+          "Lines": {
+            "78": 0
+          },
+          "Branches": []
+        },
+        "System.String GuiStracini.HolidayAPI.HolidayFilter::get_Search()": {
+          "Lines": {
+            "84": 0
+          },
+          "Branches": []
+        },
+        "System.String GuiStracini.HolidayAPI.HolidayFilter::get_Language()": {
+          "Lines": {
+            "90": 0
+          },
+          "Branches": []
+        },
+        "System.Void GuiStracini.HolidayAPI.HolidayFilter::.ctor(System.String,System.Int32)": {
+          "Lines": {
+            "26": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/claude/guistracini.holidayapi/Src/GuiStracini.HolidayAPI/Utils/AdditionalRouteValueAttribute.cs": {
+      "GuiStracini.HolidayAPI.Utils.AdditionalRouteValueAttribute": {
+        "System.Boolean GuiStracini.HolidayAPI.Utils.AdditionalRouteValueAttribute::get_AsQueryString()": {
+          "Lines": {
+            "30": 34
+          },
+          "Branches": []
+        },
+        "System.Void GuiStracini.HolidayAPI.Utils.AdditionalRouteValueAttribute::.ctor(System.Boolean)": {
+          "Lines": {
+            "36": 17,
+            "38": 17,
+            "39": 17
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/claude/guistracini.holidayapi/Src/GuiStracini.HolidayAPI/Utils/EndpointRouteAttribute.cs": {
+      "GuiStracini.HolidayAPI.Utils.EndpointRouteAttribute": {
+        "System.String GuiStracini.HolidayAPI.Utils.EndpointRouteAttribute::get_EndPoint()": {
+          "Lines": {
+            "44": 8
+          },
+          "Branches": []
+        },
+        "System.Void GuiStracini.HolidayAPI.Utils.EndpointRouteAttribute::.ctor(System.String)": {
+          "Lines": {
+            "31": 8,
+            "33": 8,
+            "34": 8
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/claude/guistracini.holidayapi/Src/GuiStracini.HolidayAPI/Utils/ProcessMatchData.cs": {
+      "GuiStracini.HolidayAPI.Utils.ProcessMatchData": {
+        "System.Type GuiStracini.HolidayAPI.Utils.ProcessMatchData::get_Type()": {
+          "Lines": {
+            "27": 19
+          },
+          "Branches": []
+        },
+        "System.String GuiStracini.HolidayAPI.Utils.ProcessMatchData::get_Endpoint()": {
+          "Lines": {
+            "33": 63
+          },
+          "Branches": []
+        },
+        "System.String GuiStracini.HolidayAPI.Utils.ProcessMatchData::get_OriginalEndpoint()": {
+          "Lines": {
+            "39": 17
+          },
+          "Branches": []
+        },
+        "System.Int32 GuiStracini.HolidayAPI.Utils.ProcessMatchData::get_Used()": {
+          "Lines": {
+            "45": 8
+          },
+          "Branches": []
+        },
+        "System.Int32 GuiStracini.HolidayAPI.Utils.ProcessMatchData::get_Skipped()": {
+          "Lines": {
+            "51": 9
+          },
+          "Branches": []
+        },
+        "System.Int32 GuiStracini.HolidayAPI.Utils.ProcessMatchData::get_Counter()": {
+          "Lines": {
+            "57": 26
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/claude/guistracini.holidayapi/Src/GuiStracini.HolidayAPI/Utils/RequestHelpers.cs": {
+      "GuiStracini.HolidayAPI.Utils.RequestHelpers": {
+        "GuiStracini.HolidayAPI.Utils.EndpointRouteAttribute GuiStracini.HolidayAPI.Utils.RequestHelpers::GetRequestEndpointAttribute(GuiStracini.HolidayAPI.Transport.BaseRequest)": {
+          "Lines": {
+            "38": 9,
+            "39": 9,
+            "40": 9,
+            "41": 9,
+            "42": 9,
+            "43": 9,
+            "45": 1,
+            "48": 8
+          },
+          "Branches": [
+            {
+              "Line": 38,
+              "Offset": 29,
+              "EndOffset": 31,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 9,
+              "IsReachable": true
+            },
+            {
+              "Line": 38,
+              "Offset": 29,
+              "EndOffset": 39,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0,
+              "IsReachable": true
+            },
+            {
+              "Line": 38,
+              "Offset": 37,
+              "EndOffset": 39,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1,
+              "IsReachable": true
+            },
+            {
+              "Line": 38,
+              "Offset": 37,
+              "EndOffset": 41,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 8,
+              "IsReachable": true
+            }
+          ]
+        },
+        "System.String GuiStracini.HolidayAPI.Utils.RequestHelpers::GetRequestEndpoint(GuiStracini.HolidayAPI.Transport.BaseRequest)": {
+          "Lines": {
+            "59": 9,
+            "61": 9,
+            "62": 9,
+            "64": 1,
+            "67": 8,
+            "68": 8,
+            "70": 8,
+            "71": 8,
+            "72": 8,
+            "74": 3,
+            "75": 3,
+            "78": 8,
+            "79": 8,
+            "80": 8,
+            "81": 8,
+            "82": 8,
+            "83": 8,
+            "85": 1,
+            "88": 31,
+            "90": 9,
+            "93": 6,
+            "95": 0,
+            "96": 0,
+            "97": 0,
+            "98": 0,
+            "101": 6
+          },
+          "Branches": [
+            {
+              "Line": 62,
+              "Offset": 26,
+              "EndOffset": 28,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1,
+              "IsReachable": true
+            },
+            {
+              "Line": 62,
+              "Offset": 26,
+              "EndOffset": 45,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 8,
+              "IsReachable": true
+            },
+            {
+              "Line": 71,
+              "Offset": 92,
+              "EndOffset": 94,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 7,
+              "IsReachable": true
+            },
+            {
+              "Line": 71,
+              "Offset": 92,
+              "EndOffset": 101,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1,
+              "IsReachable": true
+            },
+            {
+              "Line": 72,
+              "Offset": 113,
+              "EndOffset": 115,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 3,
+              "IsReachable": true
+            },
+            {
+              "Line": 74,
+              "Offset": 138,
+              "EndOffset": 140,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 2,
+              "IsReachable": true
+            },
+            {
+              "Line": 74,
+              "Offset": 138,
+              "EndOffset": 153,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 1,
+              "IsReachable": true
+            },
+            {
+              "Line": 72,
+              "Offset": 113,
+              "EndOffset": 169,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 5,
+              "IsReachable": true
+            },
+            {
+              "Line": 83,
+              "Offset": 208,
+              "EndOffset": 210,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 1,
+              "IsReachable": true
+            },
+            {
+              "Line": 83,
+              "Offset": 208,
+              "EndOffset": 217,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 7,
+              "IsReachable": true
+            },
+            {
+              "Line": 88,
+              "Offset": 269,
+              "EndOffset": 239,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 9,
+              "IsReachable": true
+            },
+            {
+              "Line": 88,
+              "Offset": 269,
+              "EndOffset": 271,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 6,
+              "IsReachable": true
+            },
+            {
+              "Line": 93,
+              "Offset": 300,
+              "EndOffset": 302,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 1,
+              "IsReachable": true
+            },
+            {
+              "Line": 93,
+              "Offset": 314,
+              "EndOffset": 316,
+              "Path": 0,
+              "Ordinal": 14,
+              "Hits": 0,
+              "IsReachable": true
+            },
+            {
+              "Line": 93,
+              "Offset": 300,
+              "EndOffset": 334,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 6,
+              "IsReachable": true
+            },
+            {
+              "Line": 93,
+              "Offset": 314,
+              "EndOffset": 334,
+              "Path": 1,
+              "Ordinal": 15,
+              "Hits": 6,
+              "IsReachable": true
+            }
+          ]
+        },
+        "System.Void GuiStracini.HolidayAPI.Utils.RequestHelpers::ProcessMatch(GuiStracini.HolidayAPI.Transport.BaseRequest,System.Text.RegularExpressions.Match,GuiStracini.HolidayAPI.Utils.ProcessMatchData)": {
+          "Lines": {
+            "117": 9,
+            "118": 9,
+            "119": 9,
+            "120": 9,
+            "122": 1,
+            "125": 8,
+            "126": 8,
+            "127": 8,
+            "128": 8,
+            "129": 8,
+            "130": 8,
+            "131": 8,
+            "132": 8,
+            "133": 8,
+            "134": 8,
+            "135": 8,
+            "136": 8,
+            "137": 8,
+            "138": 8,
+            "140": 1,
+            "141": 1,
+            "143": 1,
+            "146": 1,
+            "148": 7,
+            "149": 7,
+            "150": 7,
+            "151": 7,
+            "152": 7,
+            "153": 7
+          },
+          "Branches": [
+            {
+              "Line": 120,
+              "Offset": 57,
+              "EndOffset": 59,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1,
+              "IsReachable": true
+            },
+            {
+              "Line": 120,
+              "Offset": 57,
+              "EndOffset": 71,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 8,
+              "IsReachable": true
+            },
+            {
+              "Line": 127,
+              "Offset": 87,
+              "EndOffset": 89,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 7,
+              "IsReachable": true
+            },
+            {
+              "Line": 127,
+              "Offset": 105,
+              "EndOffset": 107,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 1,
+              "IsReachable": true
+            },
+            {
+              "Line": 127,
+              "Offset": 105,
+              "EndOffset": 115,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 6,
+              "IsReachable": true
+            },
+            {
+              "Line": 127,
+              "Offset": 113,
+              "EndOffset": 115,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 1,
+              "IsReachable": true
+            },
+            {
+              "Line": 127,
+              "Offset": 131,
+              "EndOffset": 133,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 0,
+              "IsReachable": true
+            },
+            {
+              "Line": 127,
+              "Offset": 131,
+              "EndOffset": 141,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 7,
+              "IsReachable": true
+            },
+            {
+              "Line": 127,
+              "Offset": 139,
+              "EndOffset": 141,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 0,
+              "IsReachable": true
+            },
+            {
+              "Line": 127,
+              "Offset": 157,
+              "EndOffset": 159,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 0,
+              "IsReachable": true
+            },
+            {
+              "Line": 127,
+              "Offset": 157,
+              "EndOffset": 178,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 7,
+              "IsReachable": true
+            },
+            {
+              "Line": 127,
+              "Offset": 176,
+              "EndOffset": 178,
+              "Path": 0,
+              "Ordinal": 14,
+              "Hits": 0,
+              "IsReachable": true
+            },
+            {
+              "Line": 127,
+              "Offset": 194,
+              "EndOffset": 196,
+              "Path": 0,
+              "Ordinal": 16,
+              "Hits": 5,
+              "IsReachable": true
+            },
+            {
+              "Line": 127,
+              "Offset": 87,
+              "EndOffset": 209,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1,
+              "IsReachable": true
+            },
+            {
+              "Line": 127,
+              "Offset": 113,
+              "EndOffset": 209,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 0,
+              "IsReachable": true
+            },
+            {
+              "Line": 127,
+              "Offset": 139,
+              "EndOffset": 209,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 0,
+              "IsReachable": true
+            },
+            {
+              "Line": 127,
+              "Offset": 176,
+              "EndOffset": 209,
+              "Path": 1,
+              "Ordinal": 15,
+              "Hits": 0,
+              "IsReachable": true
+            },
+            {
+              "Line": 127,
+              "Offset": 207,
+              "EndOffset": 209,
+              "Path": 0,
+              "Ordinal": 18,
+              "Hits": 1,
+              "IsReachable": true
+            },
+            {
+              "Line": 141,
+              "Offset": 243,
+              "EndOffset": 245,
+              "Path": 0,
+              "Ordinal": 20,
+              "Hits": 1,
+              "IsReachable": true
+            },
+            {
+              "Line": 141,
+              "Offset": 243,
+              "EndOffset": 257,
+              "Path": 1,
+              "Ordinal": 21,
+              "Hits": 0,
+              "IsReachable": true
+            },
+            {
+              "Line": 127,
+              "Offset": 194,
+              "EndOffset": 258,
+              "Path": 1,
+              "Ordinal": 17,
+              "Hits": 7,
+              "IsReachable": true
+            },
+            {
+              "Line": 127,
+              "Offset": 207,
+              "EndOffset": 258,
+              "Path": 1,
+              "Ordinal": 19,
+              "Hits": 7,
+              "IsReachable": true
+            }
+          ]
+        },
+        "System.String GuiStracini.HolidayAPI.Utils.RequestHelpers::GetRequestAdditionalRouteValue(GuiStracini.HolidayAPI.Transport.BaseRequest)": {
+          "Lines": {
+            "162": 8,
+            "163": 8,
+            "164": 34,
+            "165": 8,
+            "166": 8,
+            "168": 3,
+            "171": 5,
+            "172": 5,
+            "173": 5,
+            "174": 17,
+            "175": 5,
+            "176": 5,
+            "178": 5,
+            "180": 3,
+            "183": 5
+          },
+          "Branches": [
+            {
+              "Line": 166,
+              "Offset": 77,
+              "EndOffset": 79,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 3,
+              "IsReachable": true
+            },
+            {
+              "Line": 166,
+              "Offset": 77,
+              "EndOffset": 85,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 5,
+              "IsReachable": true
+            },
+            {
+              "Line": 178,
+              "Offset": 127,
+              "EndOffset": 129,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 5,
+              "IsReachable": true
+            },
+            {
+              "Line": 178,
+              "Offset": 136,
+              "EndOffset": 138,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 3,
+              "IsReachable": true
+            },
+            {
+              "Line": 178,
+              "Offset": 127,
+              "EndOffset": 154,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0,
+              "IsReachable": true
+            },
+            {
+              "Line": 178,
+              "Offset": 136,
+              "EndOffset": 154,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 2,
+              "IsReachable": true
+            }
+          ]
+        },
+        "System.Boolean GuiStracini.HolidayAPI.Utils.RequestHelpers::ParseProperty(GuiStracini.HolidayAPI.Transport.BaseRequest,System.Reflection.PropertyInfo,System.Boolean,System.Text.StringBuilder)": {
+          "Lines": {
+            "201": 17,
+            "202": 17,
+            "203": 17,
+            "204": 17,
+            "205": 17,
+            "206": 17,
+            "208": 0,
+            "211": 17,
+            "213": 17,
+            "214": 17,
+            "216": 14,
+            "219": 3,
+            "221": 3,
+            "223": 2,
+            "226": 3,
+            "228": 3,
+            "229": 3,
+            "230": 3,
+            "231": 3,
+            "232": 3,
+            "233": 3,
+            "235": 3,
+            "236": 3,
+            "237": 3,
+            "238": 3,
+            "241": 3
+          },
+          "Branches": [
+            {
+              "Line": 201,
+              "Offset": 24,
+              "EndOffset": 26,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 17,
+              "IsReachable": true
+            },
+            {
+              "Line": 201,
+              "Offset": 24,
+              "EndOffset": 34,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0,
+              "IsReachable": true
+            },
+            {
+              "Line": 201,
+              "Offset": 32,
+              "EndOffset": 34,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0,
+              "IsReachable": true
+            },
+            {
+              "Line": 201,
+              "Offset": 32,
+              "EndOffset": 36,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 17,
+              "IsReachable": true
+            },
+            {
+              "Line": 214,
+              "Offset": 58,
+              "EndOffset": 60,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 14,
+              "IsReachable": true
+            },
+            {
+              "Line": 214,
+              "Offset": 58,
+              "EndOffset": 62,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 3,
+              "IsReachable": true
+            },
+            {
+              "Line": 221,
+              "Offset": 85,
+              "EndOffset": 87,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 2,
+              "IsReachable": true
+            },
+            {
+              "Line": 221,
+              "Offset": 85,
+              "EndOffset": 104,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 1,
+              "IsReachable": true
+            },
+            {
+              "Line": 228,
+              "Offset": 127,
+              "EndOffset": 129,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 2,
+              "IsReachable": true
+            },
+            {
+              "Line": 228,
+              "Offset": 145,
+              "EndOffset": 147,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 0,
+              "IsReachable": true
+            },
+            {
+              "Line": 228,
+              "Offset": 163,
+              "EndOffset": 165,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 0,
+              "IsReachable": true
+            },
+            {
+              "Line": 228,
+              "Offset": 163,
+              "EndOffset": 174,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 0,
+              "IsReachable": true
+            },
+            {
+              "Line": 228,
+              "Offset": 172,
+              "EndOffset": 174,
+              "Path": 0,
+              "Ordinal": 14,
+              "Hits": 0,
+              "IsReachable": true
+            },
+            {
+              "Line": 228,
+              "Offset": 190,
+              "EndOffset": 192,
+              "Path": 0,
+              "Ordinal": 16,
+              "Hits": 0,
+              "IsReachable": true
+            },
+            {
+              "Line": 228,
+              "Offset": 127,
+              "EndOffset": 202,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 1,
+              "IsReachable": true
+            },
+            {
+              "Line": 228,
+              "Offset": 145,
+              "EndOffset": 202,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 2,
+              "IsReachable": true
+            },
+            {
+              "Line": 228,
+              "Offset": 172,
+              "EndOffset": 202,
+              "Path": 1,
+              "Ordinal": 15,
+              "Hits": 0,
+              "IsReachable": true
+            },
+            {
+              "Line": 228,
+              "Offset": 200,
+              "EndOffset": 202,
+              "Path": 0,
+              "Ordinal": 18,
+              "Hits": 3,
+              "IsReachable": true
+            },
+            {
+              "Line": 235,
+              "Offset": 209,
+              "EndOffset": 211,
+              "Path": 0,
+              "Ordinal": 20,
+              "Hits": 0,
+              "IsReachable": true
+            },
+            {
+              "Line": 235,
+              "Offset": 209,
+              "EndOffset": 218,
+              "Path": 1,
+              "Ordinal": 21,
+              "Hits": 3,
+              "IsReachable": true
+            },
+            {
+              "Line": 235,
+              "Offset": 241,
+              "EndOffset": 243,
+              "Path": 0,
+              "Ordinal": 22,
+              "Hits": 0,
+              "IsReachable": true
+            },
+            {
+              "Line": 235,
+              "Offset": 241,
+              "EndOffset": 250,
+              "Path": 1,
+              "Ordinal": 23,
+              "Hits": 3,
+              "IsReachable": true
+            },
+            {
+              "Line": 228,
+              "Offset": 190,
+              "EndOffset": 261,
+              "Path": 1,
+              "Ordinal": 17,
+              "Hits": 0,
+              "IsReachable": true
+            },
+            {
+              "Line": 228,
+              "Offset": 200,
+              "EndOffset": 261,
+              "Path": 1,
+              "Ordinal": 19,
+              "Hits": 0,
+              "IsReachable": true
+            }
+          ]
+        },
+        "System.String GuiStracini.HolidayAPI.Utils.RequestHelpers::GetPropertyName(System.Reflection.PropertyInfo)": {
+          "Lines": {
+            "251": 3,
+            "252": 3,
+            "253": 3,
+            "254": 3,
+            "255": 3,
+            "256": 3,
+            "258": 3,
+            "261": 3
+          },
+          "Branches": [
+            {
+              "Line": 252,
+              "Offset": 31,
+              "EndOffset": 33,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 3,
+              "IsReachable": true
+            },
+            {
+              "Line": 252,
+              "Offset": 39,
+              "EndOffset": 41,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 3,
+              "IsReachable": true
+            },
+            {
+              "Line": 252,
+              "Offset": 31,
+              "EndOffset": 53,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0,
+              "IsReachable": true
+            },
+            {
+              "Line": 252,
+              "Offset": 39,
+              "EndOffset": 53,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0,
+              "IsReachable": true
+            }
+          ]
+        },
+        "System.Type GuiStracini.HolidayAPI.Utils.RequestHelpers::GetPropertyType(System.Reflection.PropertyInfo)": {
+          "Lines": {
+            "271": 3,
+            "272": 3,
+            "274": 1,
+            "277": 3
+          },
+          "Branches": [
+            {
+              "Line": 272,
+              "Offset": 19,
+              "EndOffset": 21,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1,
+              "IsReachable": true
+            },
+            {
+              "Line": 272,
+              "Offset": 19,
+              "EndOffset": 28,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2,
+              "IsReachable": true
+            }
+          ]
+        }
+      }
+    },
+    "/home/claude/guistracini.holidayapi/Src/GuiStracini.HolidayAPI/Utils/ServiceFactory.cs": {
+      "GuiStracini.HolidayAPI.Utils.ServiceFactory": {
+        "System.Void GuiStracini.HolidayAPI.Utils.ServiceFactory::.ctor(System.Net.Http.HttpClient)": {
+          "Lines": {
+            "36": 0,
+            "38": 0,
+            "39": 0
+          },
+          "Branches": []
+        }
+      },
+      "GuiStracini.HolidayAPI.Utils.ServiceFactory/<Post>d__2`2": {
+        "System.Void GuiStracini.HolidayAPI.Utils.ServiceFactory/<Post>d__2`2::MoveNext()": {
+          "Lines": {
+            "54": 0,
+            "57": 0,
+            "58": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "64": 0,
+            "66": 0,
+            "68": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/claude/guistracini.holidayapi/Src/GuiStracini.HolidayAPI/Transport/BaseRequest.cs": {
+      "GuiStracini.HolidayAPI.Transport.BaseRequest": {
+        "System.Guid GuiStracini.HolidayAPI.Transport.BaseRequest::get_Key()": {
+          "Lines": {
+            "29": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/claude/guistracini.holidayapi/Src/GuiStracini.HolidayAPI/Transport/BaseResponse.cs": {
+      "GuiStracini.HolidayAPI.Transport.BaseResponse": {
+        "System.Int32 GuiStracini.HolidayAPI.Transport.BaseResponse::get_Status()": {
+          "Lines": {
+            "30": 0
+          },
+          "Branches": []
+        },
+        "System.String GuiStracini.HolidayAPI.Transport.BaseResponse::get_Warning()": {
+          "Lines": {
+            "36": 0
+          },
+          "Branches": []
+        },
+        "System.String GuiStracini.HolidayAPI.Transport.BaseResponse::get_Error()": {
+          "Lines": {
+            "42": 0
+          },
+          "Branches": []
+        },
+        "GuiStracini.HolidayAPI.Model.RequestMetadata GuiStracini.HolidayAPI.Transport.BaseResponse::get_Requests()": {
+          "Lines": {
+            "48": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/claude/guistracini.holidayapi/Src/GuiStracini.HolidayAPI/Transport/CountriesResponse.cs": {
+      "GuiStracini.HolidayAPI.Transport.CountriesResponse": {
+        "System.Collections.Generic.IEnumerable`1<GuiStracini.HolidayAPI.Model.Country> GuiStracini.HolidayAPI.Transport.CountriesResponse::get_Countries()": {
+          "Lines": {
+            "29": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/claude/guistracini.holidayapi/Src/GuiStracini.HolidayAPI/Transport/HolidayRequest.cs": {
+      "GuiStracini.HolidayAPI.Transport.HolidayRequest": {
+        "System.String GuiStracini.HolidayAPI.Transport.HolidayRequest::get_Country()": {
+          "Lines": {
+            "31": 2
+          },
+          "Branches": []
+        },
+        "System.Int32 GuiStracini.HolidayAPI.Transport.HolidayRequest::get_Year()": {
+          "Lines": {
+            "37": 2
+          },
+          "Branches": []
+        },
+        "System.Boolean GuiStracini.HolidayAPI.Transport.HolidayRequest::get_SubDivisions()": {
+          "Lines": {
+            "44": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/claude/guistracini.holidayapi/Src/GuiStracini.HolidayAPI/Transport/HolidayResponse.cs": {
+      "GuiStracini.HolidayAPI.Transport.HolidayResponse": {
+        "System.Collections.Generic.IEnumerable`1<GuiStracini.HolidayAPI.Model.Holiday> GuiStracini.HolidayAPI.Transport.HolidayResponse::get_Holidays()": {
+          "Lines": {
+            "30": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/claude/guistracini.holidayapi/Src/GuiStracini.HolidayAPI/Transport/HolidaySearchableRequest.cs": {
+      "GuiStracini.HolidayAPI.Transport.HolidaySearchableRequest": {
+        "System.Nullable`1<System.Int32> GuiStracini.HolidayAPI.Transport.HolidaySearchableRequest::get_Month()": {
+          "Lines": {
+            "32": 1
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.Int32> GuiStracini.HolidayAPI.Transport.HolidaySearchableRequest::get_Day()": {
+          "Lines": {
+            "41": 1
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.Boolean> GuiStracini.HolidayAPI.Transport.HolidaySearchableRequest::get_Previous()": {
+          "Lines": {
+            "50": 1
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.Boolean> GuiStracini.HolidayAPI.Transport.HolidaySearchableRequest::get_Upcoming()": {
+          "Lines": {
+            "59": 1
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.Boolean> GuiStracini.HolidayAPI.Transport.HolidaySearchableRequest::get_Public()": {
+          "Lines": {
+            "68": 1
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.Boolean> GuiStracini.HolidayAPI.Transport.HolidaySearchableRequest::get_Subdivisions()": {
+          "Lines": {
+            "77": 1
+          },
+          "Branches": []
+        },
+        "System.String GuiStracini.HolidayAPI.Transport.HolidaySearchableRequest::get_Language()": {
+          "Lines": {
+            "86": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/claude/guistracini.holidayapi/Src/GuiStracini.HolidayAPI/Transport/LanguagesResponse.cs": {
+      "GuiStracini.HolidayAPI.Transport.LanguagesResponse": {
+        "System.Collections.Generic.IEnumerable`1<GuiStracini.HolidayAPI.Model.Language> GuiStracini.HolidayAPI.Transport.LanguagesResponse::get_Languages()": {
+          "Lines": {
+            "29": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/claude/guistracini.holidayapi/Src/GuiStracini.HolidayAPI/Transport/SearchableRequest.cs": {
+      "GuiStracini.HolidayAPI.Transport.SearchableRequest": {
+        "System.String GuiStracini.HolidayAPI.Transport.SearchableRequest::get_Search()": {
+          "Lines": {
+            "32": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/claude/guistracini.holidayapi/Src/GuiStracini.HolidayAPI/Transport/WorkdayRequest.cs": {
+      "GuiStracini.HolidayAPI.Transport.WorkdayRequest": {
+        "System.String GuiStracini.HolidayAPI.Transport.WorkdayRequest::get_Country()": {
+          "Lines": {
+            "31": 0
+          },
+          "Branches": []
+        },
+        "System.String GuiStracini.HolidayAPI.Transport.WorkdayRequest::get_Start()": {
+          "Lines": {
+            "37": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 GuiStracini.HolidayAPI.Transport.WorkdayRequest::get_Days()": {
+          "Lines": {
+            "43": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/claude/guistracini.holidayapi/Src/GuiStracini.HolidayAPI/Transport/WorkdayResponse.cs": {
+      "GuiStracini.HolidayAPI.Transport.WorkdayResponse": {
+        "GuiStracini.HolidayAPI.Model.Workday GuiStracini.HolidayAPI.Transport.WorkdayResponse::get_Workday()": {
+          "Lines": {
+            "28": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/claude/guistracini.holidayapi/Src/GuiStracini.HolidayAPI/Transport/WorkdaysRequest.cs": {
+      "GuiStracini.HolidayAPI.Transport.WorkdaysRequest": {
+        "System.String GuiStracini.HolidayAPI.Transport.WorkdaysRequest::get_Country()": {
+          "Lines": {
+            "30": 0
+          },
+          "Branches": []
+        },
+        "System.String GuiStracini.HolidayAPI.Transport.WorkdaysRequest::get_Start()": {
+          "Lines": {
+            "36": 0
+          },
+          "Branches": []
+        },
+        "System.String GuiStracini.HolidayAPI.Transport.WorkdaysRequest::get_End()": {
+          "Lines": {
+            "42": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/claude/guistracini.holidayapi/Src/GuiStracini.HolidayAPI/Transport/WorkdaysResponse.cs": {
+      "GuiStracini.HolidayAPI.Transport.WorkdaysResponse": {
+        "System.Int32 GuiStracini.HolidayAPI.Transport.WorkdaysResponse::get_Workdays()": {
+          "Lines": {
+            "27": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/claude/guistracini.holidayapi/Src/GuiStracini.HolidayAPI/Model/Country.cs": {
+      "GuiStracini.HolidayAPI.Model.Country": {
+        "System.String GuiStracini.HolidayAPI.Model.Country::get_Code()": {
+          "Lines": {
+            "27": 0
+          },
+          "Branches": []
+        },
+        "System.String GuiStracini.HolidayAPI.Model.Country::get_Name()": {
+          "Lines": {
+            "33": 0
+          },
+          "Branches": []
+        },
+        "System.String[] GuiStracini.HolidayAPI.Model.Country::get_Languages()": {
+          "Lines": {
+            "39": 0
+          },
+          "Branches": []
+        },
+        "GuiStracini.HolidayAPI.Model.CountryCode GuiStracini.HolidayAPI.Model.Country::get_Codes()": {
+          "Lines": {
+            "45": 0
+          },
+          "Branches": []
+        },
+        "System.String GuiStracini.HolidayAPI.Model.Country::get_Flag()": {
+          "Lines": {
+            "51": 0
+          },
+          "Branches": []
+        },
+        "GuiStracini.HolidayAPI.Model.Subdivision[] GuiStracini.HolidayAPI.Model.Country::get_Subdivisions()": {
+          "Lines": {
+            "57": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/claude/guistracini.holidayapi/Src/GuiStracini.HolidayAPI/Model/CountryCode.cs": {
+      "GuiStracini.HolidayAPI.Model.CountryCode": {
+        "System.String GuiStracini.HolidayAPI.Model.CountryCode::get_Alpha2()": {
+          "Lines": {
+            "28": 0
+          },
+          "Branches": []
+        },
+        "System.String GuiStracini.HolidayAPI.Model.CountryCode::get_Alpha3()": {
+          "Lines": {
+            "35": 0
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.Int32> GuiStracini.HolidayAPI.Model.CountryCode::get_Numeric()": {
+          "Lines": {
+            "42": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/claude/guistracini.holidayapi/Src/GuiStracini.HolidayAPI/Model/Holiday.cs": {
+      "GuiStracini.HolidayAPI.Model.Holiday": {
+        "System.String GuiStracini.HolidayAPI.Model.Holiday::get_Name()": {
+          "Lines": {
+            "31": 0
+          },
+          "Branches": []
+        },
+        "System.DateTime GuiStracini.HolidayAPI.Model.Holiday::get_Date()": {
+          "Lines": {
+            "37": 0
+          },
+          "Branches": []
+        },
+        "System.DateTime GuiStracini.HolidayAPI.Model.Holiday::get_Observed()": {
+          "Lines": {
+            "43": 0
+          },
+          "Branches": []
+        },
+        "System.Boolean GuiStracini.HolidayAPI.Model.Holiday::get_Public()": {
+          "Lines": {
+            "49": 0
+          },
+          "Branches": []
+        },
+        "System.String GuiStracini.HolidayAPI.Model.Holiday::get_Country()": {
+          "Lines": {
+            "55": 0
+          },
+          "Branches": []
+        },
+        "System.Guid GuiStracini.HolidayAPI.Model.Holiday::get_Uuid()": {
+          "Lines": {
+            "61": 0
+          },
+          "Branches": []
+        },
+        "GuiStracini.HolidayAPI.Model.Weekday GuiStracini.HolidayAPI.Model.Holiday::get_Weekday()": {
+          "Lines": {
+            "67": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/claude/guistracini.holidayapi/Src/GuiStracini.HolidayAPI/Model/Language.cs": {
+      "GuiStracini.HolidayAPI.Model.Language": {
+        "System.String GuiStracini.HolidayAPI.Model.Language::get_Code()": {
+          "Lines": {
+            "28": 0
+          },
+          "Branches": []
+        },
+        "System.String GuiStracini.HolidayAPI.Model.Language::get_Name()": {
+          "Lines": {
+            "34": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/claude/guistracini.holidayapi/Src/GuiStracini.HolidayAPI/Model/RequestMetadata.cs": {
+      "GuiStracini.HolidayAPI.Model.RequestMetadata": {
+        "System.Int32 GuiStracini.HolidayAPI.Model.RequestMetadata::get_Used()": {
+          "Lines": {
+            "28": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 GuiStracini.HolidayAPI.Model.RequestMetadata::get_Available()": {
+          "Lines": {
+            "34": 0
+          },
+          "Branches": []
+        },
+        "System.DateTime GuiStracini.HolidayAPI.Model.RequestMetadata::get_Resets()": {
+          "Lines": {
+            "40": 0
+          },
+          "Branches": []
+        },
+        "System.DateTime GuiStracini.HolidayAPI.Model.RequestMetadata::get_LastCall()": {
+          "Lines": {
+            "46": 0
+          },
+          "Branches": []
+        },
+        "System.String GuiStracini.HolidayAPI.Model.RequestMetadata::get_Message()": {
+          "Lines": {
+            "52": 0
+          },
+          "Branches": []
+        },
+        "System.String GuiStracini.HolidayAPI.Model.RequestMetadata::get_Warning()": {
+          "Lines": {
+            "58": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/claude/guistracini.holidayapi/Src/GuiStracini.HolidayAPI/Model/Subdivision.cs": {
+      "GuiStracini.HolidayAPI.Model.Subdivision": {
+        "System.String GuiStracini.HolidayAPI.Model.Subdivision::get_Code()": {
+          "Lines": {
+            "25": 0
+          },
+          "Branches": []
+        },
+        "System.String GuiStracini.HolidayAPI.Model.Subdivision::get_Name()": {
+          "Lines": {
+            "31": 0
+          },
+          "Branches": []
+        },
+        "System.String[] GuiStracini.HolidayAPI.Model.Subdivision::get_Languages()": {
+          "Lines": {
+            "37": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/claude/guistracini.holidayapi/Src/GuiStracini.HolidayAPI/Model/Weekday.cs": {
+      "GuiStracini.HolidayAPI.Model.Weekday": {
+        "GuiStracini.HolidayAPI.Model.WeekdayDetail GuiStracini.HolidayAPI.Model.Weekday::get_Date()": {
+          "Lines": {
+            "25": 0
+          },
+          "Branches": []
+        },
+        "GuiStracini.HolidayAPI.Model.WeekdayDetail GuiStracini.HolidayAPI.Model.Weekday::get_Observed()": {
+          "Lines": {
+            "31": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/claude/guistracini.holidayapi/Src/GuiStracini.HolidayAPI/Model/WeekdayDetail.cs": {
+      "GuiStracini.HolidayAPI.Model.WeekdayDetail": {
+        "System.String GuiStracini.HolidayAPI.Model.WeekdayDetail::get_Name()": {
+          "Lines": {
+            "25": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 GuiStracini.HolidayAPI.Model.WeekdayDetail::get_Numeric()": {
+          "Lines": {
+            "31": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/claude/guistracini.holidayapi/Src/GuiStracini.HolidayAPI/Model/Workday.cs": {
+      "GuiStracini.HolidayAPI.Model.Workday": {
+        "System.DateTime GuiStracini.HolidayAPI.Model.Workday::get_Date()": {
+          "Lines": {
+            "31": 0
+          },
+          "Branches": []
+        },
+        "GuiStracini.HolidayAPI.Model.WeekdayDetail GuiStracini.HolidayAPI.Model.Workday::get_Weekday()": {
+          "Lines": {
+            "37": 0
+          },
+          "Branches": []
+        }
+      }
+    }
+  }
+}
