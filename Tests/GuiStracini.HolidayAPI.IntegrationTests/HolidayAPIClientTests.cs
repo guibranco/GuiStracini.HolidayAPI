@@ -119,21 +119,16 @@ namespace GuiStracini.HolidayAPI.IntegrationTests
 
             var list = result.ToList();
             Assert.True(list.Any());
-            Assert.Contains(
-                list,
-                holiday =>
-                    holiday.Date.Equals(new DateTime(year, 12, 25))
-                    && holiday.Name.Equals("Christmas Day")
+            Assert.Contains(list, holiday =>
+                holiday.Date.Equals(new DateTime(year, 12, 25))
+                && holiday.Name.Equals("Christmas Day")
             );
-            Assert.Contains(
-                list,
-                holiday =>
-                    holiday.Date.Equals(new DateTime(year, 9, 7))
-                    && holiday.Name.Equals("Independence Day")
+            Assert.Contains(list, holiday =>
+                holiday.Date.Equals(new DateTime(year, 9, 7))
+                && holiday.Name.Equals("Independence Day")
             );
-            Assert.DoesNotContain(
-                list,
-                holiday => holiday.Name.Equals("George Washington's Birthday")
+            Assert.DoesNotContain(list, holiday =>
+                holiday.Name.Equals("George Washington's Birthday")
             );
         }
 
@@ -153,33 +148,21 @@ namespace GuiStracini.HolidayAPI.IntegrationTests
 
             var list = result.ToList();
             Assert.True(list.Any());
-            Assert.DoesNotContain(
-                list,
-                holiday =>
-                    holiday.Date.Equals(new DateTime(year, 12, 25))
-                    && holiday.Name.Equals(
-                        "Christmas Day",
-                        StringComparison.InvariantCultureIgnoreCase
-                    )
+            Assert.DoesNotContain(list, holiday =>
+                holiday.Date.Equals(new DateTime(year, 12, 25))
+                && holiday.Name.Equals("Christmas Day", StringComparison.InvariantCultureIgnoreCase)
             );
-            Assert.DoesNotContain(
-                list,
-                holiday =>
-                    holiday.Date.Equals(new DateTime(year, 9, 7))
-                    && holiday.Name.Equals(
-                        "Independence Day",
-                        StringComparison.InvariantCultureIgnoreCase
-                    )
+            Assert.DoesNotContain(list, holiday =>
+                holiday.Date.Equals(new DateTime(year, 9, 7))
+                && holiday.Name.Equals(
+                    "Independence Day",
+                    StringComparison.InvariantCultureIgnoreCase
+                )
             );
-            Assert.Contains(
-                list,
-                holiday =>
-                    holiday.Date.Month.Equals(8)
-                    && holiday.Date.DayOfWeek == DayOfWeek.Sunday
-                    && holiday.Name.Equals(
-                        "Father's Day",
-                        StringComparison.InvariantCultureIgnoreCase
-                    )
+            Assert.Contains(list, holiday =>
+                holiday.Date.Month.Equals(8)
+                && holiday.Date.DayOfWeek == DayOfWeek.Sunday
+                && holiday.Name.Equals("Father's Day", StringComparison.InvariantCultureIgnoreCase)
             );
         }
 
@@ -219,29 +202,20 @@ namespace GuiStracini.HolidayAPI.IntegrationTests
 
             var list = result.ToList();
             Assert.True(list.Any());
-            Assert.DoesNotContain(
-                list,
-                holiday =>
-                    holiday.Date.Equals(new DateTime(year, 12, 25))
-                    && holiday.Name.Equals(
-                        "Christmas Day",
-                        StringComparison.InvariantCultureIgnoreCase
-                    )
+            Assert.DoesNotContain(list, holiday =>
+                holiday.Date.Equals(new DateTime(year, 12, 25))
+                && holiday.Name.Equals("Christmas Day", StringComparison.InvariantCultureIgnoreCase)
             );
-            Assert.DoesNotContain(
-                list,
-                holiday =>
-                    holiday.Date.Equals(new DateTime(year, 9, 7))
-                    && holiday.Name.Equals(
-                        "Independence Day",
-                        StringComparison.InvariantCultureIgnoreCase
-                    )
+            Assert.DoesNotContain(list, holiday =>
+                holiday.Date.Equals(new DateTime(year, 9, 7))
+                && holiday.Name.Equals(
+                    "Independence Day",
+                    StringComparison.InvariantCultureIgnoreCase
+                )
             );
-            Assert.Contains(
-                list,
-                holiday =>
-                    holiday.Date.Equals(new DateTime(year, 12, 25))
-                    && holiday.Name.Contains("Natal", StringComparison.InvariantCultureIgnoreCase)
+            Assert.Contains(list, holiday =>
+                holiday.Date.Equals(new DateTime(year, 12, 25))
+                && holiday.Name.Contains("Natal", StringComparison.InvariantCultureIgnoreCase)
             );
         }
 
@@ -263,9 +237,8 @@ namespace GuiStracini.HolidayAPI.IntegrationTests
             Assert.Contains(list, country => country.Name.Equals("Argentina"));
 
             Assert.Contains(list, country => country.Code.Equals("BR"));
-            Assert.Contains(
-                list,
-                country => country.Flag.Equals("https://flagsapi.com/BR/flat/64.png")
+            Assert.Contains(list, country =>
+                country.Flag.Equals("https://flagsapi.com/BR/flat/64.png")
             );
         }
 

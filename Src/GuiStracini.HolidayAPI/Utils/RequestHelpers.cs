@@ -169,9 +169,8 @@ namespace GuiStracini.HolidayAPI.Utils
             }
 
             var builder = new StringBuilder();
-            var addAsQueryString = properties.Aggregate(
-                false,
-                (current, property) => ParseProperty(request, property, current, builder)
+            var addAsQueryString = properties.Aggregate(false, (current, property) =>
+                ParseProperty(request, property, current, builder)
             );
             var result = builder.ToString();
 
