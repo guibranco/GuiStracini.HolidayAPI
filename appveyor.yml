@@ -22,6 +22,11 @@ init:
 - SET JAVA_HOME=C:\Program Files\Java\jdk19
 - SET PATH=%JAVA_HOME%\bin;%PATH%
 
+install:
+- ps: Invoke-WebRequest -Uri 'https://dot.net/v1/dotnet-install.ps1' -UseBasicParsing -OutFile "$env:TEMP\dotnet-install.ps1"
+- ps: '& "$env:TEMP\dotnet-install.ps1" -Channel 10.0 -InstallDir "$env:ProgramFiles\dotnet"'
+- cmd: dotnet --info
+
 before_build:
 - ps: $env:SOLUTION_NAME = $([io.path]::GetFileNameWithoutExtension($(Get-ChildItem -Path .\* -Include *.sln)))
 - ps: $env:SONAR_PROJECT = "$env:APPVEYOR_REPO_NAME" -replace "/","_"
