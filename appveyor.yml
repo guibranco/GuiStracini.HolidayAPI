@@ -1,6 +1,6 @@
 version: 3.4.{build}
 skip_tags: true
-image: Visual Studio 2022
+image: Visual Studio 2026
 configuration: Release
 
 environment:
@@ -19,8 +19,16 @@ dotnet_csproj:
   informational_version: '{version}'
 
 init:
-- SET JAVA_HOME=C:\Program Files\Java\jdk19
-- SET PATH=%JAVA_HOME%\bin;%PATH%
+- ps: |
+    $jdk = Get-ChildItem -Path "C:\Program Files\Java" -Directory -Filter "jdk*" -ErrorAction SilentlyContinue |
+        Sort-Object { [int]([regex]::Match($_.Name, '\d+').Value) } -Descending |
+        Select-Object -First 1
+    if ($jdk) {
+        $env:JAVA_HOME = $jdk.FullName
+        $env:PATH = "$($jdk.FullName)\bin;$env:PATH"
+    }
+- java -version
+- dotnet --list-sdks
 
 before_build:
 - ps: $env:SOLUTION_NAME = $([io.path]::GetFileNameWithoutExtension($(Get-ChildItem -Path .\* -Include *.sln)))
@@ -29,8 +37,7 @@ before_build:
 - ps: $env:LOCAL_PR = 0
 - ps: if(-Not $env:APPVEYOR_PULL_REQUEST_NUMBER) { $env:LOCAL_PR = 1 }
 - ps: if($env:APPVEYOR_PULL_REQUEST_HEAD_REPO_NAME -Eq $env:APPVEYOR_REPO_NAME) { $env:LOCAL_PR = 1 }
-- cmd: nuget restore
-- cmd: choco install opencover.portable
+- cmd: dotnet restore
 - cmd: choco install codecov
 - cmd: curl -L https://github.com/codacy/codacy-coverage-reporter/releases/latest/download/codacy-coverage-reporter-assembly.jar > ./codacy-test-reporter.jar
 - cmd: dotnet tool install --global dotnet-sonarscanner
@@ -64,6 +71,8 @@ build_script:
 after_build:
 - xcopy Src\%SOLUTION_NAME%\bin\Release\netstandard2.0\*.* Build\.netstandard2.0\
 - xcopy Src\%SOLUTION_NAME%\bin\Release\netstandard2.1\*.* Build\.netstandard2.1\
+- xcopy Src\%SOLUTION_NAME%\bin\Release\net8.0\*.* Build\.net8.0\
+- xcopy Src\%SOLUTION_NAME%\bin\Release\net10.0\*.* Build\.net10.0\
 
 - copy Src\%SOLUTION_NAME%\bin\Release\%SOLUTION_NAME%.%APPVEYOR_BUILD_VERSION%.nupkg %SOLUTION_NAME%.%APPVEYOR_BUILD_VERSION%.nupkg
 
